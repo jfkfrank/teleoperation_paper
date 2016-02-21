@@ -19,7 +19,7 @@
   
   
 \begin{document}
-\title{Orbione-Bot Team Description Paper }
+\title{Orbione-Bot 2016 Team Description Paper }
 
 \author{Francisco J. Rodr\'iguez Lera, Fernando Casado, Jes\'us Balsa, Vicente Matell\'an\inst{1} \and Francisco Mart\'in Rico\inst{2}}
 
@@ -33,43 +33,49 @@ Universidad Rey Juan Carlos, Madrid, Spain}
 \maketitle
 %
 \begin{abstract}
-This report aims to show the capabilities of the Spanish team named Orbione-Bot gathered to participate in the RoboCup@Home competition. It shows the background of our team members, the robot that we will be used (RB1) and the contributions to the RoboCup goals that we are expecting. It describes our software architecture which offers visual object recognition, autonomous navigation based on RGB-D sensors, dialogue including context awareness, and mobile manipulation abilities. These components have been tested in periodically open demonstrations held in our lab where we have built a mock-up apartment. 
+This report aims to show the capabilities of the Spanish team named Orbione-Bot gathered to participate in the RoboCup@Home competition. It shows the background of our team members, the robot that we will be used (RB1) and the contributions to the RoboCup@Home goals that we are expecting. It also describes our software architecture the visual object recognition system, our autonomous navigation based on RGB-D sensors, the dialogue module that includes context awareness, and the mobile manipulation abilities. These components have been tested in periodically open demonstrations held in our lab where we have built a mock-up apartment. 
 
 \end{abstract}
 %
 \section{Introduction}
 
-The research goal of our team is generating more acceptable socially assistive robots.
-RoboCup@Home will let us test our results in external environments before to test our researches in real home environments, and after testing them in our mock-up home.
 
-The background of our team is the Watermelon Project. This project was initiated at at the University Le\'on's  Robotics Group in 2012. In 2013 it was expanded with the addition of Robotics Group at the Rey Juan Carlos University \cite{martin2014myrabot}. 
+The research goal of our team is how to create more acceptable socially assistive robots. RoboCup@Home competition will let us validate our results by external reviewers, and contrast them with other teams' ideas,  before deploying them in real home environments, and after testing them in our mock-up home.
 
-
-\section{Background}
-
-Our original goal was to prove that a robotic platform could be created  using low-cost materials.
-We wanted to validate it as a starter kit for robotics researchers in competitions like RoCKIn or other
-endeavours. The RoCKIn 2014 events allowed us to test our approach intensively, and introduce
-several improvements and fixes in our robot. Finally, we have concluded that 
-this robot can be used in the labs for researching and for analyzing semi-autonomous behaviours in 
-real homes. 
-
-MYRA (?Elderly and Augmented Reality? in Spanish) was the code name given to the original
-project more than two years ago. The main goal was to build an assistance robotics platform
-that would be suited to the needs of old people, such as helping them to take the right
-medication at the right time. We intended to study the human-robot interaction using
-augmented reality, and a target demographic with usually little experience with robots or
-technology overall. The Watermelon team was formed at the end of 2013, in order to
-participate in the RoCKIn@Home camp that was going to take place in Rome on January the
-next year. Since the first moment, we focused our efforts on adding new software and
-hardware solutions, or improving the existing ones, in order to adapt MYRA for the
-competition. Thus the MYRABot platform was created, and it has been continuously reshaped
-ever since.
+The background of our team in robotic competition is the Watermelon Project. This project was initiated at at the University Le\'on's  Robotics Group in 2012. In 2013  the Universidad Rey Juan Carlos's robotic group joined the team. 
 
 
-\section{Research}
+%\subsection{Background}
+
+%Our original goal was to create a ultra-low cost robotic platform that could enter robotic competitions. We propose it as an starter kit for robotics researchers willing to participate in robotics competitions like RoCKIn. The RoCKIn 2014 events allowed us to test our approach intensively, which generated several improvements in our robot. This robot can be used in the labs for researching and for analyzing semi-autonomous behaviors in  real homes. 
+
+MYRA - Mayores y Realidad Aumentada in Spanish (''Elderly and Augmented Reality'' in English) was the code name given to the original project more than two years ago. The main goal was to build an assistance robotics platform that would be suited to the needs of old people, such as helping them to take the right medication at the right time. We intended to study the human-robot interaction using augmented reality, and a target demographic with usually little experience with robots or technology overall. 
+
+The Watermelon team was established at the end of 2013, in order to participate in the RoCKIn@Home camp that was going to take place in Rome on January the next year. Since the first moment, we focused our efforts on adding new software and hardware solutions, or improving the existing ones, in order to adapt MYRA for the
+competition. Thus the MYRABot robot  \cite{martin2014myrabot} was created, and it has been continuously reshaped ever since.
 
 
+\section{Hardware Platforms}
+
+Our team will enter 2016 competition using RB1 (see figure~\ref{fig:rb1}). It is a mobile manipulator built by Robotnik.
+
+\begin{figure*}[ht]
+  \centering
+  \includegraphics[width=0.3\textwidth]{rb1.png}
+  \caption{RB1 platform}
+  \label{fig:rb1}
+\end{figure*}
+
+
+We are also working in a bimanipulator plaftorm.
+
+
+
+\subsection{Architecture}
+
+We have a three layers architecture based on ROS and {BICA}~\cite{aguero2010behavior}. 
+The lower layer corresponds to ROS, and is in charge of hardware management. 
+The intermediate layer provides the robot skills in order to carry out specific duties (perception, navigation,...).
 
 \begin{figure*}[ht]
   \centering
@@ -78,12 +84,7 @@ ever since.
   \label{fig:architecture}
 \end{figure*}
 
-\subsection{Architecture}
-
-We have a three layers architecture based on ROS and Bica~\cite{aguero2010behavior}. 
-The lower layer corresponds to ROS, and is in charge of hardware management. 
-The intermediate layer provides the robot skills in order to carry out specific duties (perception, navigation,...).
-The top layer presents Bica. It is a component-based for generating behaviour s architecture. This node coordinates the various
+The top layer presents {BICA}. It is a component-based for generating behavior s architecture. This node coordinates the various
 capabilities of the robot depending on the task to be carried out by the robot.
 Figure~\ref{fig:architecture} shows the overall architecture of the software we have developed for participating in the RoCKIn competition. 
 % In the peripheral layer, which represents the hardware access, we
