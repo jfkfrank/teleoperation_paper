@@ -6,12 +6,13 @@
 \usepackage{llncsdoc}
 %
 
-\markboth{Orbione-Bot Team Description Paper}{Lera et al.}
+\markboth{Le\'onRobot - Team Description Paper}{Lera et al.}
 
 \def\addtocontents#1#2{}%
 \def\addcontentsline#1#2#3{}%
 \def\markboth#1#2{}%
 
+% \usepackage{hyperref}
 
 \usepackage[pdftex]{graphicx}
 \graphicspath{{figures/}}
@@ -19,7 +20,7 @@
   
   
 \begin{document}
-\title{Orbione-Bot 2016 Team Description Paper }
+\title{Le\'onRobot Team Description Paper. RoboCup@home 2016  }
 
 \author{Francisco J. Rodr\'iguez Lera, Fernando Casado, Jes\'us Balsa, Vicente Matell\'an\inst{1} \and Francisco Mart\'in Rico\inst{2}}
 
@@ -52,39 +53,44 @@ The background of our team in robotic competition is the Watermelon Project. Thi
 MYRA - Mayores y Realidad Aumentada in Spanish (''Elderly and Augmented Reality'' in English) was the code name given to the original project more than two years ago. The main goal was to build an assistance robotics platform that would be suited to the needs of old people, such as helping them to take the right medication at the right time. We intended to study the human-robot interaction using augmented reality, and a target demographic with usually little experience with robots or technology overall. 
 
 The Watermelon team was established at the end of 2013, in order to participate in the RoCKIn@Home camp that was going to take place in Rome on January the next year. Since the first moment, we focused our efforts on adding new software and hardware solutions, or improving the existing ones, in order to adapt MYRA for the
-competition. Thus the MYRABot robot  \cite{martin2014myrabot} was created, and it has been continuously reshaped ever since.
+competition. Thus the MYRABot robot [\cite{martin2014myrabot}] was created, and it has been continuously reshaped ever since.
 
 
-\section{Hardware Platforms}
+
+
+\section{Hardware Platform}
 
 Our team will enter 2016 competition using RB1 (see figure~\ref{fig:rb1}). It is a mobile manipulator built by Robotnik.
+The hardware description of our platform is presented at the end of this TDP and in Robotnik's web page [\cite{2RobotnikRB1}] or in ROS web page [\cite{RobotnikRB1}].
 
 \begin{figure*}[ht]
   \centering
-  \includegraphics[width=0.3\textwidth]{rb1.png}
+  \includegraphics[width=0.25\textwidth]{rb1.png}
+  \includegraphics[width=0.38\textwidth]{RB1_robot.jpg}
   \caption{RB1 platform}
   \label{fig:rb1}
 \end{figure*}
 
 
-We are also working in a bimanipulator plaftorm.
+RB-1 is designed as a mobile manipulator for indoor environments. Its shape is similar to other robots as Fetch or Tiago, but RB1 mounts a 7DOF arm with Dynamixel Pro servos.
 
 
+\section{Scientific Contributions}
 
 \subsection{Architecture}
 
-We have a three layers architecture based on ROS and {BICA}~\cite{aguero2010behavior}. 
+We have a three layer architecture based on ROS and {BICA}~[\cite{aguero2010behavior}]. 
 The lower layer corresponds to ROS, and is in charge of hardware management. 
 The intermediate layer provides the robot skills in order to carry out specific duties (perception, navigation,...).
 
 \begin{figure*}[ht]
   \centering
-  \includegraphics[width=0.8\textwidth]{rokinarq-142}
+  \includegraphics[width=\textwidth]{rokinarq}
   \caption{Software architecture for RoCKIn competition.} 
   \label{fig:architecture}
 \end{figure*}
 
-The top layer presents {BICA}. It is a component-based for generating behavior s architecture. This node coordinates the various
+The top layer presents {BICA}. It is a component-based for generating behaviors architecture. This node coordinates the various
 capabilities of the robot depending on the task to be carried out by the robot.
 Figure~\ref{fig:architecture} shows the overall architecture of the software we have developed for participating in the RoCKIn competition. 
 % In the peripheral layer, which represents the hardware access, we
@@ -99,9 +105,9 @@ Figure~\ref{fig:architecture} shows the overall architecture of the software we 
 
 \subsubsection{Component-based Architecture for Behaviour Generation}
 
-We use a component-based architecture~\cite{aguero2010behavior} to generate robot behaviour s. We recently
-started the integration of this approach to our platform for avoiding big and complex finite
-state machines (FSMs) developed ad-hoc in each ROS node. 
+% Our software solution We use a component-based architecture~\cite{aguero2010behavior} to generate robot behaviours. We recently
+% started the integration of this approach to our platform for avoiding big and complex finite
+% state machines (FSMs) developed ad-hoc in each ROS node. 
 % 
 % Figure~\ref{fig:BicaandROS} describes the implementation scheme of a robotic application using our approach.
 % There can be multiple ROS nodes containing components of our architecture, which communicate
@@ -137,7 +143,7 @@ another, it explicitly calls its step() method. Components that are not being us
 another component do not run, saving computing resources. 
 
 We have developed a useful tool to design these complex components. This tool generates
-the skeleton code for a behaviour  modelled graphically. Figure~\ref{fig:Bicacomponent} shows the implementation
+the skeleton code for a behaviour  modeled graphically. Figure~\ref{fig:Bicacomponent} shows the implementation
 of a component as an FSM with nine states (yellow circles). In each state, another component
 (blue circles) are activated. From any component you can perform any communication with
 other nodes ROS.
@@ -145,7 +151,7 @@ other nodes ROS.
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.5\textwidth]{202}
+  \includegraphics[width=0.8\textwidth]{202}
   \caption{Bica component implementing a finite state machine to define a high-level behaviour.} 
   \label{fig:Bicacomponent}
 \end{figure}
@@ -190,7 +196,7 @@ The system implemented for real environment deployment  works as follows:
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.6\textwidth]{SimulatorContext}
-    \caption{There are different acoustic singals available in all the real environments: doorbell, oven, fridge, ...}
+    \caption{There are different acoustic signals available in all the real environments: doorbell, oven, fridge, ...}
   \label{fig:contextsimulator}
 \end{figure}
 
@@ -203,7 +209,9 @@ Navigating in a socially acceptable way is an important ability for mobile robot
 environments that requires efficiently detecting and tracking humans to negotiate the space with.
 In particular, walking side by side is not a trivial problem that involves relative positioning
 calculations to the accompanying person taking into account the environment limitations (narrow
-corridors, turnings, etc.) as well as keeping its track towards its destination.
+corridors, turnings, etc.) as well as keeping its track towards its destination. 
+
+Our contributions and development in this field can be follow in~[\cite{lera2015social}].
 
 
 \begin{figure}[ht]
@@ -220,13 +228,38 @@ corridors, turnings, etc.) as well as keeping its track towards its destination.
 
 
 
-\section{Reusability}
+\section{Contributions: Source Code Availability}
 
-Poner el repo de githuba de PACO, poner el repo de GitHub del equipo.
+We have different GitHub available to reach our solutions. 
+As individuals it is possible to see our developments in:
+\begin{itemize}
+ \item \url{https://github.com/fmrico}
+ \item \url{https://github.com/FranLera}
+\end{itemize}
+
+As a team our developments are available after each competition in the next GitHub repository:
+\begin{itemize}
+ \item \url{https://github.com/Robotica-ule/MYRABot}
+\end{itemize}
+
+To share information, methodologies and developments is one of our principles. Former members of our team have contributed with manuals in other fields as in PCL
+\begin{itemize}
+ \item \url{http://robotica.unileon.es/mediawiki/index.php/PhD-3D-Object-Tracking}
+\end{itemize}
+
 
 
 
 \section{Conclusions and Future Work}
+
+
+This TDP described the main developments of our team for the 2016 RoboCup@home competition. 
+As in our last competition, we will participate with our robot RB1. 
+We also travel with our backup robot MYRABot, that is considered as our older team member.
+
+In order to succeed in the RoboCup@Home league, at this moment we have provided to RB1 basic skills to perform dialogue  (speech recognition), perception (object recognition and human tracking), navigation (SLAM, localization and global/local approaches), manipulation (grasping) and context awareness (environment activities recognition).  
+
+The skill set presented will allow us to introduce us at RoboCup@Home 2016 competition.
 
 % % % % \medskip\noindent{\itshape Sample Output}
 % % % % \begin{table}
@@ -560,9 +593,9 @@ Poner el repo de githuba de PACO, poner el repo de GitHub del equipo.
       \begin{itemize}
 	\item Francisco Lera
 	\item Fernando García
-	\item Jesús Balsa
-	\item Vicente Matellán
-	\item Franciso Martín
+	\item Jes\'us Balsa
+	\item Vicente Matell\'an
+	\item Franciso Mart\'in
       \end{itemize}
   
 \end{itemize}
@@ -592,16 +625,14 @@ Poner el repo de githuba de PACO, poner el repo de GitHub del equipo.
 \begin{itemize}
  \item Development framework: ROS
   \begin{enumerate}
-   \item Paquete
-   \item Paquete
-   \item Paquete
-   \item Paquete
-   \item Paquete
-   \item Paquete
+   \item Vision: ork, findobject
+   \item Dialogue: Pocketsphinx
+   \item BellRecognition:  pyaudio 
+   \item Manipulation: MoveIt, self developements.
+   \item Navigation: Ros stack, self developements.
   \end{enumerate}
 
-
-  \item Robot Control: Bica 
+  \item Robot Control: FSM using Bica 
 \end{itemize}
 
 
