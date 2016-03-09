@@ -1,0 +1,113 @@
+\documentclass[journal,twoside]{JoPhA}
+
+\usepackage{flushend}
+
+\begin{document}
+
+\title{Cybersecurity in Autonomous Systems: Analyzing the ROS Communications Model}
+
+\author{David Ma\~nanes, Francisco Javier Rodr\'iguez Lera, Jes\'us Balsa and Vicente Matell\'an,
+\IEEEcompsocitemizethanks{
+All authors are with the Robotics Group at Universidad de Le\'on (Spain)
+
+\IEEEcompsocthanksitem Corresponding author: vicente.matellan@unileon.es} % <-this % s
+}
+
+
+\markboth{Workshop on Physical Agents, Malaga 2016}%
+{Matell\'an et al: Cybersecurity in ROS}
+\maketitle
+
+
+\begin{abstract}
+La ciberseguridad en robótica es importante
+
+ROS es esl framework más extendido
+
+Cifrar las comunicaciones, medir rendimiento
+\end{abstract}
+
+
+\begin{IEEEkeywords}
+autonomous systems, cybersecurity, robotics, performance, cyber-physical
+\end{IEEEkeywords}
+
+
+\section{Introduction}
+
+\IEEEPARstart{A}{utonomous} systems are spreading not just in the virtual world (Internet, software systems) or in science-fiction movies, but in our ordinary real world. We can already find driverless cars in the streets, autonomous vacuum cleaners in our homes, museum guides hotel assistants, etc. These cyber-physical systems, as any computer-based system, can suffer different types of vulnerabilities, and the  need of cybersecurity \cite{Morante2015} is required. 
+
+ROS (Robotic Operating System) \cite{ROS09} has become the most popular framework for developing robotic applications. It started in the research environment, but currently most of the current manufacturers of commercial platforms use ROS as the {\em de facto} standar for building robotic software, from manufacturing robots as Baxter (by Rethink robotics) to service robots as our RB1 (by Robotnik).
+
+Contar nuestra linea de robots asistenciales \cite{lera}
+
+Comentar problemas de privacidad en entornos domesticos: \cite{Denning09}
+
+Organizacion del paper
+
+
+
+
+\subsection{ROS security assestment}
+
+ROS framework is basically a message-passing distributed system. Its architecture is based on processes that publish {\em messages} to {\em topics}. For instance, a process ({\em node}) can be in charge of accessing a sensor, making the basic processing of the information, and publishing it as a structure information on a named topic. Another process can {\em subscribe} to this topic, that is, it can read that information, make a decision about the movement of the robot. These commands will be sent to the motors in another topic.
+
+These nodes can be running in the same computer or in different computers. 
+
+Comentar papers sobre seguridad en ROS 
+
+caso del honeypot \cite{McClean2013}
+
+
+
+
+
+\section{Testbed description}
+
+We want to evaluate if ciphering the communications would affect the performance of ROS. 
+
+
+\subsection{Simulated testedbed}
+
+We have installed ROS Jade in two computers connected through a wired Ethernet 10/100 switch (model XXXX). In the first computer we have connected a Xtion camera and a Hokuyo laser. In the second computer have run a node visualizing the information from the sensors. Figure \ref{fig:maqueta} shows this environment.
+
+
+Then we modified the standard ROS implementation. We changed the TCP/IP sockets based implementation by ciphered ones.
+
+
+\subsection{Robotic testbed}
+
+In the second experiment we changed the first computer for a RB1 robot and the XXX switch by a wireless one. This robot was also running ROS Jade.
+
+
+
+\section{Experimental Measuments}
+
+Figure \ref{fig:velocidad-maqueta} shows the maximum rate that can be reached both in the laser and the camera visualization according to \texttt{rviz} information.
+
+The same measurements were made in the second environment to see if the use of wireless systems and a real robot would have any influence.
+
+The absolute values of the frame rates is obviously different, as shown in figure \ref{fig:velocidad-robot}. But the interesting part is the relative different when using clear communications or ciphered ones. 
+
+Table \ref{tab:relativas}  compares the relative reduction of speed when using ciphered protocols vs clear ones in both environments as well as the relative increase of CPU usage.
+
+\section{Conclusion and Futher Work}
+
+We have evaluated the influence of cyphering in the performance of ROS based robotic systems.
+
+As we commented in the introduction, we think that securing communications is just one dimension in  the cybersecurity of Autonomous Systems. If we want to see autonomous systems working in our homes we need to secure the navigation abilities, the interaction mechanisms, etc. 
+ 
+Some works have been sketched in this area, as for instance in \cite{Guiochet2016}.
+
+
+
+
+\section*{Acknowledgment}
+The authors would  like to thank the Spanish Ministry of Economy and Competitiveness for the partial support to this work under grant DPI2013-40534-R and to the Spanish National Institue of CyberSecurity (INCIBE) under grand Adenda21 ULE-INCIBE.
+
+\bibliographystyle{plain} 
+\bibliography{waf2016}
+
+\end{document}
+
+
