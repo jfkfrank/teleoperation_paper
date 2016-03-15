@@ -2,6 +2,13 @@
 
 \usepackage{flushend}
 
+\usepackage[pdftex]{graphicx}
+% declare the path(s) where your graphic files are
+\graphicspath{{figures/}}
+% and their extensions so you won't have to specify these with
+% every instance of \includegraphics
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+
 \begin{document}
 
 \title{Cybersecurity in Autonomous Systems: Analyzing the ROS Communications Model}
@@ -20,11 +27,11 @@ All authors are with the Robotics Group at Universidad de Le\'on (Spain)
 
 
 \begin{abstract}
-La ciberseguridad en robótica es importante
-
-ROS es esl framework más extendido
-
-Cifrar las comunicaciones, medir rendimiento
+ROS dispone de un sistema distruido de comunicaciones donde se publica el estado del robot y de sus sensores para cada momento $<t>$.
+Este sistema simplifica la visutalización de datos del robot pero  supone un problema de seguridad ya que cualquier ususario malintencionado podría capturar dicha información y hacerse
+con información relevante como puede ser las cámaras en tiempo real.
+Para evitar este problema, aplicaremos diferentes tres tipos de cifrado (DES, AES, y RSA) y evaluaremos el comportamiento del sistema ante estas circunstancias, tanto a nivel computacional como a nivel de red.
+Los primeros resultados muestran que cifrados simeticos con claves privadas como DES, insertan cierto delay en el comportamiento general de envio de mensajes de ROS.
 \end{abstract}
 
 
@@ -59,7 +66,24 @@ Comentar papers sobre seguridad en ROS
 caso del honeypot \cite{McClean2013}
 
 
+% es.slideshare.net/abubakrashraf/security-protection-in-operating-system
 
+\begin{enumerate}
+ \item Availability: Interruption
+ \item Confidenciatily: Interception
+ \item Integrity: Modification
+ \item Authenticity :Fabrication
+\end{enumerate}
+
+
+http://es.slideshare.net/abubakrashraf/security-protection-in-operating-system
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.5\textwidth]{SecurityAttacks.pdf}
+    \caption{Conceptual model of the security attacks.}
+  \label{fig:Conceptualmodel}
+\end{figure}
 
 
 \section{Testbed description}
