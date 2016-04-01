@@ -1,12 +1,13 @@
 \documentclass[journal,twoside]{JoPhA}
 
 \usepackage{flushend}
+\usepackage{color}
 
 \begin{document}
 
-\title{JoPhA Paper Demo}
+\title{Strategies for Haptic-Robotic Teleoperation in Board Games: Playing checkers with Baxter}
 
-\author{Miguel Cazorla and Vicente Matell\'an
+\author{Gonzalo Est\'ebanez Costales, Camino Fernández Llamas, Francisco Jesús Rodr\'iguez, Laura Inyesta, Pablo, 
 \IEEEcompsocitemizethanks{\IEEEcompsocthanksitem Miguel Cazorla is with University of Alicante.\protect\\
 
 E-mail: miguel@dccia.ua.es
@@ -41,21 +42,47 @@ I wish you the best of success.
  
 \hfill January 11, 2007
 
-\subsection{Subsection Heading Here}
-Subsection text here.
+\subsection{Slave: Haptic Device}
+Haptic feedback takes advantage of the human sense of touch by recreating forces, vibrations or motions to the user. 
+An haptic device allows to feel a feedback from virtual or real objects and produces a realistic touch sensations to a user. 
+The PHANToM Omni is a 6 DOF haptic device that applies haptic feedback. 
+
+ 
+
+It has 3 actuated DOF associated to the armature which provides the translational movements (X, Y, and Z Cartesian coordinates) and other 3 non-actuated DOF associated to the gimball  that gives the orientation (pitch, roll and yaw rotational movements).  The characteristic of this device allow to offer a feedback up to a maximum of 3.3N.
 
 
-\subsubsection{Subsubsection Heading Here}
+\subsection{Master: Baxter}
 Subsubsection text here.
 
+\subsection{Controller}
+{\color{red}{Hay que adaptar a nuestro sistema}}
 
-\section{Guidelines}
-Some basic guidelines are given:
-\begin{itemize}
-\item Paper must be written in two columns.
-\item Use the \emph{flushend} package to compensate the last page. 
-\item All the main words in the title must be capitalized. 
-\end{itemize}
+To use this device for the six DOF robot, the robot was broken into two 
+sets of three degrees of freedom.  The first system is determined by 
+the Cartesian coordinates of the wrist joint.  
+
+The  rotation  of  the  gimbal  is  then  used  to  correspond  to  the  three rotational  degrees  of  freedom  (Rx,  Ry,  and  Rz)  of  the  forearm  of  the  robot.    
+By  doing  this,  the  problems  associated  with  multiple  solutions  to  larger  order  degree  of  freedom  robotic  systems  are  mitigated.    
+It  is  approximated  that  the  three  axese intersect  at  the  wrist despite the length of the link between the lower arm and forearm.  
+This is justified due to the relatively short length of this link and the fact that the robot is controlled based on the vision of a surgeon, allowing for intuitive compensation by the surgeon to position the  end  effector.
+This  visual  compensation  is  also  used  to  mitigate  the  effects  of  motor backlash propagation through the robot, although solutions to reduce backlash are being attempted.
+
+\section{Experiment}
+
+\section{Experiment}
+
+\subsection{Game description}
+
+Checkers is a strategy gameboard for two players that play on opposite sides of board. It can be played on a 8x8, 10x10 and 12x12 checkerboards.
+There are two kind of pieces: the dark pieces and the light pieces. 
+The game consists on move a piece diagonally to an adjacent unoccupied square. If the adjacent square contains an opponent's piece, and the square immediately beyond it is vacant, the piece may be captured and take away from the board by jumping over it. During the game each player alternate turns.
+
+\subsection{Board adaptation}
+
+
+
+
 
 
 
