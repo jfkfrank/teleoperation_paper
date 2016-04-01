@@ -6,23 +6,24 @@
 \usepackage{llncsdoc}
 %
 
-\markboth{Le\'onRobot - Team Description Paper}{Lera et al.}
+\markboth{LeonRobot - Team Description Paper}{Lera et al.}
 
 \def\addtocontents#1#2{}%
 \def\addcontentsline#1#2#3{}%
 \def\markboth#1#2{}%
 
-% \usepackage{hyperref}
+
 
 \usepackage[pdftex]{graphicx}
 \graphicspath{{figures/}}
 \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
   
-  
+ \usepackage{hyperref}
+ 
 \begin{document}
-\title{Le\'onRobot Team Description Paper. RoboCup@home 2016  }
+\title{LeonRobot Team Description Paper. RoboCup@home 2016  }
 
-\author{Francisco J. Rodr\'iguez Lera, Fernando Casado, Jes\'us Balsa, Vicente Matell\'an\inst{1} \and Francisco Mart\'in Rico\inst{2}}
+\author{Francisco J. Rodr\'iguez Lera, Vicente Matell\'an\inst{1} \and Francisco Mart\'in Rico\inst{2}}
 
 \institute{Universidad de Le\'on, 24071, Le\'on, Spain
 \and
@@ -65,15 +66,16 @@ The hardware description of our platform is presented at the end of this TDP and
 
 \begin{figure*}[ht]
   \centering
-  \includegraphics[width=0.25\textwidth]{rb1.png}
-  \includegraphics[width=0.38\textwidth]{RB1_robot.jpg}
-  \caption{RB1 platform}
+%   \includegraphics[width=0.25\textwidth]{rb1.png}
+  \includegraphics[width=0.44\textwidth]{RB1_robot.jpg}
+  \includegraphics[width=0.51\textwidth]{RB-1_jako.jpg}
+  \caption{RB-1 platform. Left picture shows 7DOF Dinamixel arm, right picture presents the $JACO^2$ arm mounted on RB-1 torso (ready from April 2016, Image courtesy of Robotnik).}
   \label{fig:rb1}
 \end{figure*}
 
 
 RB-1 is designed as a mobile manipulator for indoor environments. Its shape is similar to other robots as Fetch or Tiago, but RB1 mounts a 7DOF arm with Dynamixel Pro servos.
-
+Since March of 2016, RB-1 mounts a 6DOF $JACO^2$ arm with three fingers. 
 
 \section{Scientific Contributions}
 
@@ -166,7 +168,7 @@ Our approach consists of creating a 3D map of a cloud formed by RGB-D or ColorOc
 When the robot is running, we use an algorithm to contrast the MCL RGB-D perception with the map to evaluate the population of particles.
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=.65\textwidth]{Navigation}
+    \includegraphics[width=.7\textwidth]{Navigation}
     \caption{Rviz and Gazebo running the first approach of our 3D visual navigation method.}
   \label{fig:navigation}
 \end{figure}
@@ -585,19 +587,21 @@ The skill set presented will allow us to introduce us at RoboCup@Home 2016 compe
 \section{Team Description}
 
 \begin{itemize}
-
-  \item Team name: RB1
-  \item Contact information: 
-  \item Website: robotica.unileon.es
+  \item Team name: LeonRobot
+  \item Contact information: fjrodl@unileon.es
+  \item Website: \url{http://robotica.unileon.es/mediawiki/index.php/RoboCup}
   \item Team members:
       \begin{itemize}
-	\item Francisco Lera
-	\item Fernando García
-	\item Jes\'us Balsa
-	\item Vicente Matell\'an
-	\item Franciso Mart\'in
+	\item Jes\'us Balsa Comer\'on
+	\item Fernando Casado Garc\'ia 
+	\item Jonathan Gines Clavero 
+	\item Francisco Javier Gutierrez-Maturana S\'anchez
+	
+	\item Vicente Matell\'an Olivera
+	\item Franciso Mart\'in Rico 
+	\item Alvaro Moreno Garc\'ia 
+	\item Francisco Javier Rodr\'iguez Lera (team leader)
       \end{itemize}
-  
 \end{itemize}
 
 \section{Hardware Description}
@@ -611,7 +615,7 @@ The skill set presented will allow us to introduce us at RoboCup@Home 2016 compe
     \item Vision Sensors: RGB-D Xtion
     \item Range sensors: Frontal laser 
     \item Dialogue Sensors: Directional microphone Rode Rycote , Loudspeakers
-    \item Manipulation: 7DOF arm. Dynamixel Pro servos. Workspace: 70 cm
+    \item Manipulation: $JACO^2$, 6 Degrees Of Freedom and a payload of 2,6 Kg (mid-range) and 2,2 Kg (full extension).
     \item Computer Description: Intel Core i7 with 8 GB of RAM and a 200 GB of disk
     \item Torso: +40
     \item Head: pan-tilt head.
