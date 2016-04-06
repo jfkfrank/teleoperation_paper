@@ -1,0 +1,60 @@
+-Redacción.
+-Archivos.
+-Fotos.
+-Corrección.
+
+Notas :
+	- Mueve un solo brazo (sólo tenemos un háptico)
+	- Sería buena idea revisar las reglas de recogida de datos (impreciso algunas veces)
+	- Revisión correlación de los joints
+	- Ajustar el elbow
+	- Petición para actualizarlo.
+
+-----------------------------------------------------------------------------------------------------------------------------
+Para poder teleoperar a Baxter estamos usando un háptico "Geomatic Touch". 
+Básicamente queremos reproducir los movimientos que realizamos en el háptico en uno de los brazos de Baxter de forma simultánea con el objetivo de poder jugar a las damas.
+
+Primero hemos estudiado los puntos de referencia de Baxter al háptico, ya que al tener menos joints es más complicado transmitir determinados movimientos.
+
+La relación de los joints entre Baxter y el háptico establecida es :
+
+	Baxter		Háptico	
+	S0		"Waist"
+	S1		"Shoulder"
+	E0		No lo usamos
+	E1		No lo usamos
+	W0		No lo usamos
+	W1		"Elbow"
+	W2		No lo usamos
+
+Estos joints pueden verse en las fotos adjuntas "joint_haptico" y "joint_baxter".
+
+Para poder mover a Baxter con el háptico nos hemos basado en el ejemplo de teleoperación de los brazos por teclado del paquete "Baxter_examples". 
+
+Con ayuda de algunas de las instrucciones que se explican en dicho ejemplo conseguimos que los grippers de Baxter se abran y cierren cuando pulsamos los botones del háptico. (NOTA : PENDIENTE DE REVISIÓN, ya que da problemas recogiendo el brazo)
+
+Después intentamos reproducir los movimientos en el eje X del háptico en Baxter, para luego recoger los ejes Y Z.
+Hemos usado los joints de Baxter S0,S1 y W1 para cada uno de los ejes respectivamente.
+
+------------------------------------------------
+
+Para comunicar los dos nodos (Baxter y Háptico) hacemos que el háptico publique en el topic "geo_touch_right_arm" y en "geo_touch_right_gripper", y que Baxter recoja de los mismos. 
+El háptico solo publica en el topic "geo_touch_right_arm" si uno de los tres joints que usamos se mueve una distancia mayor de 
+|0.01|
+
+También hemos creado un tipo de mensaje personalizado que nos permite comunicar a Baxter qué joint ha de mover y la distancia que ha de moverlo, además de otro que recoge si el gripper debe o no abrirse. 
+Todo ello lo hemos guardado en un paquete "omni_geo_touch_1".
+
+Para ello, en el archivo geo_touch.cpp , hemos ampliado el código para que cuando el háptico se mueva dentro de un determinado rango en un intervalo corto de tiempo (para así evitar movimientos muy leves) publique qué joint tiene que mover Baxter en relación con el que se ha movido en el háptico y la distancia (convertida al rango de Baxter) que debe moverse. 
+ 
+------------------------------------------------
+
+Ha sido necesario obtener los valores numéricos de los extremos de cada eje tanto en Baxter como en el háptico.
+Una vez podemos hacer una conversión (cambio de base) apropiada es relativamente sencillo hacer una correlación Háptico-Baxter.
+
+
+Los mayores problemas que hemos tenido han sido ajustar de manera apropiada la distancia de movimiento de los joints en Baxter. El ratio de publicación también ha dado problemas, ya que algunas veces iba muy rápido. 
+A veces, muchos de los movimientos programados quedaban en la cola, con el resultado de que el háptico se movía a la izquierda pero en la cola todavía quedaban mensajes de mover hacia la derecha, produciéndose un retardo notable.
+
+
+
