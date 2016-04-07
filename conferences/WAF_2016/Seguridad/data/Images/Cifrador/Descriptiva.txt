@@ -1,0 +1,20 @@
+======================================
+Cifrado
+======================================
+Cifrado length: 971790.000000
+Cifrado min: 0.001309
+Cifrado max: 0.026909
+Cifrado mean: 0.010948
+Cifrado stdev: 0.000004
+El valor moda de la fase de cifrado fue:
+(array([ 0.010571]), array([ 415.]))
+======================================
+Descifrado
+======================================
+Descifrado length: 969295.000000
+Descifrado min: 0.001288
+Descifrado max: 0.039130
+Descifrado mean: 0.008828
+Descifrado stdev: 0.000003
+El valor moda de la fase de descifrado fue:
+(array([ 0.008183]), array([ 593.]))

@@ -1,0 +1,3 @@
+[INFO] Decrypter node: elapsed time: 66659.74
+[INFO] Decrypter node: approx. FPS: 14.54
+

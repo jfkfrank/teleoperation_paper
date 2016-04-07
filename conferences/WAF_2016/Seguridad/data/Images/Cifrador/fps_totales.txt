@@ -1,0 +1,3 @@
+[INFO] Encrypter node:  elasped time: 66755.17
+[INFO] Encrypter node:  approx. FPS: 14.56
+
