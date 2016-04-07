@@ -7,7 +7,7 @@
 
 \title{Strategies for Haptic-Robotic Teleoperation in Board Games: Playing checkers with Baxter}
 
-\author{Gonzalo Esteban, Francisco J. Rodr\'{i}guez--Sedano, Laura Inyesta, Pablo Blanco, Francisco J. Rodr\'{i}guez--Lera
+\author{Gonzalo Esteban, Francisco J. Rodr\'{i}guez--Sedano, Laura Inyesto, Pablo Blanco, Francisco J. Rodr\'{i}guez--Lera
 \IEEEcompsocitemizethanks{\IEEEcompsocthanksitem Miguel Cazorla is with University of Alicante.\protect\\
 
 E-mail: miguel@dccia.ua.es
@@ -21,7 +21,7 @@ E-mail: miguel@dccia.ua.es
 
 
 \begin{abstract}
-Teleoperating robots is quite a common practice in fields such as surgery, defence or rescue. The main source of information in this kind of environments is the sense of sight. The user can see on a display what the robot is watching in real time, and maybe also a visual representation of the robot surroundings. Our proposal involves the use of haptic devices to teleoperate a robot, Baxter, in order for the user to obtain touch feedback besides visual information. As a proof of concept, the proposed environment is checkers playing. Our goal is testing if the inclusion of the sense of touch improves the user experience or not. 
+Teleoperating robots is quite a common practice in fields such as surgery, defence or rescue. The main source of information in this kind of environments is the sense of sight. The user can see on a display what the robot is watching in real time, and maybe also a visual representation of the robot surroundings. Our proposal involves the use of haptic devices to teleoperate a robot, Baxter, in order for the user to obtain haptic feedback besides visual information. As a proof of concept, the proposed environment is checkers playing. Our goal is testing if the inclusion of the sense of touch improves the user experience or not. 
 \end{abstract}
 
 
@@ -36,18 +36,21 @@ JoPhA, journal, \LaTeX, paper, template.
 % Teleoperation-telemanipulation and user experience
   \IEEEPARstart{T}{eleoperating} robots is quite a common practice in many fields such as surgery, defence or rescue~\cite{Vertut85}. The reason is simple: assisting a person to perform and accomplish complex or uncertain tasks in some environments may mean the difference between failure or success.
 
-  These systems use different interfaces (e.g. cameras, microphones or input devices) to provide sensory information to the operator, and thus, improving the user experience. Traditionally, video feedback from an on-board or front-mounted camera is limited by technical constraints~\cite{Woods04,Woods97} like a restricted field of view or poor resolution. In some scenarios, these constraints makes difficult for the operator to be aware of the robot's proximity to obstacles~\cite{Alfano90}, causing a decrease in performance. To alleviate such limitations, haptic cues can be used to ~\cite{}.
+  These systems use different interfaces (e.g. cameras, microphones or input devices) to provide sensory information to the operator, and thus, improving the user experience. Traditionally, video feedback from an on-board or front-mounted camera is limited by technical constraints~\cite{Woods04,Woods97} like a restricted field of view or poor resolution. In some scenarios, these constraints makes difficult for the operator to be aware of the robot's proximity to objects~\cite{Alfano90}, causing a decrease in performance. To alleviate such limitations, at least partially, haptic cues (either by force or tactile feedback) have been shown to be useful in some applications~\cite{Son13,Sitti03,Diolaiti02}, especially when the operator performs manipulation tasks~\cite{King09,Kron04,}.
+  
+%   haptics must play a superior role over vision or audio.
   
 % Interfaces: haptics and delay
 %...
 
 % GOALS OF THE PAPER
-%...
 
 % STRUCTURE
-This paper is organized as follows. In Section~\ref{}.~\ldots The paper ends with our conclusions.
+  This paper is organized as follows. Section~\ref{sec:environment} shows the architecture of the environment by describing the basic elements of the system. Section~\ref{sec:experiment} describes how the experiment has been carried out.~\ldots The paper ends with our conclusions.
 
 \section{Environment description}
+\label{sec:environment}
+
 % FRAN? + GONZALO?
 
 \subsection{Slave: Haptic Device}
@@ -77,6 +80,7 @@ This is justified due to the relatively short length of this link and the fact t
 This  visual  compensation  is  also  used  to  mitigate  the  effects  of  motor backlash propagation through the robot, although solutions to reduce backlash are being attempted.
 
 \section{Experiment}
+\label{sec:experiment}
 % SEDANO ? + LAURA Y PABLO?
 
 \subsection{Game description}
@@ -101,17 +105,32 @@ This work is supported by the \textit{C\'{a}tedra Telef\'{o}nica--Universidad de
 \begin{thebibliography}{1}
 
 \bibitem{Vertut85}
-J.~Vertut and P.~Coiffet, \emph{Teleoperation and Robotics. Applications and Technology}, Spring Netherlands . \hskip 1em plus 0.5em minus 0.4em\relax, Vol. 3B, 1985.
+J.~Vertut and P.~Coiffet, \emph{Teleoperation and Robotics. Applications and Technology}, Spring Netherlands. \hskip 1em plus 0.5em minus 0.4em\relax Vol. 3B, 1985.
 
 \bibitem{Woods04}
-D.D.~Woods, J.~Tittle, M.~Feil and A.~Roesler, \emph{Envisioning human-robot coordination in future operations}, IEEE Transactions on Systems Man and Cybernetics: Part C (Applications and Reviews).\hskip 1em plus 0.5em minus 0.4em\relax, Vol. 34, no.2, pp. 210--218, 2004.
+D.D.~Woods, J.~Tittle, M.~Feil and A.~Roesler, \emph{Envisioning human-robot coordination in future operations}, IEEE Transactions on Systems, Man and Cybernetics: Part C (Applications and Reviews).\hskip 1em plus 0.5em minus 0.4em\relax Vol. 34, no.2, pp. 210--218, 2004.
 
 \bibitem{Woods97}
 D.~Woods and J.~Watts, \emph{How not to have to navigate through too many displays}, In Handbook of Human-Computer Interaction.estricting the field of view: Perceptual
 and performance effects.\hskip 1em plus 0.5em minus 0.4em\relax 2nd ed, M.~Helander, T.~Landauer and P~.Prabhu, Eds. Amsterdam, The Netherlands: Elsevier Science, pp. 1177--1201, 1997.
 
 \bibitem{Alfano90}
-P.L.~Alfano and G.~F.~Michel, \emph{Restricting the field of view: Perceptual and performance effects}, Perceptual and Motor Skills.\hskip 1em plus 0.5em minus 0.4em\relax, Vol. 70, no. 1, pp. 35--45, 1990.
+P.L.~Alfano and G.~F.~Michel, \emph{Restricting the field of view: Perceptual and performance effects}, Perceptual and Motor Skills.\hskip 1em plus 0.5em minus 0.4em\relax Vol. 70, no. 1, pp. 35--45, 1990.
+
+\bibitem{Son13}
+H.I.~Son, A.~Franchi, L.L.~Chuang, J.~Kim, H.H.~Bulthoff and P.R.~Giordano, \emph{Human-Centered Design and Evaluation of Haptic Cueing for Teleoperation of Multiple Mobile Robots}, IEEE Transactions on Systems, Man and Cybernetics: Part B (Cybernetics).\hskip 1em plus 0.5em minus 0.4em\relax Vol. 43, no. 2, pp. 597--609, 2013.
+
+\bibitem{Sitti03}
+M.~Sitti and H.~Hashimoto, \emph{Teleoperated Touch Feedback From the Surfaces at the Nanoscale: Modeling and Experiments}, IEEE ASME Transactions on Mechatronics.\hskip 1em plus 0.5em minus 0.4em\relax Vol. 8, no. 2, pp. 287--298, 2003.
+
+\bibitem{Diolaiti02}
+N.~Diolaiti and C.~Melchiorri, \emph{Tele-Operation of a Mobile Robot Through Haptic Feedback}, In Proceedings of the IEEE International Workshop on Haptic Virtual Environments and Their Applications (HAVE 2002).\hskip 1em plus 0.5em minus 0.4em\relax, Ottawa, Ontario, Canada, 17-18 November, 2002.
+
+\bibitem{King09}
+C.H.~King, M.O.~Culjat, M.L.~Franco, C.E.~Lewis, E.P.~Dutson, W.S.~Grundfest and J.W.~Bisley, \emph{Tactile Feedback Induces Reduced Grasping Force in Robot-Assisted Surgery}, IEEE Transactions on Haptics.\hskip 1em plus 0.5em minus 0.4em\relax Vol. 2, no. 2, pp. 103--110, 2009.
+
+\bibitem{Kron04}
+A.~Kron, G.~Schmidt, B.~Petzold, M.I.~Zah, P.~Hinterseer and E.~Steinbach, \emph{Disposal of explosive ordnances by use of a bimanual haptic telepresence system}, In Proceedings of the IEEE International Conference on Robotics and Automation (ICRA 04).\hskip 1em plus 0.5em minus 0.4em\relax pp. 1968--1973, 2004.
 
 \end{thebibliography}
 \end{document}
