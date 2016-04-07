@@ -33,15 +33,19 @@ JoPhA, journal, \LaTeX, paper, template.
 \section{Introduction}
 % GONZALO?
 
-\IEEEPARstart{T}{his} demo file is intended to serve as a ``starter file''
-for JoPhA journal papers produced under \LaTeX\ using
-JoPhA.cls. JoPhA.cls is based on IEEEtran.cls style. 
+% Teleoperation-telemanipulation and user experience
+  \IEEEPARstart{T}{eleoperating} robots is quite a common practice in many fields such as surgery, defence or rescue~\cite{Vertut85}. The reason is simple: assisting a person to perform and accomplish complex or uncertain tasks in some environments may mean the difference between failure or success.
 
-I wish you the best of success.
+  These systems use different interfaces (e.g. cameras, microphones or input devices) to provide sensory information to the operator, and thus, improving the user experience. Traditionally, video feedback from an on-board or front-mounted camera is limited by technical constraints~\cite{Woods04,Woods97} like a restricted field of view or poor resolution. In some scenarios, these constraints makes difficult for the operator to be aware of the robot's proximity to obstacles~\cite{Alfano90}, causing a decrease in performance. To alleviate such limitations, haptic cues can be used to ~\cite{}.
+  
+% Interfaces: haptics and delay
+%...
 
-\hfill mds
- 
-\hfill January 11, 2007
+% GOALS OF THE PAPER
+%...
+
+% STRUCTURE
+This paper is organized as follows. In Section~\ref{}.~\ldots The paper ends with our conclusions.
 
 \section{Environment description}
 % FRAN? + GONZALO?
@@ -50,6 +54,8 @@ I wish you the best of success.
 Haptic feedback takes advantage of the human sense of touch by recreating forces, vibrations or motions to the user. 
 An haptic device allows to feel a feedback from virtual or real objects and produces a realistic touch sensations to a user. 
 The PHANToM Omni is a 6 DOF haptic device that applies haptic feedback. 
+
+ 
 
 It has 3 actuated DOF associated to the armature which provides the translational movements (X, Y, and Z Cartesian coordinates) and other 3 non-actuated DOF associated to the gimball  that gives the orientation (pitch, roll and yaw rotational movements).  The characteristic of this device allow to offer a feedback up to a maximum of 3.3N.
 
@@ -71,7 +77,7 @@ This is justified due to the relatively short length of this link and the fact t
 This  visual  compensation  is  also  used  to  mitigate  the  effects  of  motor backlash propagation through the robot, although solutions to reduce backlash are being attempted.
 
 \section{Experiment}
-% SEDANO + LAURA Y PABLO?
+% SEDANO ? + LAURA Y PABLO?
 
 \subsection{Game description}
 
@@ -94,9 +100,18 @@ This work is supported by the \textit{C\'{a}tedra Telef\'{o}nica--Universidad de
 
 \begin{thebibliography}{1}
 
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+\bibitem{Vertut85}
+J.~Vertut and P.~Coiffet, \emph{Teleoperation and Robotics. Applications and Technology}, Spring Netherlands . \hskip 1em plus 0.5em minus 0.4em\relax, Vol. 3B, 1985.
+
+\bibitem{Woods04}
+D.D.~Woods, J.~Tittle, M.~Feil and A.~Roesler, \emph{Envisioning human-robot coordination in future operations}, IEEE Transactions on Systems Man and Cybernetics: Part C (Applications and Reviews).\hskip 1em plus 0.5em minus 0.4em\relax, Vol. 34, no.2, pp. 210--218, 2004.
+
+\bibitem{Woods97}
+D.~Woods and J.~Watts, \emph{How not to have to navigate through too many displays}, In Handbook of Human-Computer Interaction.estricting the field of view: Perceptual
+and performance effects.\hskip 1em plus 0.5em minus 0.4em\relax 2nd ed, M.~Helander, T.~Landauer and P~.Prabhu, Eds. Amsterdam, The Netherlands: Elsevier Science, pp. 1177--1201, 1997.
+
+\bibitem{Alfano90}
+P.L.~Alfano and G.~F.~Michel, \emph{Restricting the field of view: Perceptual and performance effects}, Perceptual and Motor Skills.\hskip 1em plus 0.5em minus 0.4em\relax, Vol. 70, no. 1, pp. 35--45, 1990.
 
 \end{thebibliography}
 \end{document}
