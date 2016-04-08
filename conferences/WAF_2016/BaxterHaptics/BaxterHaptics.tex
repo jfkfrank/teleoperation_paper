@@ -36,22 +36,29 @@ JoPhA, journal, \LaTeX, paper, template.
 % Teleoperation-telemanipulation and user experience
   \IEEEPARstart{T}{eleoperating} robots is quite a common practice in many fields such as surgery, defence or rescue~\cite{Vertut85}. The reason is simple: assisting a person to perform and accomplish complex or uncertain tasks in some environments may mean the difference between failure or success.
 
-  These systems use different interfaces (e.g. cameras, microphones or input devices) to provide sensory information to the operator, and thus, improving the user experience. Traditionally, video feedback from an on-board or front-mounted camera is limited by technical constraints~\cite{Woods04,Woods97} like a restricted field of view or poor resolution. In some scenarios, these constraints makes difficult for the operator to be aware of the robot's proximity to objects~\cite{Alfano90}, causing a decrease in performance. To alleviate such limitations, at least partially, haptic cues (either by force or tactile feedback) have been shown to be useful in some applications~\cite{Son13,Sitti03,Diolaiti02}, especially when the operator performs manipulation tasks~\cite{King09,Kron04,}.
+  Enhancing the user experience is a key aspect in teleoperation. These systems use different interfaces (e.g. cameras, microphones or input devices) to provide sensory information to the operator, and thus, improving the user experience. Traditionally, video feedback from an on-board or front-mounted camera is limited by technical constraints~\cite{Woods04,Woods97} like a restricted field of view or poor resolution. In some scenarios, these constraints makes difficult for the operator to be aware of the robot's proximity to objects~\cite{Alfano90}, causing a decrease in performance. To alleviate such limitations, at least partially, haptic cues (either by force or tactile feedback) have been shown to be useful in some applications~\cite{Son13,Sitti03,Diolaiti02}, especially when the operator performs manipulation tasks~\cite{King09,Kron04}.
   
 %   haptics must play a superior role over vision or audio.
-  
+  In recent years, haptic devices are playing a superior role over vision or audio, particularly in applications that involve touch.%...
+
 % Interfaces: haptics and delay
 %...
 
 % GOALS OF THE PAPER
+  The motivation behind this paper is to test whether or not the sense of touch improves the user experience in teleoperation. To achieve this, we propose an experiment: teleoperate a robot for playing a board game. The scenario will have two players and one game. One player is located at the game's place while the other is away, teleoperating a robot which is ``physically'' located at that same place. The teleoperation system consists of a Geomagic Touch haptic interface (that acts as a master device) and a Baxter robot (which acts as the slave device). The board game chosen to play is ``checkers'', as it is...
 
 % STRUCTURE
-  This paper is organized as follows. Section~\ref{sec:environment} shows the architecture of the environment by describing the basic elements of the system. Section~\ref{sec:experiment} describes how the experiment has been carried out.~\ldots The paper ends with our conclusions.
+  This paper is organized as follows. Section~\ref{sec:environment} shows the architecture of the environment by describing the basic elements of the system. Section~\ref{sec:experiment} describes how the experiment has been carried out.~\ldots Finally, the paper ends with our conclusions.
 
 \section{Environment description}
 \label{sec:environment}
 
 % FRAN? + GONZALO?
+
+% TELEMANIPULATION SYSTEMS AND BILATERAL TELEOPERATION. Highlight bilateral teleoperation using position [Kuchenbecker 2006].
+
+  A basic telemanipulation system consists of a master robot manipulated by an operator and a slave...
+  
 
 \subsection{Slave: Haptic Device}
 Haptic feedback takes advantage of the human sense of touch by recreating forces, vibrations or motions to the user. 
