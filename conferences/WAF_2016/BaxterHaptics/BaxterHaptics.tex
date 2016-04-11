@@ -141,7 +141,27 @@ In the second case, we identified the following basic tasks:
 
 In both cases we observed that previous to the first and last task, the movement of the teleoperated does not requires haptic feedback.
 
-The third step is to establish a clear relationship between selected indicators and basic haptic tasks. 
+The third step is to establish a clear relationship between selected indicators and basic haptic tasks. Table \ref{tabla_1} show this relation relationship. The first column shows the basic tasks involved in our  experiment and the specific indicators are placed in the second column. But also we consider for the design of haptic interface that different tasks have different requirements, both the haptic device as the robot. For example, in the translating task we need game piece weight perception that gives haptic force sensor and grasping force provided by the corresponding robot sensor. Moreover, in our experiment, we use a visual feedback provided by two cameras in the robot to determine the position of the game pieces and the operator can determine the necessary directions and trajectories to actions to perform the desired task. 
+
+
+
+\begin{table}
+\centering
+\caption{\label{tabla_1}Basic tasks and GEHID indicators.}
+\begin{tabular}{ll}
+\hline 
+\textbf{\footnotesize{}Basic task} & \textbf{\footnotesize{}Indicator}\tabularnewline
+\hline 
+{\footnotesize{}Presence} & {\footnotesize{}Collision on 3D movement}\tabularnewline
+{\footnotesize{}Grasping} & {\footnotesize{}Rigidity on the the grasping tool}\tabularnewline
+{\footnotesize{}Push} & {\footnotesize{}Vibration on 3D movement}\tabularnewline
+{\footnotesize{}Translating} & {\footnotesize{}Weight on 3D movement}\tabularnewline
+{\footnotesize{}Assembling} & {\footnotesize{}Collision on 3D movement}\tabularnewline
+\hline 
+\end{tabular}
+
+\end{table}
+
 
 \section{Conclusion}
 % CAMINO?
