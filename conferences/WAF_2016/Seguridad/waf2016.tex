@@ -100,6 +100,9 @@ In the second experiment we changed the first computer for a RB1 robot and the X
 
 \section{Experimental Measuments}
 
+
+
+
 Figure \ref{fig:velocidad-maqueta} shows the maximum rate that can be reached both in the laser and the camera visualization according to \texttt{rviz} information.
 
 The same measurements were made in the second environment to see if the use of wireless systems and a real robot would have any influence.
@@ -107,6 +110,75 @@ The same measurements were made in the second environment to see if the use of w
 The absolute values of the frame rates is obviously different, as shown in figure \ref{fig:velocidad-robot}. But the interesting part is the relative different when using clear communications or ciphered ones. 
 
 Table \ref{tab:relativas}  compares the relative reduction of speed when using ciphered protocols vs clear ones in both environments as well as the relative increase of CPU usage.
+
+We have addded a funtion to our program in order to measure the time spent in each encrypt and decrypt call. The function is a python method presented as a decorator pattern 
+
+{
+  \footnotesize{
+    \begin{verbatim}
+def fn_timer(function):
+	  @wraps(function)
+	  def function_timer(*args, **kwargs):
+	      v_time_0 = time.time()
+	      result = function(*args, **kwargs)
+	      v_time_1 = time.time()
+	      return result
+	  return function_timer
+    \end{verbatim}
+  }
+}
+
+\begin{figure*}[ht]
+    \centering
+    \includegraphics[width=.9\textwidth]{Resumen_llamada_funcion.png}
+    \caption{Time spent in each call to encryption/decryption function.}
+  \label{fig:Conceptualmodel}
+\end{figure*}
+
+
+\subsection{Camera}
+Encrypt
+
+PC: 234 process
+
+Total length 971790 frames, min time 0.001309 seconds, max time  0.026909
+Cifrado mean: 0.010948
+Cifrado stdev: 0.000004
+El valor moda de la fase de cifrado fue:
+(array([ 0.010571]), array([ 415.]))
+
+Descifrado length: 969295.000000
+Descifrado min: 0.001288
+Descifrado max: 0.039130
+Descifrado mean: 0.008828
+Descifrado stdev: 0.000003
+El valor moda de la fase de descifrado fue:
+(array([ 0.008183]), array([ 593.]))
+
+
+PC descifrador: 242 process (ps -ef | wc -l)
+
+Cifrador
+[INFO] Encrypter node:  elasped time: 66755.17
+[INFO] Encrypter node:  approx. FPS: 14.56
+
+
+
+Descifrador
+[INFO] Decrypter node: elapsed time: 66659.74
+[INFO] Decrypter node: approx. FPS: 14.54
+
+
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.5\textwidth]{Screenshot.png}
+    \caption{Time spent in each call to encryption/decryption function.}
+  \label{fig:Conceptualmodel}
+\end{figure}
+
+
+
 
 \section{Conclusion and Futher Work}
 

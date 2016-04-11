@@ -22,9 +22,9 @@ La relación de los joints entre Baxter y el háptico establecida es :
 	S0		"Waist"
 	S1		"Shoulder"
 	E0		No lo usamos
-	E1		No lo usamos
+	E1		"Elbow"
 	W0		No lo usamos
-	W1		"Elbow"
+	W1		"Wrist2"
 	W2		No lo usamos
 
 Estos joints pueden verse en las fotos adjuntas "joint_haptico" y "joint_baxter".
