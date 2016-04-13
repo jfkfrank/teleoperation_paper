@@ -12,23 +12,23 @@
 
 \begin{document}
 
-\title{Cybersecurity in Autonomous Systems: evaluating the performance of hardened ROS}
+\title{Cybersecurity in Autonomous Systems: Evaluating the performance of hardened ROS}
 
 \author{David Ma\~nanes, Francisco Javier Rodr\'iguez Lera, Jes\'us Balsa and Vicente Matell\'an,
 \IEEEcompsocitemizethanks{
-All authors are with the Robotics Group (http://robotica.unileon.es), Research Institute on Applied Sciences to Cybersecurity (http://riasc.unileon.es) at Universidad de Le\'on (Spain)
+All authors are with the Robotics Group (http://robotica.unileon.es) and the Research Institute on Applied Sciences to Cybersecurity (http://riasc.unileon.es) at Universidad de Le\'on (Spain).
 
 \IEEEcompsocthanksitem Corresponding author: vicente.matellan@unileon.es} % <-this % s
 }
 
 
-\markboth{Workshop on Physical Agents, Malaga 2016}%
+\markboth{Workshop on Physical Agents, M\'alaga 2016}%
 {Matell\'an et al: Cybersecurity in ROS}
 \maketitle
 
 
 \begin{abstract}
-As robotic systems spread, cybersecurity emerges as major concern. Currently most research autonomous systems are built using the ROS framework, as well as many commercial products. ROS is a distributed framework where nodes publish information that other nodes consume. This model simplifies data communication but poses a major threat because a malicious process could easily interfere the communications, read private messages or even supersede nodes. In this paper we propose that ROS communications should be ciphered. We also measure how this ciphering affects its performance. We have used three different ciphering techniques: DES, AES and RSA and we have evaluated the performance of the system, both from the computing  and the communications points of view. Preliminary results show that symmetric ciphers using private keys impose significant delays.
+As robotic systems spread, cybersecurity emerges as major concern. Currently most research autonomous systems are built using the ROS framework, along with other commercial software. ROS is a distributed framework where nodes publish information that other nodes consume. This model simplifies data communication but poses a major threat because a malicious process could easily interfere the communications, read private messages or even supersede nodes. In this paper we propose that ROS communications should be ciphered. We also measure how this ciphering affects its performance. We have used three different ciphering techniques: DES, AES and RSA. We have evaluated the performance of the system, both from the computing and the communications points of view. Preliminary results show that symmetric ciphers using private keys impose significant delays.
 
 \end{abstract}
 
@@ -40,11 +40,11 @@ autonomous systems, cybersecurity, robotics, performance, cyber-physical systems
 
 \section{Introduction}
 
-\IEEEPARstart{A}{utonomous} systems are spreading not just in the virtual world (Internet, software systems), or in science-fiction movies, but in our ordinary real world. We can already find driverless cars in the streets, autonomous vacuum cleaners in our homes, museum guides hotel assistants, etc. These cyber-physical systems, as any computer-based system, can suffer different types of vulnerabilities, and the  need of cybersecurity \cite{Morante2015} is required. 
+\IEEEPARstart{A}{utonomous} systems are spreading not just in the virtual world (Internet, software systems), or in science-fiction movies, but in our ordinary real world. Currently we can find driverless cars in the streets, autonomous vacuum cleaners in our homes, museum guides, hotel assistants, etc. These cyber-physical systems, as any computer-based system, can suffer different types of vulnerabilities, and the need of cybersecurity \cite{Morante2015} is required. 
 
-ROS (Robotic Operating System) \cite{ROS09} has become the most popular framework for developing robotic applications. It started in the research environment, but currently most of the current manufacturers of commercial platforms use ROS as the {\em de facto} standar for building robotic software, from manufacturing robots as Baxter (by Rethink robotics) to service robots as our RB1 (by Robotnik).
+ROS (Robotic Operating System) \cite{ROS09} has become the most popular framework for developing robotic applications. It started in the research environment, but currently most of manufacturers of commercial platforms use ROS as the {\em de facto} standard for building robotic software. For example, object-manipulation robots like Baxter (by Rethink robotics){\textcolor{red}{[poner REF]}} or service robots as our RB1 (by Robotnik){\textcolor{red}{[poner REF]}} are ROS based platforms.
 
-Our research group is developing assistant robot~\cite{Martin2014} for the elderly. When we have initiated experiments involving potential users caregivers have asked us about the security of our robot, and about the privacy of the communications \cite{Denning2009}. If an assistant robot carrying a camera is deployed in a home the access to the camera has to be secured, or if it is managing medical information. We have developed all our software for the autonomous behavior of the robots using ROS, so we need to consider its security.
+Our research group is developing assistant robot~\cite{Martin2014} for the elderly. When we initiated experiments involving potential users, caregivers have asked us about the security of our robot, and about the privacy of its communications \cite{Denning2009}. If an assistant robot carrying a camera is deployed in a home, the access to the camera should be secured. Even more when the robot is managing medical information. We have developed all our software for the autonomous behaviour of the robots using ROS, so we need to consider its security.
 
 
 \subsection{ROS security assestment}
@@ -56,7 +56,7 @@ ROS framework is basically a message-passing distributed system. Its architectur
 This approach is very convenient for developers but it is very easily tampered by malicious hackers. For instance in \cite{McClean2013} an experiment involving a ROS-based honeypot is described. The honeypot was a radio model truck with two cameras and a compass as sensors and controlled from a remote ROS node written in Javascript and hosted in a remote enterprise grade web server. Vulnerabilities described in the paper range from plain-text communications, unprotected TCP ports to unencrypted data storage.
 
 These vulnerabilities are a subset of the security problems threatening any computing system:
-{\textcolor{red}{No sé si merece la pena, demasiado generalista. Igual es mejor hablar más de cosas específicas de robótica y de ROS en particular}}
+{\textcolor{red}{No s\'e si merece la pena, demasiado generalista. Igual es mejor hablar más de cosas específicas de robótica y de ROS en particular}}
 \begin{enumerate}
  \item Availability: Interruption
  \item Confidenciatily: Interception
@@ -81,7 +81,7 @@ Next section describes the testbed we have designed to measure the performance o
 
 \section{Testbed description}
 
-We want to evaluate if ciphering the communications would affect the performance of ROS. 
+We want to evaluate whether ciphering communications would affect the performance of ROS. 
 
 
 \subsection{Simulated testedbed}
