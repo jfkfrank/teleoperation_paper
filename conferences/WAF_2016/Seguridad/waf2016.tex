@@ -3,6 +3,9 @@
 \usepackage{color}
 \usepackage{flushend}
 
+\usepackage{fancyvrb}
+
+
 \usepackage[pdftex]{graphicx}
 % declare the path(s) where your graphic files are
 \graphicspath{{figures/}}
@@ -81,27 +84,79 @@ Next section describes the testbed we have designed to measure the performance o
 
 \section{Testbed description}
 
-We want to evaluate whether ciphering communications would affect the performance of ROS. 
+Conventional ROS environment is composed by at least one ROS Master and any laptop clients. The ROS Master is the key element in a ROS environment, it runs as a nameservice.
+It also stores topics and services registration information for ROS nodes. 
+
+When a node want to stablish a connection with a topic, it communicate with the Master to advise its registration information. After this step, the node gets more information about other registeres nodes and can stablish new connections approapiately. The Master is updated in real time about clients information, and at the same time callbacks to those related nodes.
 
 
-\subsection{Simulated testedbed}
+
+% Nodes communicate with the Master to report their registration information. 
+% As these nodes communicate with the Master, they can receive information about other registered nodes and make connections as appropriate. The Master will also make callbacks to these nodes when this registration information changes, which allows nodes to dynamically create connections as new nodes are run. 
+
+Figure~\ref{fig:TestBed} provides the graphical representation of this situation. In this case, two clients are connected to a topic. It is transparent to ROS Master this situation,  
+The standard process starts with a basic sensor node (BSN). We have defined as BSN those ROS nodes in charge of to publish the information from the sensor.
+
+
+
+We have prepared a  testbed with two laptopts 
+
+% \subsection{Simulated testedbed}
 
 We have installed ROS Jade in two computers connected through a wired Ethernet 10/100 switch (model XXXX). In the first computer we have connected a Xtion camera and a Hokuyo laser. In the second computer have run a node visualizing the information from the sensors. Figure \ref{fig:maqueta} shows this environment.
 
 
-Then we modified the standard ROS implementation. We changed the TCP/IP sockets based implementation by ciphered ones.
+% Then we modified the standard ROS implementation. We changed the TCP/IP sockets based implementation by ciphered ones.
+
+In this first approach we have changed the info published by the node, and instead of publish the information in a clean way, we publish the information encrypted.
+We use the DES3 algorithm that provides a 
+Triple DES references the Triple Data Encryption Algorithm (3DES or TDEA or Triple DEA). It is a symmetric-key block cipher and from a high level point of view the algoritm applies the Data Encryption Standard (DES) cipher algorithm three times to each data block. It is standarized by NIST (Recommendation for
+the Triple Data Encryption Algorithm (TDEA) Block Cipher) NIST Special Publication 800-67.
+
+It has a fixed data block size of 8 bytes. Its keys are 128 (Option 1) or 192 bits (Option 2) long. However, 1 out of 8 bits is used for redundancy and do not contribute to security. The effective key length is respectively 112 or 168 bits.
+
+TDES consists of the concatenation of 3 simple DES ciphers.
+
+The plaintext is first DES encrypted with K1, then decrypted with K2, and finally encrypted again with K3. The ciphertext is decrypted in the reverse manner.
+
+The 192 bit key is a bundle of three 64 bit independent subkeys: K1, K2, and K3.
+
+The 128 bit key is split into K1 and K2, whereas K1=K3.
+
+It is important that all subkeys are different, otherwise TDES would degrade to single DES.
+
+TDES is cryptographically secure, even though it is neither as secure nor as fast as AES.
+
+
+The decorator pattern can be used to extend (decorate) the functionality of a certain object statically, or in some cases at run-time, independently of other instances of the same class, provided some groundwork is done at design time. 
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.5\textwidth]{TestBed.pdf}
+    \caption{Time spent in each call to encryption/decryption function.}
+  \label{fig:TestBed}
+\end{figure}
+
+
+
+
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.5\textwidth]{Screenshot.png}
+    \caption{Time spent in each call to encryption/decryption function.}
+  \label{fig:Conceptualmodel}
+\end{figure}
 
 
 \subsection{Robotic testbed}
 
+We want to evaluate whether ciphering communications would affect the performance of ROS. 
 In the second experiment we changed the first computer for a RB1 robot and the XXX switch by a wireless one. This robot was also running ROS Jade.
 
 
 
 \section{Experimental Measuments}
-
-
-
 
 Figure \ref{fig:velocidad-maqueta} shows the maximum rate that can be reached both in the laser and the camera visualization according to \texttt{rviz} information.
 
@@ -112,10 +167,12 @@ The absolute values of the frame rates is obviously different, as shown in figur
 Table \ref{tab:relativas}  compares the relative reduction of speed when using ciphered protocols vs clear ones in both environments as well as the relative increase of CPU usage.
 
 We have addded a funtion to our program in order to measure the time spent in each encrypt and decrypt call. The function is a python method presented as a decorator pattern 
+The decorator pattern is used here to extend the functionality of encrypt/decrypt at run-time. 
+
 
 {
   \footnotesize{
-    \begin{verbatim}
+    \begin{Verbatim}[frame=single]
 def fn_timer(function):
 	  @wraps(function)
 	  def function_timer(*args, **kwargs):
@@ -124,20 +181,27 @@ def fn_timer(function):
 	      v_time_1 = time.time()
 	      return result
 	  return function_timer
-    \end{verbatim}
+    \end{Verbatim}
   }
 }
 
 \begin{figure*}[ht]
     \centering
-    \includegraphics[width=.9\textwidth]{Resumen_llamada_funcion.png}
+    \includegraphics[width=.9\textwidth]{Outline_images_encryption_decrytiontime2.png}
     \caption{Time spent in each call to encryption/decryption function.}
   \label{fig:Conceptualmodel}
 \end{figure*}
 
 
 \subsection{Camera}
-Encrypt
+
+\subsubsection{Traffic Data}
+
+There are three nodes involved in our system: usb\_cam, encrypte\_node and decrypted\_node. The first and the sencond run in the master computer, the decrypted one in a new computer.
+
+There are three topics involved 
+
+To analyse the behaviour of the system under encrypt/decrypt circumstances we 
 
 PC: 234 process
 
@@ -168,14 +232,6 @@ Descifrador
 [INFO] Decrypter node: elapsed time: 66659.74
 [INFO] Decrypter node: approx. FPS: 14.54
 
-
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=.5\textwidth]{Screenshot.png}
-    \caption{Time spent in each call to encryption/decryption function.}
-  \label{fig:Conceptualmodel}
-\end{figure}
 
 
 
