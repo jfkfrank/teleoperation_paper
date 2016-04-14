@@ -2,6 +2,7 @@
 
 \usepackage{flushend}
 \usepackage{color}
+\usepackage{graphicx}
 
 \begin{document}
 
@@ -141,11 +142,9 @@ In the second case, we identified the following basic tasks:
 
 In both cases we observed that previous to the first and last task, the movement of the teleoperated does not requires haptic feedback.
 
-The third step is to establish a clear relationship between selected indicators and basic haptic tasks. Table \ref{tabla_1} show this relation relationship. The first column shows the basic tasks involved in our  experiment and the specific indicators are placed in the second column. But also we consider for the design of haptic interface that different tasks have different requirements, both the haptic device as the robot. For example, in the translating task we need game piece weight perception that gives haptic force sensor and grasping force provided by the corresponding robot sensor. Moreover, in our experiment, we use a visual feedback provided by two cameras in the robot to determine the position of the game pieces and the operator can determine the necessary directions and trajectories to perform the desired task. 
+The third step is to establish a clear relationship between selected indicators and basic haptic tasks. Table \ref{tabla_1} show this relationship. The first column shows the basic tasks involved in our  experiment and the specific indicators are placed in the second column. But also we consider for the design of haptic interface that different tasks have different requirements, both the haptic device as the robot. For example, in the translating task we need game piece weight perception that gives haptic force sensor and grasping force provided by the corresponding robot sensor. Moreover, in our experiment, we use a visual feedback provided by two cameras in the robot to determine the position of the game pieces and the operator can determine the necessary directions and trajectories to perform the desired task. 
 
-
-
-\begin{table}
+\begin{table}[h]
 \centering
 \caption{\label{tabla_1}Basic tasks and GEHID indicators.}
 \begin{tabular}{ll}
@@ -161,6 +160,30 @@ The third step is to establish a clear relationship between selected indicators 
 \end{tabular}
 
 \end{table}
+
+\subsection{User experience}
+
+From the point of view of usability and using as reference the definition provide by the international standard ISO 9241-11 \cite{ISO98} that define usability as “The extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use”, we measure these aspects for our experiment. But we need to include other aspects such as the haptic environment conditions in this classical model approach. L. M. Muñoz, P. Ponsa, and A. Casals \cite{Munoz12} describes in their research a human-robot metric classes that shows table \ref{tabla_2}.
+
+\begin{table}[h]
+\centering
+\caption{\label{tabla_2}Human-Robot metric classes}
+\resizebox{9cm}{!}{
+\begin{tabular}{ll} 
+\hline 
+\textbf{\footnotesize{}Metric classes} & \textbf{\footnotesize{}Description}\tabularnewline
+\hline 
+{\footnotesize{}Task effectiveness} & {\footnotesize{}Human-robot system performance parameters}\tabularnewline
+{\footnotesize{}Automation behaviour efficiency} & {\footnotesize{}Robot behaviour, Interface behaviour}\tabularnewline
+{\footnotesize{}Human behaviour efficiency} & {\footnotesize{}Information processing, decision making, action}\tabularnewline
+{\footnotesize{}Human behaviour precursors} & {\footnotesize{}Mental workload, fatigue}\tabularnewline
+{\footnotesize{}Collaborative metrics} & {\footnotesize{}Human-robot interaction, human-haptic interaction}\tabularnewline
+\hline 
+\end{tabular}
+}
+\end{table}
+
+In order to improve the use of our haptic interface we will test the haptic device for a set of expert's evaluators (3-5 people). We will prepare a user's experience test in order to measured human-robot metrics defined above. We designed a scenario in our usability laboratory in order to apply useful evaluation methods and to improve the human-robot interaction.
 
 
 \section{Conclusion}
@@ -208,6 +231,10 @@ L.M.~Mu{\~{n}}oz, P.~Ponsa and A.~Casals, \emph{Design and Development of a Guid
 
 \bibitem{Andonovski10}
 B.~Andonovski, P.~Ponsa and A.~Casals, \emph{Towards the development of a haptics guideline in human-robot systems}, Human System Interactions (HSI), 2010 3rd Conference on, Rzeszow, pp. 380--387, 2010.
+
+\bibitem{ISO98}
+ISO, \emph{ISO 9241-11:1998 Ergonomic requirements for office work with visual
+display terminals (VDTs) – part 11: Guidance on usability}, 1998.
 
 
 \end{thebibliography}
