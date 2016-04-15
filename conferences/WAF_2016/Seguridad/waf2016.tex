@@ -180,6 +180,111 @@ def fn_timer(function):
 }
 
 
+\subsection{Camera}
+
+\subsubsection{Test Messages evaluation}
+
+In this test we have used a modified version of talker/listener tutorial proposed by ROS. 
+ROS statistical data shows the simple publish/subscribe example sending 11 string messages ({\em std\_msgs/String}) by second of ``Hello wold'' plus a timestamp with 440 byts of traffic.
+In this manner, we want to analyse the behaviour of the system using bigger messages: T1, 262144 bytes; T2,  524288 bytes; and T3, 1048576 bytes 
+
+The measurments of behaviour of ROS traffic presents with simple plain messages {\em delivered\_msgs} 10 of T1 generate . When T2 messages are sent the system runs with 4194368 bytes of traffic and finally when it is working in  T3 messages just send 4194336 bytes and a total of 4 messages. There is no dropped messages by subscribtion.
+
+We want to determine the duration of execution of our talker. We run the Linux {\em time} command to measure the total CPU time consumed by the ROS talker process. 
+Firstly we analyzed T1, that presents in a time window of 32.884 seconds a user time of  1.364 seconds and a sys time of 0.044s. It represents a CPU time of 1.408 seconds.
+Secondly we analyzed T2, that presents in a time window of 33.749 seconds a user time of  2.508 seconds and a sys time of 0.164s. It represents a CPU time of 2.672 seconds.
+Finally we analyzed T3, that presents in a time window of 34.731 seconds a user time of  5.140 seconds and a sys time of 0.120s. It represents a CPU time of 5.260 seconds.
+
+This is totally different when we are working with encrypted text messages. 
+
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=.5\textwidth]{Tiempos_CPU_cifrado_texto.png}
+    \caption{Time of CPU spent in a simple talker/listener test.}
+  \label{fig:images_encryption}
+\end{figure}
+
+
+
+
+\begin{figure*}[ht!]
+    \centering
+    \includegraphics[width=.9\textwidth]{Outline_encryption_text.png}
+    \caption{Time spent in each call to encryption/decryption function.}
+  \label{fig:images_encryption}
+\end{figure*}
+
+
+% raspberry@david-H97M-D3H:~/catkin_ws/src/security_repo/ciphering_project/simple_talker_listener/src$ time python talker3DES.py
+% ;;;;;;;;
+% ^C
+% real    0m34.486s
+% user    0m22.924s
+% sys    0m0.084s
+% raspberry@david-H97M-D3H:~/catkin_ws/src/security_repo/ciphering_project/simple_talker_listener/src$ time python talker3DES.py
+% ;;;;;;;;
+% ^C
+% real    0m40.607s
+% user    0m40.368s
+% sys    0m0.232s
+% raspberry@david-H97M-D3H:~/catkin_ws/src/security_repo/ciphering_project/simple_talker_listener/src$ time python talker3DES.py
+% ;;;;;;;;
+% ^C
+% real    0m38.718s
+% user    0m38.416s
+% sys    0m0.248s
+
+
+
+% where 0m34.731s of execution 
+% user    0m5.140s
+% sys    0m0.120s
+% 
+% raspberry@david-H97M-D3H:~/catkin_ws/src/security_repo/ciphering_project/simple_talker_listener/src$ time python talker.py
+% ^C
+% real    0m33.749s
+% user    0m2.508s
+% sys    0m0.164s
+% 
+% raspberry@david-H97M-D3H:~/catkin_ws/src/security_repo/ciphering_project/simple_talker_listener/src$ time python talker.py
+% ^C
+% real    0m32.884s
+% user    0m1.364s
+% sys    0m0.044s
+======================================
+256
+======================================
+Cifrado length: 1040.000000
+Cifrado min: 0.059246
+Cifrado max: 0.683408
+Cifrado mean: 0.063858
+Cifrado stdev: 0.000388
+El valor moda de la fase de cifrado fue:
+(array([ 0.06053495]), array([ 3.]))
+======================================
+512
+======================================
+Cifrado length: 309.000000
+Cifrado min: 0.120618
+Cifrado max: 0.229785
+Cifrado mean: 0.123383
+Cifrado stdev: 0.000040
+El valor moda de la fase de cifrado fue:
+(array([ 0.12165689]), array([ 2.]))
+======================================
+1024
+======================================
+Descifrado length: 147.000000
+Descifrado min: 0.242966
+Descifrado max: 0.386008
+Descifrado mean: 0.247303
+Descifrado stdev: 0.000137
+El valor moda de la fase de descifrado fue:
+(array([ 0.24460196]), array([ 2.]))
+
+
+
 
 
 \subsection{Camera}

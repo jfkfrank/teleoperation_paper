@@ -1,0 +1,4495 @@
+topic: /chatter
+node_pub: /talker_29172_1460725825453
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725944
+  nsecs: 919821023
+window_stop: 
+  secs: 1460725945
+  nsecs: 920015096
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 400
+period_mean: 
+  secs: 0
+  nsecs: 100019560
+period_stddev: 
+  secs: 0
+  nsecs: 248997
+period_max: 
+  secs: 0
+  nsecs: 100443125
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29172_1460725825453
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725945
+  nsecs: 920015096
+window_stop: 
+  secs: 1460725947
+  nsecs: 19918918
+delivered_msgs: 11
+dropped_msgs: 0
+traffic: 440
+period_mean: 
+  secs: 0
+  nsecs: 99988007
+period_stddev: 
+  secs: 0
+  nsecs: 109544
+period_max: 
+  secs: 0
+  nsecs: 100173950
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29172_1460725825453
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725947
+  nsecs: 19918918
+window_stop: 
+  secs: 1460725948
+  nsecs: 119771003
+delivered_msgs: 11
+dropped_msgs: 0
+traffic: 440
+period_mean: 
+  secs: 0
+  nsecs: 99985909
+period_stddev: 
+  secs: 0
+  nsecs: 63245
+period_max: 
+  secs: 0
+  nsecs: 100100041
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29172_1460725825453
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725948
+  nsecs: 119771003
+window_stop: 
+  secs: 1460725949
+  nsecs: 119863986
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 400
+period_mean: 
+  secs: 0
+  nsecs: 100003110
+period_stddev: 
+  secs: 0
+  nsecs: 70710
+period_max: 
+  secs: 0
+  nsecs: 100134850
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29172_1460725825453
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725949
+  nsecs: 119863986
+window_stop: 
+  secs: 1460725950
+  nsecs: 120062112
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 400
+period_mean: 
+  secs: 0
+  nsecs: 100010871
+period_stddev: 
+  secs: 0
+  nsecs: 100000
+period_max: 
+  secs: 0
+  nsecs: 100128173
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29172_1460725825453
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725950
+  nsecs: 120062112
+window_stop: 
+  secs: 1460725951
+  nsecs: 219924926
+delivered_msgs: 11
+dropped_msgs: 0
+traffic: 440
+period_mean: 
+  secs: 0
+  nsecs: 99994111
+period_stddev: 
+  secs: 0
+  nsecs: 122474
+period_max: 
+  secs: 0
+  nsecs: 100287915
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29172_1460725825453
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725951
+  nsecs: 219924926
+window_stop: 
+  secs: 1460725952
+  nsecs: 319494009
+delivered_msgs: 11
+dropped_msgs: 0
+traffic: 440
+period_mean: 
+  secs: 0
+  nsecs: 99954295
+period_stddev: 
+  secs: 0
+  nsecs: 126491
+period_max: 
+  secs: 0
+  nsecs: 100178957
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29172_1460725825453
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725952
+  nsecs: 319494009
+window_stop: 
+  secs: 1460725953
+  nsecs: 319572925
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 400
+period_mean: 
+  secs: 0
+  nsecs: 99995666
+period_stddev: 
+  secs: 0
+  nsecs: 109544
+period_max: 
+  secs: 0
+  nsecs: 100240946
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29172_1460725825453
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725953
+  nsecs: 319572925
+window_stop: 
+  secs: 1460725954
+  nsecs: 319989919
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 400
+period_mean: 
+  secs: 0
+  nsecs: 100044012
+period_stddev: 
+  secs: 0
+  nsecs: 154919
+period_max: 
+  secs: 0
+  nsecs: 100359201
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29172_1460725825453
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725954
+  nsecs: 319989919
+window_stop: 
+  secs: 1460725955
+  nsecs: 420048952
+delivered_msgs: 11
+dropped_msgs: 0
+traffic: 440
+period_mean: 
+  secs: 0
+  nsecs: 100005698
+period_stddev: 
+  secs: 0
+  nsecs: 89442
+period_max: 
+  secs: 0
+  nsecs: 100131989
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29172_1460725825453
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725955
+  nsecs: 420048952
+window_stop: 
+  secs: 1460725956
+  nsecs: 519944906
+delivered_msgs: 11
+dropped_msgs: 0
+traffic: 440
+period_mean: 
+  secs: 0
+  nsecs: 99992108
+period_stddev: 
+  secs: 0
+  nsecs: 63245
+period_max: 
+  secs: 0
+  nsecs: 100111962
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29172_1460725825453
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725956
+  nsecs: 519944906
+window_stop: 
+  secs: 1460725957
+  nsecs: 619431018
+delivered_msgs: 11
+dropped_msgs: 0
+traffic: 440
+period_mean: 
+  secs: 0
+  nsecs: 99947309
+period_stddev: 
+  secs: 0
+  nsecs: 130384
+period_max: 
+  secs: 0
+  nsecs: 100102901
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29172_1460725825453
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725957
+  nsecs: 619431018
+window_stop: 
+  secs: 1460725958
+  nsecs: 619476079
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 400
+period_mean: 
+  secs: 0
+  nsecs: 99997997
+period_stddev: 
+  secs: 0
+  nsecs: 63245
+period_max: 
+  secs: 0
+  nsecs: 100134850
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29172_1460725825453
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725958
+  nsecs: 619476079
+window_stop: 
+  secs: 1460725959
+  nsecs: 619543075
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 400
+period_mean: 
+  secs: 0
+  nsecs: 100008355
+period_stddev: 
+  secs: 0
+  nsecs: 54772
+period_max: 
+  secs: 0
+  nsecs: 100125075
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29172_1460725825453
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725959
+  nsecs: 619543075
+window_stop: 
+  secs: 1460725960
+  nsecs: 619551897
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 400
+period_mean: 
+  secs: 0
+  nsecs: 100013123
+period_stddev: 
+  secs: 0
+  nsecs: 161245
+period_max: 
+  secs: 0
+  nsecs: 100376845
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29172_1460725825453
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725960
+  nsecs: 619551897
+window_stop: 
+  secs: 1460725961
+  nsecs: 719563961
+delivered_msgs: 11
+dropped_msgs: 0
+traffic: 440
+period_mean: 
+  secs: 0
+  nsecs: 100017690
+period_stddev: 
+  secs: 0
+  nsecs: 54772
+period_max: 
+  secs: 0
+  nsecs: 100123882
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29172_1460725825453
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725961
+  nsecs: 719563961
+window_stop: 
+  secs: 1460725962
+  nsecs: 720307111
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 400
+period_mean: 
+  secs: 0
+  nsecs: 100074317
+period_stddev: 
+  secs: 0
+  nsecs: 246981
+period_max: 
+  secs: 0
+  nsecs: 100368023
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29172_1460725825453
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725962
+  nsecs: 720307111
+window_stop: 
+  secs: 1460725963
+  nsecs: 820255041
+delivered_msgs: 11
+dropped_msgs: 0
+traffic: 440
+period_mean: 
+  secs: 0
+  nsecs: 99994802
+period_stddev: 
+  secs: 0
+  nsecs: 260768
+period_max: 
+  secs: 0
+  nsecs: 100299120
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29172_1460725825453
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725963
+  nsecs: 820255041
+window_stop: 
+  secs: 1460725964
+  nsecs: 919799089
+delivered_msgs: 11
+dropped_msgs: 0
+traffic: 440
+period_mean: 
+  secs: 0
+  nsecs: 100008606
+period_stddev: 
+  secs: 0
+  nsecs: 158113
+period_max: 
+  secs: 0
+  nsecs: 100198984
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29172_1460725825453
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725964
+  nsecs: 919799089
+window_stop: 
+  secs: 1460725966
+  nsecs: 19709110
+delivered_msgs: 11
+dropped_msgs: 0
+traffic: 440
+period_mean: 
+  secs: 0
+  nsecs: 100025200
+period_stddev: 
+  secs: 0
+  nsecs: 77459
+period_max: 
+  secs: 0
+  nsecs: 100174904
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725968
+  nsecs: 93760967
+window_stop: 
+  secs: 1460725968
+  nsecs: 93821048
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 262335
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725968
+  nsecs: 93821048
+window_stop: 
+  secs: 1460725969
+  nsecs: 96404075
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 2621520
+period_mean: 
+  secs: 0
+  nsecs: 100392553
+period_stddev: 
+  secs: 0
+  nsecs: 1796106
+period_max: 
+  secs: 0
+  nsecs: 104421854
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725969
+  nsecs: 96404075
+window_stop: 
+  secs: 1460725970
+  nsecs: 99278926
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 2621520
+period_mean: 
+  secs: 0
+  nsecs: 100671556
+period_stddev: 
+  secs: 0
+  nsecs: 10588862
+period_max: 
+  secs: 0
+  nsecs: 120377064
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725970
+  nsecs: 99278926
+window_stop: 
+  secs: 1460725971
+  nsecs: 112873077
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 2621520
+period_mean: 
+  secs: 0
+  nsecs: 99510007
+period_stddev: 
+  secs: 0
+  nsecs: 10597263
+period_max: 
+  secs: 0
+  nsecs: 120683908
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725971
+  nsecs: 112873077
+window_stop: 
+  secs: 1460725972
+  nsecs: 194906949
+delivered_msgs: 11
+dropped_msgs: 0
+traffic: 2883672
+period_mean: 
+  secs: 0
+  nsecs: 100281715
+period_stddev: 
+  secs: 0
+  nsecs: 8482098
+period_max: 
+  secs: 0
+  nsecs: 120667935
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725972
+  nsecs: 194906949
+window_stop: 
+  secs: 1460725973
+  nsecs: 296405076
+delivered_msgs: 11
+dropped_msgs: 0
+traffic: 2883672
+period_mean: 
+  secs: 0
+  nsecs: 98900985
+period_stddev: 
+  secs: 0
+  nsecs: 6201532
+period_max: 
+  secs: 0
+  nsecs: 110929966
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725973
+  nsecs: 296405076
+window_stop: 
+  secs: 1460725974
+  nsecs: 392559051
+delivered_msgs: 11
+dropped_msgs: 0
+traffic: 2883672
+period_mean: 
+  secs: 0
+  nsecs: 100044989
+period_stddev: 
+  secs: 0
+  nsecs: 11314062
+period_max: 
+  secs: 0
+  nsecs: 120115041
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725974
+  nsecs: 392559051
+window_stop: 
+  secs: 1460725975
+  nsecs: 492194890
+delivered_msgs: 11
+dropped_msgs: 0
+traffic: 2883672
+period_mean: 
+  secs: 0
+  nsecs: 99333405
+period_stddev: 
+  secs: 0
+  nsecs: 11461457
+period_max: 
+  secs: 0
+  nsecs: 120326996
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725975
+  nsecs: 492194890
+window_stop: 
+  secs: 1460725976
+  nsecs: 492193937
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 2621520
+period_mean: 
+  secs: 0
+  nsecs: 99985440
+period_stddev: 
+  secs: 0
+  nsecs: 6055658
+period_max: 
+  secs: 0
+  nsecs: 109444141
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725976
+  nsecs: 492193937
+window_stop: 
+  secs: 1460725977
+  nsecs: 495109081
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 2621520
+period_mean: 
+  secs: 0
+  nsecs: 100324445
+period_stddev: 
+  secs: 0
+  nsecs: 1596558
+period_max: 
+  secs: 0
+  nsecs: 102892160
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725977
+  nsecs: 495109081
+window_stop: 
+  secs: 1460725978
+  nsecs: 592350959
+delivered_msgs: 11
+dropped_msgs: 0
+traffic: 2883672
+period_mean: 
+  secs: 0
+  nsecs: 99994301
+period_stddev: 
+  secs: 0
+  nsecs: 1186591
+period_max: 
+  secs: 0
+  nsecs: 102653026
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725978
+  nsecs: 592350959
+window_stop: 
+  secs: 1460725979
+  nsecs: 592678070
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 2621520
+period_mean: 
+  secs: 0
+  nsecs: 99701563
+period_stddev: 
+  secs: 0
+  nsecs: 1002995
+period_max: 
+  secs: 0
+  nsecs: 100455999
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725979
+  nsecs: 592678070
+window_stop: 
+  secs: 1460725980
+  nsecs: 601166009
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 2621520
+period_mean: 
+  secs: 0
+  nsecs: 100997342
+period_stddev: 
+  secs: 0
+  nsecs: 11413369
+period_max: 
+  secs: 0
+  nsecs: 120346070
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725980
+  nsecs: 601166009
+window_stop: 
+  secs: 1460725981
+  nsecs: 692066907
+delivered_msgs: 11
+dropped_msgs: 0
+traffic: 2883672
+period_mean: 
+  secs: 0
+  nsecs: 97201585
+period_stddev: 
+  secs: 0
+  nsecs: 13812023
+period_max: 
+  secs: 0
+  nsecs: 119879961
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725981
+  nsecs: 692066907
+window_stop: 
+  secs: 1460725982
+  nsecs: 692857980
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 2621520
+period_mean: 
+  secs: 0
+  nsecs: 100086768
+period_stddev: 
+  secs: 0
+  nsecs: 17045204
+period_max: 
+  secs: 0
+  nsecs: 120778084
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725982
+  nsecs: 692857980
+window_stop: 
+  secs: 1460725983
+  nsecs: 717732906
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 2621520
+period_mean: 
+  secs: 0
+  nsecs: 100552241
+period_stddev: 
+  secs: 0
+  nsecs: 16296901
+period_max: 
+  secs: 0
+  nsecs: 119745016
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725983
+  nsecs: 717732906
+window_stop: 
+  secs: 1460725984
+  nsecs: 795531034
+delivered_msgs: 11
+dropped_msgs: 0
+traffic: 2883672
+period_mean: 
+  secs: 0
+  nsecs: 99404311
+period_stddev: 
+  secs: 0
+  nsecs: 13083768
+period_max: 
+  secs: 0
+  nsecs: 119921208
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725984
+  nsecs: 795531034
+window_stop: 
+  secs: 1460725985
+  nsecs: 807771921
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 2621520
+period_mean: 
+  secs: 0
+  nsecs: 101314226
+period_stddev: 
+  secs: 0
+  nsecs: 10270199
+period_max: 
+  secs: 0
+  nsecs: 120124101
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725985
+  nsecs: 807771921
+window_stop: 
+  secs: 1460725986
+  nsecs: 892281055
+delivered_msgs: 11
+dropped_msgs: 0
+traffic: 2883672
+period_mean: 
+  secs: 0
+  nsecs: 99582696
+period_stddev: 
+  secs: 0
+  nsecs: 12019484
+period_max: 
+  secs: 0
+  nsecs: 117639065
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725986
+  nsecs: 892281055
+window_stop: 
+  secs: 1460725987
+  nsecs: 892537117
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 2621520
+period_mean: 
+  secs: 0
+  nsecs: 99814891
+period_stddev: 
+  secs: 0
+  nsecs: 9540283
+period_max: 
+  secs: 0
+  nsecs: 119623900
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29211_1460725959261
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725987
+  nsecs: 892537117
+window_stop: 
+  secs: 1460725988
+  nsecs: 898051023
+delivered_msgs: 10
+dropped_msgs: 0
+traffic: 2621520
+period_mean: 
+  secs: 0
+  nsecs: 100687556
+period_stddev: 
+  secs: 0
+  nsecs: 13044577
+period_max: 
+  secs: 0
+  nsecs: 120796918
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29227_1460725982172
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725991
+  nsecs: 76349973
+window_stop: 
+  secs: 1460725991
+  nsecs: 76416969
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 524479
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29227_1460725982172
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725991
+  nsecs: 76416969
+window_stop: 
+  secs: 1460725992
+  nsecs: 101253986
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 128334420
+period_stddev: 
+  secs: 0
+  nsecs: 2915647
+period_max: 
+  secs: 0
+  nsecs: 133494854
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29227_1460725982172
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725992
+  nsecs: 101253986
+window_stop: 
+  secs: 1460725993
+  nsecs: 117516994
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 127042259
+period_stddev: 
+  secs: 0
+  nsecs: 4938420
+period_max: 
+  secs: 0
+  nsecs: 134100914
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29227_1460725982172
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725993
+  nsecs: 117516994
+window_stop: 
+  secs: 1460725994
+  nsecs: 143639087
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 128284726
+period_stddev: 
+  secs: 0
+  nsecs: 3531996
+period_max: 
+  secs: 0
+  nsecs: 136755944
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29227_1460725982172
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725994
+  nsecs: 143639087
+window_stop: 
+  secs: 1460725995
+  nsecs: 218170881
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 134062596
+period_stddev: 
+  secs: 0
+  nsecs: 7248586
+period_max: 
+  secs: 0
+  nsecs: 144934893
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29227_1460725982172
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725995
+  nsecs: 218170881
+window_stop: 
+  secs: 1460725996
+  nsecs: 239264965
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 127551147
+period_stddev: 
+  secs: 0
+  nsecs: 4733603
+period_max: 
+  secs: 0
+  nsecs: 134366989
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29227_1460725982172
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725996
+  nsecs: 239264965
+window_stop: 
+  secs: 1460725997
+  nsecs: 257988929
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 127372298
+period_stddev: 
+  secs: 0
+  nsecs: 663324
+period_max: 
+  secs: 0
+  nsecs: 128472089
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29227_1460725982172
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725997
+  nsecs: 257988929
+window_stop: 
+  secs: 1460725998
+  nsecs: 277832031
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 127579144
+period_stddev: 
+  secs: 0
+  nsecs: 872926
+period_max: 
+  secs: 0
+  nsecs: 129420996
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29227_1460725982172
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725998
+  nsecs: 277832031
+window_stop: 
+  secs: 1460725999
+  nsecs: 332731962
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 132579701
+period_stddev: 
+  secs: 0
+  nsecs: 9841188
+period_max: 
+  secs: 0
+  nsecs: 152987957
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29227_1460725982172
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460725999
+  nsecs: 332731962
+window_stop: 
+  secs: 1460726000
+  nsecs: 354069948
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 127721003
+period_stddev: 
+  secs: 0
+  nsecs: 1577022
+period_max: 
+  secs: 0
+  nsecs: 130626917
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29227_1460725982172
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726000
+  nsecs: 354069948
+window_stop: 
+  secs: 1460726001
+  nsecs: 364001035
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 126182011
+period_stddev: 
+  secs: 0
+  nsecs: 4543016
+period_max: 
+  secs: 0
+  nsecs: 133134842
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29227_1460725982172
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726001
+  nsecs: 364001035
+window_stop: 
+  secs: 1460726002
+  nsecs: 390018939
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 127034561
+period_stddev: 
+  secs: 0
+  nsecs: 3598610
+period_max: 
+  secs: 0
+  nsecs: 133274079
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29227_1460725982172
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726002
+  nsecs: 390018939
+window_stop: 
+  secs: 1460726003
+  nsecs: 403244018
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 126659018
+period_stddev: 
+  secs: 0
+  nsecs: 2089258
+period_max: 
+  secs: 0
+  nsecs: 130369901
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29227_1460725982172
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726003
+  nsecs: 403244018
+window_stop: 
+  secs: 1460726004
+  nsecs: 425748109
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 127072708
+period_stddev: 
+  secs: 0
+  nsecs: 2818510
+period_max: 
+  secs: 0
+  nsecs: 133302927
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29227_1460725982172
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726004
+  nsecs: 425748109
+window_stop: 
+  secs: 1460726005
+  nsecs: 437125921
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 126056705
+period_stddev: 
+  secs: 0
+  nsecs: 2513165
+period_max: 
+  secs: 0
+  nsecs: 128954887
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29243_1460726004785
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726013
+  nsecs: 688824892
+window_stop: 
+  secs: 1460726013
+  nsecs: 688891887
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 524479
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29243_1460726004785
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726013
+  nsecs: 688891887
+window_stop: 
+  secs: 1460726014
+  nsecs: 692672967
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 125569684
+period_stddev: 
+  secs: 0
+  nsecs: 734846
+period_max: 
+  secs: 0
+  nsecs: 126772881
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29243_1460726004785
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726014
+  nsecs: 692672967
+window_stop: 
+  secs: 1460726015
+  nsecs: 825530052
+delivered_msgs: 9
+dropped_msgs: 0
+traffic: 4718664
+period_mean: 
+  secs: 0
+  nsecs: 125952631
+period_stddev: 
+  secs: 0
+  nsecs: 5026032
+period_max: 
+  secs: 0
+  nsecs: 134619951
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29243_1460726004785
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726015
+  nsecs: 825530052
+window_stop: 
+  secs: 1460726016
+  nsecs: 834456920
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 127188989
+period_stddev: 
+  secs: 0
+  nsecs: 4172169
+period_max: 
+  secs: 0
+  nsecs: 132372856
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29243_1460726004785
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726016
+  nsecs: 834456920
+window_stop: 
+  secs: 1460726017
+  nsecs: 844166040
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 126371996
+period_stddev: 
+  secs: 0
+  nsecs: 675277
+period_max: 
+  secs: 0
+  nsecs: 127574920
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29243_1460726004785
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726017
+  nsecs: 844166040
+window_stop: 
+  secs: 1460726018
+  nsecs: 857676982
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 127729858
+period_stddev: 
+  secs: 0
+  nsecs: 4488318
+period_max: 
+  secs: 0
+  nsecs: 134515047
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29243_1460726004785
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726018
+  nsecs: 857676982
+window_stop: 
+  secs: 1460726019
+  nsecs: 864702939
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 125942707
+period_stddev: 
+  secs: 0
+  nsecs: 583952
+period_max: 
+  secs: 0
+  nsecs: 127337932
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29243_1460726004785
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726019
+  nsecs: 864702939
+window_stop: 
+  secs: 1460726020
+  nsecs: 874088048
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 125898838
+period_stddev: 
+  secs: 0
+  nsecs: 674536
+period_max: 
+  secs: 0
+  nsecs: 127366066
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29243_1460726004785
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726020
+  nsecs: 874088048
+window_stop: 
+  secs: 1460726021
+  nsecs: 876970052
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 125411987
+period_stddev: 
+  secs: 0
+  nsecs: 1213260
+period_max: 
+  secs: 0
+  nsecs: 127008915
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29243_1460726004785
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726021
+  nsecs: 876970052
+window_stop: 
+  secs: 1460726022
+  nsecs: 892991065
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 126776865
+period_stddev: 
+  secs: 0
+  nsecs: 4477275
+period_max: 
+  secs: 0
+  nsecs: 136281014
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29243_1460726004785
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726022
+  nsecs: 892991065
+window_stop: 
+  secs: 1460726023
+  nsecs: 907824039
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 125931297
+period_stddev: 
+  secs: 0
+  nsecs: 531036
+period_max: 
+  secs: 0
+  nsecs: 126831054
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29243_1460726004785
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726023
+  nsecs: 907824039
+window_stop: 
+  secs: 1460726024
+  nsecs: 915321111
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 125874144
+period_stddev: 
+  secs: 0
+  nsecs: 457165
+period_max: 
+  secs: 0
+  nsecs: 126572848
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29243_1460726004785
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726024
+  nsecs: 915321111
+window_stop: 
+  secs: 1460726025
+  nsecs: 919667959
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 125525167
+period_stddev: 
+  secs: 0
+  nsecs: 118321
+period_max: 
+  secs: 0
+  nsecs: 125741005
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29243_1460726004785
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726025
+  nsecs: 919667959
+window_stop: 
+  secs: 1460726026
+  nsecs: 923655033
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 125564575
+period_stddev: 
+  secs: 0
+  nsecs: 230217
+period_max: 
+  secs: 0
+  nsecs: 125874042
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29243_1460726004785
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726026
+  nsecs: 923655033
+window_stop: 
+  secs: 1460726027
+  nsecs: 929091930
+delivered_msgs: 8
+dropped_msgs: 0
+traffic: 4194368
+period_mean: 
+  secs: 0
+  nsecs: 125720569
+period_stddev: 
+  secs: 0
+  nsecs: 228035
+period_max: 
+  secs: 0
+  nsecs: 126040935
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726035
+  nsecs: 64815044
+window_stop: 
+  secs: 1460726035
+  nsecs: 64867019
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 1048767
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726035
+  nsecs: 64867019
+window_stop: 
+  secs: 1460726036
+  nsecs: 75028896
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 252307971
+period_stddev: 
+  secs: 0
+  nsecs: 1915985
+period_max: 
+  secs: 0
+  nsecs: 255009890
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726036
+  nsecs: 75028896
+window_stop: 
+  secs: 1460726037
+  nsecs: 79168081
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 251222690
+period_stddev: 
+  secs: 0
+  nsecs: 471168
+period_max: 
+  secs: 0
+  nsecs: 251688004
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726037
+  nsecs: 79168081
+window_stop: 
+  secs: 1460726038
+  nsecs: 81895112
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250759681
+period_stddev: 
+  secs: 0
+  nsecs: 1526433
+period_max: 
+  secs: 0
+  nsecs: 252918958
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726038
+  nsecs: 81895112
+window_stop: 
+  secs: 1460726039
+  nsecs: 338924884
+delivered_msgs: 5
+dropped_msgs: 0
+traffic: 5242920
+period_mean: 
+  secs: 0
+  nsecs: 251076996
+period_stddev: 
+  secs: 0
+  nsecs: 8565920
+period_max: 
+  secs: 0
+  nsecs: 264090061
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726039
+  nsecs: 338924884
+window_stop: 
+  secs: 1460726040
+  nsecs: 345021963
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 255448023
+period_stddev: 
+  secs: 0
+  nsecs: 6313081
+period_max: 
+  secs: 0
+  nsecs: 264281034
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726040
+  nsecs: 345021963
+window_stop: 
+  secs: 1460726041
+  nsecs: 600831031
+delivered_msgs: 5
+dropped_msgs: 0
+traffic: 5242920
+period_mean: 
+  secs: 0
+  nsecs: 251582265
+period_stddev: 
+  secs: 0
+  nsecs: 8294034
+period_max: 
+  secs: 0
+  nsecs: 263320923
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726041
+  nsecs: 600831031
+window_stop: 
+  secs: 1460726042
+  nsecs: 605607032
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250698327
+period_stddev: 
+  secs: 0
+  nsecs: 563914
+period_max: 
+  secs: 0
+  nsecs: 251466990
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726042
+  nsecs: 605607032
+window_stop: 
+  secs: 1460726043
+  nsecs: 607086896
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250319957
+period_stddev: 
+  secs: 0
+  nsecs: 414728
+period_max: 
+  secs: 0
+  nsecs: 250749111
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726043
+  nsecs: 607086896
+window_stop: 
+  secs: 1460726044
+  nsecs: 612571001
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250904321
+period_stddev: 
+  secs: 0
+  nsecs: 9835903
+period_max: 
+  secs: 0
+  nsecs: 263461113
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726044
+  nsecs: 612571001
+window_stop: 
+  secs: 1460726045
+  nsecs: 618200063
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 251213630
+period_stddev: 
+  secs: 0
+  nsecs: 919782
+period_max: 
+  secs: 0
+  nsecs: 252515078
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726045
+  nsecs: 618200063
+window_stop: 
+  secs: 1460726046
+  nsecs: 618783950
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250039339
+period_stddev: 
+  secs: 0
+  nsecs: 531977
+period_max: 
+  secs: 0
+  nsecs: 250736952
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726046
+  nsecs: 618783950
+window_stop: 
+  secs: 1460726047
+  nsecs: 619349002
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 249954303
+period_stddev: 
+  secs: 0
+  nsecs: 577927
+period_max: 
+  secs: 0
+  nsecs: 250769853
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726047
+  nsecs: 619349002
+window_stop: 
+  secs: 1460726048
+  nsecs: 621633052
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 254846016
+period_stddev: 
+  secs: 0
+  nsecs: 6189668
+period_max: 
+  secs: 0
+  nsecs: 263565063
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726048
+  nsecs: 621633052
+window_stop: 
+  secs: 1460726049
+  nsecs: 626184940
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250354687
+period_stddev: 
+  secs: 0
+  nsecs: 234520
+period_max: 
+  secs: 0
+  nsecs: 250526190
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726049
+  nsecs: 626184940
+window_stop: 
+  secs: 1460726050
+  nsecs: 626306056
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 249896049
+period_stddev: 
+  secs: 0
+  nsecs: 258843
+period_max: 
+  secs: 0
+  nsecs: 250185013
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726050
+  nsecs: 626306056
+window_stop: 
+  secs: 1460726051
+  nsecs: 626472949
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 249956369
+period_stddev: 
+  secs: 0
+  nsecs: 223606
+period_max: 
+  secs: 0
+  nsecs: 250249862
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726051
+  nsecs: 626472949
+window_stop: 
+  secs: 1460726052
+  nsecs: 626683950
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 249885320
+period_stddev: 
+  secs: 0
+  nsecs: 223606
+period_max: 
+  secs: 0
+  nsecs: 250150919
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726052
+  nsecs: 626683950
+window_stop: 
+  secs: 1460726053
+  nsecs: 627671957
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250135978
+period_stddev: 
+  secs: 0
+  nsecs: 371483
+period_max: 
+  secs: 0
+  nsecs: 250607014
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726053
+  nsecs: 627671957
+window_stop: 
+  secs: 1460726054
+  nsecs: 627968072
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250156641
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 250184775
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726054
+  nsecs: 627968072
+window_stop: 
+  secs: 1460726055
+  nsecs: 628623962
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250126044
+period_stddev: 
+  secs: 0
+  nsecs: 324037
+period_max: 
+  secs: 0
+  nsecs: 250582218
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726055
+  nsecs: 628623962
+window_stop: 
+  secs: 1460726056
+  nsecs: 628688097
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250085672
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 250117064
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726056
+  nsecs: 628688097
+window_stop: 
+  secs: 1460726057
+  nsecs: 629528045
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250188986
+period_stddev: 
+  secs: 0
+  nsecs: 184390
+period_max: 
+  secs: 0
+  nsecs: 250452041
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726057
+  nsecs: 629528045
+window_stop: 
+  secs: 1460726058
+  nsecs: 630515098
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250259638
+period_stddev: 
+  secs: 0
+  nsecs: 151657
+period_max: 
+  secs: 0
+  nsecs: 250386954
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726058
+  nsecs: 630515098
+window_stop: 
+  secs: 1460726059
+  nsecs: 631839990
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250325282
+period_stddev: 
+  secs: 0
+  nsecs: 89442
+period_max: 
+  secs: 0
+  nsecs: 250398874
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726059
+  nsecs: 631839990
+window_stop: 
+  secs: 1460726060
+  nsecs: 632160902
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250034967
+period_stddev: 
+  secs: 0
+  nsecs: 204939
+period_max: 
+  secs: 0
+  nsecs: 250329018
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726060
+  nsecs: 632160902
+window_stop: 
+  secs: 1460726061
+  nsecs: 632889032
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250174045
+period_stddev: 
+  secs: 0
+  nsecs: 161245
+period_max: 
+  secs: 0
+  nsecs: 250316143
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726061
+  nsecs: 632889032
+window_stop: 
+  secs: 1460726062
+  nsecs: 633115053
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250036637
+period_stddev: 
+  secs: 0
+  nsecs: 240831
+period_max: 
+  secs: 0
+  nsecs: 250371933
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726062
+  nsecs: 633115053
+window_stop: 
+  secs: 1460726063
+  nsecs: 633250951
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 249984344
+period_stddev: 
+  secs: 0
+  nsecs: 340587
+period_max: 
+  secs: 0
+  nsecs: 250437021
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726063
+  nsecs: 633250951
+window_stop: 
+  secs: 1460726064
+  nsecs: 634336948
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250176986
+period_stddev: 
+  secs: 0
+  nsecs: 158113
+period_max: 
+  secs: 0
+  nsecs: 250377894
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726064
+  nsecs: 634336948
+window_stop: 
+  secs: 1460726065
+  nsecs: 635296106
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250284353
+period_stddev: 
+  secs: 0
+  nsecs: 258843
+period_max: 
+  secs: 0
+  nsecs: 250470876
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726065
+  nsecs: 635296106
+window_stop: 
+  secs: 1460726066
+  nsecs: 635571002
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250004371
+period_stddev: 
+  secs: 0
+  nsecs: 260768
+period_max: 
+  secs: 0
+  nsecs: 250368119
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726066
+  nsecs: 635571002
+window_stop: 
+  secs: 1460726067
+  nsecs: 636118888
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 249696970
+period_stddev: 
+  secs: 0
+  nsecs: 866025
+period_max: 
+  secs: 0
+  nsecs: 250921011
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726067
+  nsecs: 636118888
+window_stop: 
+  secs: 1460726068
+  nsecs: 636794090
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250013033
+period_stddev: 
+  secs: 0
+  nsecs: 187082
+period_max: 
+  secs: 0
+  nsecs: 250236035
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726068
+  nsecs: 636794090
+window_stop: 
+  secs: 1460726069
+  nsecs: 637984991
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250345309
+period_stddev: 
+  secs: 0
+  nsecs: 10131090
+period_max: 
+  secs: 0
+  nsecs: 262747049
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726069
+  nsecs: 637984991
+window_stop: 
+  secs: 1460726070
+  nsecs: 638416051
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 249756336
+period_stddev: 
+  secs: 0
+  nsecs: 770713
+period_max: 
+  secs: 0
+  nsecs: 250801086
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726070
+  nsecs: 638416051
+window_stop: 
+  secs: 1460726071
+  nsecs: 638528108
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250003656
+period_stddev: 
+  secs: 0
+  nsecs: 151657
+period_max: 
+  secs: 0
+  nsecs: 250221014
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726071
+  nsecs: 638528108
+window_stop: 
+  secs: 1460726072
+  nsecs: 876347064
+delivered_msgs: 5
+dropped_msgs: 0
+traffic: 5242920
+period_mean: 
+  secs: 0
+  nsecs: 246950030
+period_stddev: 
+  secs: 0
+  nsecs: 5298962
+period_max: 
+  secs: 0
+  nsecs: 250871896
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726072
+  nsecs: 876347064
+window_stop: 
+  secs: 1460726073
+  nsecs: 889308929
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 249981005
+period_stddev: 
+  secs: 0
+  nsecs: 236643
+period_max: 
+  secs: 0
+  nsecs: 250293970
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726073
+  nsecs: 889308929
+window_stop: 
+  secs: 1460726074
+  nsecs: 891942977
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250786304
+period_stddev: 
+  secs: 0
+  nsecs: 364691
+period_max: 
+  secs: 0
+  nsecs: 251060009
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726074
+  nsecs: 891942977
+window_stop: 
+  secs: 1460726075
+  nsecs: 892637014
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 249886989
+period_stddev: 
+  secs: 0
+  nsecs: 317804
+period_max: 
+  secs: 0
+  nsecs: 250279903
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726075
+  nsecs: 892637014
+window_stop: 
+  secs: 1460726076
+  nsecs: 892843961
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250108321
+period_stddev: 
+  secs: 0
+  nsecs: 170293
+period_max: 
+  secs: 0
+  nsecs: 250253916
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726076
+  nsecs: 892843961
+window_stop: 
+  secs: 1460726077
+  nsecs: 893652915
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250164270
+period_stddev: 
+  secs: 0
+  nsecs: 70710
+period_max: 
+  secs: 0
+  nsecs: 250267029
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726077
+  nsecs: 893652915
+window_stop: 
+  secs: 1460726078
+  nsecs: 893748998
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250114282
+period_stddev: 
+  secs: 0
+  nsecs: 221359
+period_max: 
+  secs: 0
+  nsecs: 250298976
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726078
+  nsecs: 893748998
+window_stop: 
+  secs: 1460726079
+  nsecs: 894939899
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250428358
+period_stddev: 
+  secs: 0
+  nsecs: 126491
+period_max: 
+  secs: 0
+  nsecs: 250610113
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726079
+  nsecs: 894939899
+window_stop: 
+  secs: 1460726080
+  nsecs: 896452903
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 254497607
+period_stddev: 
+  secs: 0
+  nsecs: 5676178
+period_max: 
+  secs: 0
+  nsecs: 262514830
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726080
+  nsecs: 896452903
+window_stop: 
+  secs: 1460726081
+  nsecs: 897409915
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250229279
+period_stddev: 
+  secs: 0
+  nsecs: 289827
+period_max: 
+  secs: 0
+  nsecs: 250630140
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726081
+  nsecs: 897409915
+window_stop: 
+  secs: 1460726082
+  nsecs: 897468090
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 250069379
+period_stddev: 
+  secs: 0
+  nsecs: 339116
+period_max: 
+  secs: 0
+  nsecs: 250458002
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726082
+  nsecs: 897468090
+window_stop: 
+  secs: 1460726084
+  nsecs: 147648096
+delivered_msgs: 5
+dropped_msgs: 0
+traffic: 5242920
+period_mean: 
+  secs: 0
+  nsecs: 249898016
+period_stddev: 
+  secs: 0
+  nsecs: 430116
+period_max: 
+  secs: 0
+  nsecs: 250355005
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726084
+  nsecs: 147648096
+window_stop: 
+  secs: 1460726085
+  nsecs: 149077892
+delivered_msgs: 4
+dropped_msgs: 0
+traffic: 4194336
+period_mean: 
+  secs: 0
+  nsecs: 254501978
+period_stddev: 
+  secs: 0
+  nsecs: 5908214
+period_max: 
+  secs: 0
+  nsecs: 262853861
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_1956_1460723103264
+window_start: 
+  secs: 1460726085
+  nsecs: 149077892
+window_stop: 
+  secs: 1460726086
+  nsecs: 398750066
+delivered_msgs: 5
+dropped_msgs: 0
+traffic: 5242920
+period_mean: 
+  secs: 0
+  nsecs: 250036537
+period_stddev: 
+  secs: 0
+  nsecs: 202484
+period_max: 
+  secs: 0
+  nsecs: 250372172
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726093
+  nsecs: 924077033
+window_stop: 
+  secs: 1460726096
+  nsecs: 830128908
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 1114112
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726096
+  nsecs: 830128908
+window_stop: 
+  secs: 1460726098
+  nsecs: 114654064
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 1048576
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726098
+  nsecs: 114654064
+window_stop: 
+  secs: 1460726099
+  nsecs: 702616930
+delivered_msgs: 2
+dropped_msgs: 0
+traffic: 2097152
+period_mean: 
+  secs: 0
+  nsecs: 801801920
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 801801920
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726099
+  nsecs: 702616930
+window_stop: 
+  secs: 1460726100
+  nsecs: 783724069
+delivered_msgs: 3
+dropped_msgs: 0
+traffic: 3145728
+period_mean: 
+  secs: 0
+  nsecs: 374371409
+period_stddev: 
+  secs: 0
+  nsecs: 33711541
+period_max: 
+  secs: 0
+  nsecs: 408082962
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726100
+  nsecs: 783724069
+window_stop: 
+  secs: 1460726102
+  nsecs: 328923940
+delivered_msgs: 3
+dropped_msgs: 0
+traffic: 3145728
+period_mean: 
+  secs: 0
+  nsecs: 614259004
+period_stddev: 
+  secs: 0
+  nsecs: 302659032
+period_max: 
+  secs: 0
+  nsecs: 916918039
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726102
+  nsecs: 328923940
+window_stop: 
+  secs: 1460726105
+  nsecs: 141166925
+delivered_msgs: 3
+dropped_msgs: 0
+traffic: 3145728
+period_mean: 
+  secs: 1
+  nsecs: 249595999
+period_stddev: 
+  secs: 0
+  nsecs: 643522858
+period_max: 
+  secs: 1
+  nsecs: 893118858
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726105
+  nsecs: 141166925
+window_stop: 
+  secs: 1460726107
+  nsecs: 24183988
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 1048576
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726107
+  nsecs: 24183988
+window_stop: 
+  secs: 1460726108
+  nsecs: 917736053
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 1048576
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726108
+  nsecs: 917736053
+window_stop: 
+  secs: 1460726110
+  nsecs: 804184913
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 1048576
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726110
+  nsecs: 804184913
+window_stop: 
+  secs: 1460726112
+  nsecs: 708234071
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 1048576
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726112
+  nsecs: 708234071
+window_stop: 
+  secs: 1460726114
+  nsecs: 605221986
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 1048576
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726114
+  nsecs: 605221986
+window_stop: 
+  secs: 1460726116
+  nsecs: 546494960
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 1048576
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726116
+  nsecs: 546494960
+window_stop: 
+  secs: 1460726118
+  nsecs: 443182945
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 1048576
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726118
+  nsecs: 443182945
+window_stop: 
+  secs: 1460726120
+  nsecs: 354094028
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 1048576
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726120
+  nsecs: 354094028
+window_stop: 
+  secs: 1460726122
+  nsecs: 253177881
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 1048576
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726122
+  nsecs: 253177881
+window_stop: 
+  secs: 1460726124
+  nsecs: 144881010
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 1048576
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726124
+  nsecs: 144881010
+window_stop: 
+  secs: 1460726126
+  nsecs: 41821956
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 1048576
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726126
+  nsecs: 41821956
+window_stop: 
+  secs: 1460726127
+  nsecs: 930197954
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 1048576
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726127
+  nsecs: 930197954
+window_stop: 
+  secs: 1460726129
+  nsecs: 813818931
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 1048576
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726129
+  nsecs: 813818931
+window_stop: 
+  secs: 1460726131
+  nsecs: 732943058
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 1048576
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726131
+  nsecs: 732943058
+window_stop: 
+  secs: 1460726133
+  nsecs: 661510944
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 1048576
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726133
+  nsecs: 661510944
+window_stop: 
+  secs: 1460726135
+  nsecs: 540036916
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 1048576
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
+topic: /chatter
+node_pub: /talker_29259_1460726026021
+node_sub: /listener_2296_1460726093730
+window_start: 
+  secs: 1460726135
+  nsecs: 540036916
+window_stop: 
+  secs: 1460726137
+  nsecs: 433454990
+delivered_msgs: 1
+dropped_msgs: 0
+traffic: 1048576
+period_mean: 
+  secs: 0
+  nsecs: 0
+period_stddev: 
+  secs: 0
+  nsecs: 0
+period_max: 
+  secs: 0
+  nsecs: 0
+stamp_age_mean: 
+  secs: 0
+  nsecs: 0
+stamp_age_stddev: 
+  secs: 0
+  nsecs: 0
+stamp_age_max: 
+  secs: 0
+  nsecs: 0
+---
