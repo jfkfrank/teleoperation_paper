@@ -195,24 +195,24 @@ Firstly we analyzed T1, that presents in a time window of 32.884 seconds a user 
 Secondly we analyzed T2, that presents in a time window of 33.749 seconds a user time of  2.508 seconds and a sys time of 0.164s. It represents a CPU time of 2.672 seconds.
 Finally we analyzed T3, that presents in a time window of 34.731 seconds a user time of  5.140 seconds and a sys time of 0.120s. It represents a CPU time of 5.260 seconds.
 
-This is totally different when we are working with encrypted text messages. 
-
-
-\begin{figure}[ht!]
+This is totally different when we are working with encrypted text messages of type T1, T2 or T3. Fig~\ref{fig:time_text_CPU} presents the main differences. We have repeated the same experiment, but this time calling an encryption method that encrypts from plain text to DES3. It is possible to see that the encrypt process consumes more CPU than  the plain process.
+For instance, T1 type presents running for  34.486 seconds a total of 23.008 of CPU. This means that the total CPU time increases almost 62\%. This is even higher in T2 and T3 types with almost the 98\% of real execution time.
+\begin{figure}[h!]
     \centering
     \includegraphics[width=.5\textwidth]{Tiempos_CPU_cifrado_texto.png}
     \caption{Time of CPU spent in a simple talker/listener test.}
-  \label{fig:images_encryption}
+  \label{fig:time_text_CPU}
 \end{figure}
 
-
-
-
-\begin{figure*}[ht!]
+If we focus in encryption/decryption process we can see the time needed to encryption call presents in 1040 messages 
+a minimal time of 0.059246 seconds and a  max time to encrypt the string of  0.683408 seconds with an average of 0.063858 seconds and standard deviation of 0.000388.
+This time encreases with T2 and T3 types. T2 type needs 0.123383 seconds in average with standard deviation of 0.000040 seconds and  T3  0.247303 with a standar deviation of 0.000137.
+Fig~\ref{fig:text_encryption_time} outlines the behaviour of the talker cyphering data. Left part of the figure presents the box plot of the three types of message. The right part of the element present the number of repetition associated to a time to each encryption process.
+\begin{figure*}[ht]
     \centering
     \includegraphics[width=.9\textwidth]{Outline_encryption_text.png}
     \caption{Time spent in each call to encryption/decryption function.}
-  \label{fig:images_encryption}
+  \label{fig:text_encryption_time}
 \end{figure*}
 
 
@@ -252,36 +252,36 @@ This is totally different when we are working with encrypted text messages.
 % real    0m32.884s
 % user    0m1.364s
 % sys    0m0.044s
-======================================
-256
-======================================
-Cifrado length: 1040.000000
-Cifrado min: 0.059246
-Cifrado max: 0.683408
-Cifrado mean: 0.063858
-Cifrado stdev: 0.000388
-El valor moda de la fase de cifrado fue:
-(array([ 0.06053495]), array([ 3.]))
-======================================
-512
-======================================
-Cifrado length: 309.000000
-Cifrado min: 0.120618
-Cifrado max: 0.229785
-Cifrado mean: 0.123383
-Cifrado stdev: 0.000040
-El valor moda de la fase de cifrado fue:
-(array([ 0.12165689]), array([ 2.]))
-======================================
-1024
-======================================
-Descifrado length: 147.000000
-Descifrado min: 0.242966
-Descifrado max: 0.386008
-Descifrado mean: 0.247303
-Descifrado stdev: 0.000137
-El valor moda de la fase de descifrado fue:
-(array([ 0.24460196]), array([ 2.]))
+% ======================================
+% 256
+% ======================================
+% Cifrado length: 1040.000000
+% Cifrado min: 0.059246
+% Cifrado max: 0.683408
+% Cifrado mean: 0.063858
+% Cifrado stdev: 0.000388
+% El valor moda de la fase de cifrado fue:
+% (array([ 0.06053495]), array([ 3.]))
+% ======================================
+% 512
+% ======================================
+% Cifrado length: 309.000000
+% Cifrado min: 0.120618
+% Cifrado max: 0.229785
+% Cifrado mean: 0.123383
+% Cifrado stdev: 0.000040
+% El valor moda de la fase de cifrado fue:
+% (array([ 0.12165689]), array([ 2.]))
+% ======================================
+% 1024
+% ======================================
+% Descifrado length: 147.000000
+% Descifrado min: 0.242966
+% Descifrado max: 0.386008
+% Descifrado mean: 0.247303
+% Descifrado stdev: 0.000137
+% El valor moda de la fase de descifrado fue:
+% (array([ 0.24460196]), array([ 2.]))
 
 
 
