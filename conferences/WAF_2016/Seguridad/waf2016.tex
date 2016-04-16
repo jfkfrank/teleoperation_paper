@@ -48,16 +48,16 @@ autonomous systems, cybersecurity, robotics, performance, cyber-physical systems
 \IEEEPARstart{I}{t} is possible to find driverless cars in the streets, autonomous vacuum cleaners in our homes, museum guides, hotel assistants, etc. These cyber-physical systems, as any computer-based system, can suffer different types of vulnerabilities, and the need of cybersecurity \cite{Morante2015} is required. 
 
 
-ROS (Robotic Operating System) \cite{ROS09} has become the most popular framework for developing robotic applications. It started in the research environment, but currently most of manufacturers of commercial platforms use ROS as the {\em de facto} standard for building robotic software. For example, object-manipulation robots like Baxter (by Rethink robotics) ~\ref{fitzgerald2013developing} or service robots as our RB1 (by Robotnik) are ROS based platforms.
+ROS (Robotic Operating System) \cite{ROS09} has become the most popular framework for developing robotic applications. It started in the research environment, but currently most of manufacturers of commercial platforms use ROS as the {\em de facto} standard for building robotic software. For example, object-manipulation robots like Baxter (by Rethink robotics) ~\cite{fitzgerald2013developing} or service robots as our RB1 (by Robotnik) are ROS based platforms.
 
 Our research group is developing an assistant robot~\cite{Martin2014} for the elderly. When we initiated experiments involving potential users, caregivers have asked us about the security of our robot and about the privacy of its communications \cite{Denning2009}. When an assistant robot carrying a camera is deployed in a home, the access to the camera should be secured; even more when the robot is managing medical information. We have developed all our software for the autonomous behaviour of the robots using ROS, so we need to consider its security.
 
-\subsection{Security assestment}
+\subsection{Security assessment}
 
-There are three basic vulnerabilities threatening any computing system are availability (data interruption), confidenciality (data interception), integrity (data modification). Other authors also  adds two more~\ref{sattarova2007security}: authenticity and non-repudiation (data fabrication from a non-trusted origin). 
+There are three basic vulnerabilities threatening any computing system are availability (data interruption), confidenciality (data interception), integrity (data modification). Other authors also  adds two more~\cite{sattarova2007security}: authenticity and non-repudiation (data fabrication from a non-trusted origin). 
 
 
-The concepts can be easily translated to an industrial control applications~\ref{huitsing2008attack} or to a robotic environment due to the distributed and extensive network use approach presented by most extended robotics frameworks (Yarp, ROS, ROBOCOMP). On the one hand, the robot is deployed in a home environment. It provides information to users and also carry out behaviours in order to fulfill required tasks. During this time, the robot perceive information from its sensors and update its behaviours. 
+The concepts can be easily translated to an industrial control applications~\cite{huitsing2008attack} or to a robotic environment due to the distributed and extensive network use approach presented by most extended robotics frameworks (Yarp, ROS, ROBOCOMP). On the one hand, the robot is deployed in a home environment. It provides information to users and also carry out behaviours in order to fulfill required tasks. During this time, the robot perceive information from its sensors and update its behaviours. 
 On the other hand, an attaker can attempt to make the robot or its network resources unavailable, this is a denial-of-service attack. The attacker can try to modify data messages in order to change robot behaviour, the attacker can intercept the robot info about the environment and about the users personal data. Finally the attacker can simulate a sensor and deploy new information available to the robot. 
 Figure \ref{fig:Conceptualmodel} graphically summarizes these vulnerabilities in a robotic environment. In this research we are going to focus in confidenciality of data send to and from the robot. Our approach consists in encrypt data transmitted by ROS nodes, without change the ROS messages or the ROS methods to send the data. 
 
@@ -76,13 +76,13 @@ Figure \ref{fig:Conceptualmodel} graphically summarizes these vulnerabilities in
 \end{figure}
 
 
-\subsection{ROS security assestment}
+\subsection{ROS security assessment}
 
 ROS provides specific libraries for robotics as well as classical operating system services such as hardware abstraction (for sensors and actuators), low-level device control, and inter-process communication. Inter-process communication is based on a graph architecture where computation takes place in ROS processes named nodes. These nodes can receive and send messages, but no security was considered in its design. 
 
-ROS framework is basically a message-passing distributed system. Its architecture is based on processes that publish {\em messages} to {\em topics}. For instance, a process ({\em node}) can be in charge of accessing a sensor, making the basic processing of the information, and publishing it as a structure information on a named topic. Another process can {\em subscribe} to this topic, that is, it can read that information, make a decision about the movement of the robot. These commands will be sent to the motors in another topic. These nodes can be running in the same computer or in different computers. 
+ROS framework is basically a message-passing distributed system. Its architecture is based on processes that publish {\em messages} to {\em topics}. For instance, a process ({\em node}) can be in charge of accessing a sensor, performing the information processing, and publishing it as an information structure on a named topic. Another process can {\em subscribe} to this topic, that is, read its information. Then the process can make a decision about the movement of the robot. Next, this node will publish the commands in another topic to sent them to the motors. ROS nodes can be running in the same computer or in different computers.
 
-This approach is very convenient for developers but it is very easily tampered by malicious hackers. For instance in \cite{McClean2013} an experiment involving a ROS-based honeypot is described. The honeypot was a radio model truck with two cameras and a compass as sensors and controlled from a remote ROS node written in Javascript and hosted in a remote enterprise grade web server. Vulnerabilities described in the paper range from plain-text communications, unprotected TCP ports to unencrypted data storage.
+This approach is very convenient for developers but can be easily tampered by malicious hackers. For instance, in \cite{McClean2013} an experiment involving a ROS-based honeypot is described. The honeypot was a radio model truck with two cameras and a compass as sensors, and it was controlled from a remote ROS node written in Javascript and hosted in a remote enterprise grade web server. Vulnerabilities described in the paper comprise plain-text communications, unprotected TCP ports and unencrypted data storage.
 
 The first step to solve some of these problems is to secure the communication channels by using a ciphering mechanism. but, how does this systems impact on the performance of a robotic system? This is the goal of this paper, characterize and evaluate different alternatives to secure ROS communication mechanism.
 
@@ -158,13 +158,16 @@ In the second experiment we changed the first computer for a RB1 robot and the X
 
 \section{Experimental Measurements}
 
-Figure \ref{fig:velocidad-maqueta} shows the maximum rate that can be reached both in the laser and the camera visualization according to \texttt{rviz} information.
+To illustrate the described approach, we present an ad-hoc implementation of an encryption system to change part of the message used for transmit or receive robot sensors information. 
+We maintanin in each case 
+
+% Figure \ref{fig:velocidad-maqueta} shows the maximum rate that can be reached both in the laser and the camera visualization according to \texttt{rviz} information.
 
 The same measurements were made in the second environment to see if the use of wireless systems and a real robot would have any influence.
 
-The absolute values of the frame rates is obviously different, as shown in figure \ref{fig:velocidad-robot}. But the interesting part is the relative different when using clear communications or ciphered ones. 
+% The absolute values of the frame rates is obviously different, as shown in figure \ref{fig:velocidad-robot}. But the interesting part is the relative different when using clear communications or ciphered ones. 
 
-Table \ref{tab:relativas}  compares the relative reduction of speed when using ciphered protocols vs clear ones in both environments as well as the relative increase of CPU usage.
+% Table \ref{tab:relativas}  compares the relative reduction of speed when using ciphered protocols vs clear ones in both environments as well as the relative increase of CPU usage.
 
 We have addded a funtion to our program in order to measure the time spent in each encrypt and decrypt call. The function is a python method presented as a decorator pattern 
 The decorator pattern is used here to extend the functionality of encrypt/decrypt at run-time. 
@@ -340,6 +343,7 @@ Figure \ref{fig:images_encryption} presents the situation in the client node. We
 \end{figure*}
 
 
+\section{Discussion}
 
 % Descifrado length: 969295.000000
 % Descifrado min: 0.001288
@@ -371,7 +375,8 @@ Figure \ref{fig:images_encryption} presents the situation in the client node. We
 We have evaluated the influence of cyphering in the performance of ROS based robotic systems.
 
 As we commented in the introduction, we think that securing communications is just one dimension in  the cybersecurity of Autonomous Systems. If we want to see autonomous systems working in our homes we need to secure the navigation abilities, the interaction mechanisms, etc. 
- 
+Moreover, the overhead of communication and deployment should also be considered in distributed architectures.
+
 Some works have been sketched in this area, as for instance in \cite{Guiochet2016}.
 
 
