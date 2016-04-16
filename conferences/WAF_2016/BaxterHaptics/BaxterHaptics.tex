@@ -8,11 +8,11 @@
 
 \title{Strategies for Haptic-Robotic Teleoperation in Board Games: Playing checkers with Baxter}
 
-\author{Gonzalo Esteban, Francisco J. Rodr\'{i}guez--Sedano, Laura Inyesto, Pablo Blanco, Francisco J. Rodr\'{i}guez--Lera
-\IEEEcompsocitemizethanks{\IEEEcompsocthanksitem Miguel Cazorla is with University of Alicante.\protect\\
+\author{Francisco J. Rodr\'{i}guez--Sedano, Gonzalo Esteban, Laura Inyesto, Pablo Blanco, Francisco J. Rodr\'{i}guez--Lera
 
-E-mail: miguel@dccia.ua.es
-\IEEEcompsocthanksitem Vicente Matell\'an is with University of Rey Juan Carlos.} % <-this % s
+\IEEEcompsocitemizethanks{\IEEEcompsocthanksitem Robotics Group. University of Le\'{o}n.\protect\\
+
+E-mail: francisco.sedano@unileon.es, gestec00@estudiantes.unileon.es, linyea00@estudiantes.unileon.es, pblanm02@estudiantes.unileon.es, fjrodl@unileon.es}
 }
 
 
@@ -32,7 +32,7 @@ JoPhA, journal, \LaTeX, paper, template.
 
 
 \section{Introduction}
-% GONZALO?
+% GONZALO
 
 % Teleoperation-telemanipulation and user experience
   \IEEEPARstart{T}{eleoperating} robots is quite a common practice in many fields such as surgery, defence or rescue~\cite{Vertut85}. The reason is simple: assisting a person to perform and accomplish complex or uncertain tasks in some environments may mean the difference between failure or success.
@@ -60,19 +60,107 @@ JoPhA, journal, \LaTeX, paper, template.
 
   A basic telemanipulation system consists of a master robot manipulated by an operator and a slave...
   
+\includegraphics[scale=0.07]{Images/baxterHoldingPiece.jpg} 
+
+
+\begin{table}
+\centering
+\begin{tabular}{c}
+\includegraphics[scale=0.25]{Images/baxterCamaraBrazo.jpg} \\
+\includegraphics[scale=0.25]{Images/baxterCamaraBrazo.jpg} 
+\end{tabular}
+\caption{\label{tabla_joints} Corresponding joints between robot and haptic device.}
+\end{table}
+
+
 
 \subsection{Slave: Haptic Device}
 Haptic feedback takes advantage of the human sense of touch by recreating forces, vibrations or motions to the user. 
 An haptic device allows to feel a feedback from virtual or real objects and produces a realistic touch sensations to a user. 
 The PHANToM Omni is a 6 DOF haptic device that applies haptic feedback. 
 
- 
+\includegraphics[scale=0.5]{Images/Baxter&HapticSmall.jpg} 
 
 It has 3 actuated DOF associated to the armature which provides the translational movements (X, Y, and Z Cartesian coordinates) and other 3 non-actuated DOF associated to the gimball  that gives the orientation (pitch, roll and yaw rotational movements).  The characteristic of this device allow to offer a feedback up to a maximum of 3.3N.
 
 
 \subsection{Master: Baxter}
-Subsubsection text here.
+Subsubsection text here. 
+
+(Paper de Fran)
+
+(Incluir imágenes articulaciones)
+
+\begin{table}
+\centering
+\begin{tabular}{c}
+\includegraphics[scale=1.2]{Images/joint_baxter.png} \\
+\includegraphics[scale=0.4]{Images/joint_haptico.png} 
+\end{tabular}
+\caption{\label{tabla_joints} Corresponding joints between robot and haptic device.}
+\end{table}
+
+%-Redacción.
+%-Archivos.
+%-Fotos.
+%-Corrección.
+%
+%Notas :
+%	- Mueve un solo brazo (sólo tenemos un háptico)
+%	- Sería buena idea revisar las reglas de recogida de datos (impreciso algunas veces)
+%	- Revisión correlación de los joints
+%	- Ajustar el elbow
+%	- Petición para actualizarlo.
+%
+%-----------------------------------------------------------------------------------------------------------------------------
+%Para poder teleoperar a Baxter estamos usando un háptico "Geomatic Touch". 
+%Básicamente queremos reproducir los movimientos que realizamos en el háptico en uno de los brazos de Baxter de forma simultánea con el objetivo de poder jugar a las damas.
+%
+%Primero hemos estudiado los puntos de referencia de Baxter al háptico, ya que al tener menos joints es más complicado transmitir determinados movimientos.
+%
+%La relación de los joints entre Baxter y el háptico establecida es :
+%
+%	Baxter		Háptico	
+%	S0		"Waist"
+%	S1		"Shoulder"
+%	E0		No lo usamos
+%	E1		"Elbow"
+%	W0		No lo usamos
+%	W1		"Wrist2"
+%	W2		No lo usamos
+%
+%Estos joints pueden verse en las fotos adjuntas "joint_haptico" y "joint_baxter".
+%
+%Para poder mover a Baxter con el háptico nos hemos basado en el ejemplo de teleoperación de los brazos por teclado del paquete "Baxter_examples". 
+%
+%Con ayuda de algunas de las instrucciones que se explican en dicho ejemplo conseguimos que los grippers de Baxter se abran y cierren cuando pulsamos los botones del háptico. (NOTA : PENDIENTE DE REVISIÓN, ya que da problemas recogiendo el brazo)
+%
+%Después intentamos reproducir los movimientos en el eje X del háptico en Baxter, para luego recoger los ejes Y Z.
+%Hemos usado los joints de Baxter S0,S1 y W1 para cada uno de los ejes respectivamente.
+%
+%------------------------------------------------
+%
+%Para comunicar los dos nodos (Baxter y Háptico) hacemos que el háptico publique en el topic "geo_touch_right_arm" y en "geo_touch_right_gripper", y que Baxter recoja de los mismos. 
+%El háptico solo publica en el topic "geo_touch_right_arm" si uno de los tres joints que usamos se mueve una distancia mayor de 
+%|0.01|
+%
+%También hemos creado un tipo de mensaje personalizado que nos permite comunicar a Baxter qué joint ha de mover y la distancia que ha de moverlo, además de otro que recoge si el gripper debe o no abrirse. 
+%Todo ello lo hemos guardado en un paquete "omni_geo_touch_1".
+%
+%Para ello, en el archivo geo_touch.cpp , hemos ampliado el código para que cuando el háptico se mueva dentro de un determinado rango en un intervalo corto de tiempo (para así evitar movimientos muy leves) publique qué joint tiene que mover Baxter en relación con el que se ha movido en el háptico y la distancia (convertida al rango de Baxter) que debe moverse. 
+% 
+%------------------------------------------------
+%
+%Ha sido necesario obtener los valores numéricos de los extremos de cada eje tanto en Baxter como en el háptico.
+%Una vez podemos hacer una conversión (cambio de base) apropiada es relativamente sencillo hacer una correlación Háptico-Baxter.
+%
+%
+%Los mayores problemas que hemos tenido han sido ajustar de manera apropiada la distancia de movimiento de los joints en Baxter. El ratio de publicación también ha dado problemas, ya que algunas veces iba muy rápido. 
+%A veces, muchos de los movimientos programados quedaban en la cola, con el resultado de que el háptico se movía a la izquierda pero en la cola todavía quedaban mensajes de mover hacia la derecha, produciéndose un retardo notable.
+
+
+
+
 
 \subsection{Controller}
 {\color{red}{Hay que adaptar a nuestro sistema}}
@@ -97,8 +185,20 @@ Checkers is a strategy gameboard for two players that play on opposite sides of 
 There are two kind of pieces: the dark pieces and the light pieces. 
 The game consists on move a piece diagonally to an adjacent unoccupied square. If the adjacent square contains an opponent's piece, and the square immediately beyond it is vacant, the piece may be captured and take away from the board by jumping over it. During the game each player alternate turns.
 
-\subsection{Board adaptation}
+\subsection{Board and game pieces adaptation}
 
+To realize our experiment we need to modify the game board, game pieces and the gripper system our robot.
+Baxter has two electric parallel grippers that allow our robot to pick up rigid and semi-rigid objects of many shapes and sizes. To play checkers we need that these devices can grab and move game pieces. The shape of these pieces is cylindrical and the height is about three or four milimetres. This requirement makes it difficult for the robot grip firmly the game pieces. Our robot also has two Kits with interchangeable fingers and fingertips to maximize flexibility, and will support customized finger options for specialized parts. We decided to make our own fingers and game pieces to ensure grip and movement of the parts in game development. Figure \ref{3Dprinter} shows the two elements manufactured by a 3D printer.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.35]{Images/print_3D_2.jpg} 
+\caption{\label{3Dprinter}Games pieces and grippers for print in 3D printer.}
+\end{figure}
+
+We have also modified the board and we made our own game board where the squares have a size of 55x55 mm, to adapt it to the size of the game pieces (45x45 mm).
+
+After making the changes and to improve the grip of the pieces we have changed the natural way to do that (close the robot grippers) and we do open these grippers.
 
 \subsection{Evaluation}
 
@@ -142,11 +242,11 @@ In the second case, we identified the following basic tasks:
 
 In both cases we observed that previous to the first and last task, the movement of the teleoperated does not requires haptic feedback.
 
-The third step is to establish a clear relationship between selected indicators and basic haptic tasks. Table \ref{tabla_1} show this relationship. The first column shows the basic tasks involved in our  experiment and the specific indicators are placed in the second column. But also we consider for the design of haptic interface that different tasks have different requirements, both the haptic device as the robot. For example, in the translating task we need game piece weight perception that gives haptic force sensor and grasping force provided by the corresponding robot sensor. Moreover, in our experiment, we use a visual feedback provided by two cameras in the robot to determine the position of the game pieces and the operator can determine the necessary directions and trajectories to perform the desired task. 
+The third step is to establish a clear relationship between selected indicators and basic haptic tasks. Table \ref{indicators} show this relationship. The first column shows the basic tasks involved in our  experiment and the specific indicators are placed in the second column. But also we consider for the design of haptic interface that different tasks have different requirements, both the haptic device as the robot. For example, in the translating task we need game piece weight perception that gives haptic force sensor and grasping force provided by the corresponding robot sensor. Moreover, in our experiment, we use a visual feedback provided by two cameras in the robot to determine the position of the game pieces and the operator can determine the necessary directions and trajectories to perform the desired task. 
 
 \begin{table}[h]
 \centering
-\caption{\label{tabla_1}Basic tasks and GEHID indicators.}
+\caption{\label{indicators}Basic tasks and GEHID indicators.}
 \begin{tabular}{ll}
 \hline 
 \textbf{\footnotesize{}Basic task} & \textbf{\footnotesize{}Indicator}\tabularnewline
@@ -163,11 +263,11 @@ The third step is to establish a clear relationship between selected indicators 
 
 \subsection{User experience}
 
-From the point of view of usability and using as reference the definition provide by the international standard ISO 9241-11 \cite{ISO98} that define usability as “The extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use”, we measure these aspects for our experiment. But we need to include other aspects such as the haptic environment conditions in this classical model approach. L. M. Muñoz, P. Ponsa, and A. Casals \cite{Munoz12} describes in their research a human-robot metric classes that shows table \ref{tabla_2}.
+From the point of view of usability and using as reference the definition provide by the international standard ISO 9241-11 \cite{ISO98} that define usability as “The extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use”, we measure these aspects for our experiment. But we need to include other aspects such as the haptic environment conditions in this classical model approach. L. M. Muñoz, P. Ponsa, and A. Casals \cite{Munoz12} describes in their research a human-robot metric classes that shows table \ref{metric_classes}.
 
 \begin{table}[h]
 \centering
-\caption{\label{tabla_2}Human-Robot metric classes}
+\caption{\label{metric_classes}Human-Robot metric classes}
 \resizebox{9cm}{!}{
 \begin{tabular}{ll} 
 \hline 
