@@ -52,6 +52,10 @@ ROS (Robotic Operating System) \cite{ROS09} has become the most popular framewor
 
 Our research group is developing an assistant robot~\cite{Martin2014} for the elderly. When we initiated experiments involving potential users, caregivers have asked us about the security of our robot and about the privacy of its communications \cite{Denning2009}. When an assistant robot carrying a camera is deployed in a home, the access to the camera should be secured; even more when the robot is managing medical information. We have developed all our software for the autonomous behaviour of the robots using ROS, so we need to consider its security.
 
+Some works have been sketched in this area, as for instance in \cite{Guiochet2016}.
+
+
+
 \subsection{Security assessment}
 
 There are three basic vulnerabilities threatening any computing system are availability (data interruption), confidenciality (data interception), integrity (data modification). Other authors also  adds two more~\cite{sattarova2007security}: authenticity and non-repudiation (data fabrication from a non-trusted origin). 
@@ -189,9 +193,9 @@ def fn_timer(function):
 }
 
 
-\subsection{Camera}
+\subsection{Text Messages}
 
-\subsubsection{Test Messages evaluation}
+% \subsubsection{Text Messages}
 
 In this test we have used a modified version of talker/listener tutorial proposed by ROS. 
 ROS statistical data shows the simple publish/subscribe example sending 11 string messages ({\em std\_msgs/String}) by second of ``Hello wold'' plus a timestamp with 440 byts of traffic.
@@ -216,13 +220,7 @@ For instance, T1 type presents running for  34.486 seconds a total of 23.008 of 
 If we focus in encryption/decryption process we can see the time needed to encryption call presents in 1040 messages 
 a minimal time of 0.059246 seconds and a  max time to encrypt the string of  0.683408 seconds with an average of 0.063858 seconds and standard deviation of 0.000388.
 This time encreases with T2 and T3 types. T2 type needs 0.123383 seconds in average with standard deviation of 0.000040 seconds and  T3  0.247303 with a standar deviation of 0.000137.
-Fig~\ref{fig:text_encryption_time} outlines the behaviour of the talker cyphering data. Left part of the figure presents the box plot of the three types of message. The right part of the element present the number of repetition associated to a time to each encryption process.
-\begin{figure*}[ht]
-    \centering
-    \includegraphics[width=.9\textwidth]{Outline_encryption_text.png}
-    \caption{Time spent in each call to encryption/decryption function.}
-  \label{fig:text_encryption_time}
-\end{figure*}
+
 
 
 % raspberry@david-H97M-D3H:~/catkin_ws/src/security_repo/ciphering_project/simple_talker_listener/src$ time python talker3DES.py
@@ -308,7 +306,15 @@ There are three topics involved:
 
 To analyse the behaviour of the system under encrypt/decrypt circumstances we use an Intel i7 computer with 16 GB RAM. The ROS master system has 234 process running by default in a Ubuntu 14.04, the client is running 242 process in the same operative system.
 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.5\textwidth]{Screenshot.png}
+    \caption{Screenshot taken during the image encryption test.}
+  \label{fig:screenshot}
+\end{figure}
+
 In this case we measure the time needed to encrypt or decrypt the ROS message ({\em sensor\_msgs/Image.msg}). We just encrypt or decrypt the field data of {\em uint8[]} that is treated as a string.
+To evaluate  the frame rate, our nodes present this information during the execution in the visualization frame . 
 
 This experiment was running for about 18 hours sending in total 971790 frames. The minimal time to encrypt the images was 0.001309 seconds, the max time  0.026909 seconds with a 
 mean of  0.010948 seconds and a standard deviation of 0.000004 seconds. The mode value in this phase was 0.010571 seconds wich was reapeated 415 times. 
@@ -317,69 +323,52 @@ The minimal time to decrypt the images was 0.001288 seconds, the max time was 0.
 mean of  0.008828 seconds and a standard deviation of 0.000003 seconds. The mode value in this phase was 0.008183 seconds wich was reapeated 593 times. 
 
 
-The figure~\ref{fig:graphicalRepresentation} presents the box-plot of the encryption decryption data analyzed and the histograma. 
 
-\begin{figure}[ht]
+Figure \ref{fig:screenshot} presents the situation in the client node. We have used the ROS node {\em image\_view} to visualize the images from topics.  There is an non-encrypted topic that we have maintanined in order to validate delays. There is an encrypted topic that is not possible to visualize using the releeased image\_view ROS node. Finally there is a frame that presents the image after decrypt the topic using our own decrypt node. 
+
+
+The fps in the encrypter machine is 14.56 and the fps in the decryption machine is 14.54.
+
+
+
+
+
+
+\begin{figure*}[ht]
     \centering
-    \includegraphics[width=.5\textwidth]{Screenshot.png}
+    \includegraphics[width=.9\textwidth]{Outline_encryption_text.png}
     \caption{Time spent in each call to encryption/decryption function.}
-  \label{fig:graphicalRepresentation}
-\end{figure}
+  \label{fig:text_encryption_time}
+\end{figure*}
 
 
-Our application present the frame rate during the execution in master and client machines. The fps in the encrypter machine is 14.56 and the fps in the decryption machine is 14.54.
+\section{Discussion}
+
+Fig~\ref{fig:text_encryption_time} outlines the behaviour of the talker cyphering data. Left part of the figure presents the box plot of the three types of message. The right part of the element present the number of repetition associated to a time to each encryption process.
+
+
+
 We observe that the delay induced by encryption does not reduce the standard frame rate. 
 
+The figure~\ref{fig:images_encryption} presents the box-plot of the encryption decryption data analyzed and the histograma. 
 
-
-
-Figure \ref{fig:images_encryption} presents the situation in the client node. We have used the ROS node {\em image\_view} to visualize the images from topics.  There is an non-encrypted topic that we have maintanined in order to validate delays. There is an encrypted topic that is not possible to visualize using the releeased image\_view ROS node. Finally there is a frame that presents the image after decrypt the topic using our own decrypt node. 
-
-\begin{figure*}[ht!]
+\begin{figure*}[ht]
     \centering
     \includegraphics[width=.9\textwidth]{Outline_images_encryption_decrytiontime2.png}
     \caption{Time spent in each call to encryption/decryption function.}
   \label{fig:images_encryption}
 \end{figure*}
 
-
-\section{Discussion}
-
-% Descifrado length: 969295.000000
-% Descifrado min: 0.001288
-% Descifrado max: 0.039130
-% Descifrado mean: 0.008828
-% Descifrado stdev: 0.000003
-% El valor moda de la fase de descifrado fue:
-% (array([ 0.008183]), array([ 593.]))
-% At the same time 
-% 
-% PC descifrador: 242 process (ps -ef | wc -l)
-% 
-% Cifrador
-% [INFO] Encrypter node:  elasped time: 66755.17
-% [INFO] Encrypter node:  approx. FPS: 14.56
-% 
-% 
-% 
-% Descifrador
-% [INFO] Decrypter node: elapsed time: 66659.74
-% [INFO] Decrypter node: approx. FPS: 14.54
-
-
-
-
-
 \section{Conclusion and Futher Work}
 
-We have evaluated the influence of cyphering in the performance of ROS based robotic systems.
+This article has introduced the use of ciphering information through ROS communication system.
+We have evaluated the influence from two points of view CPU consuming and network traffic. 
+
+We have shown that our approach allows avoinding security problems related with publish/subscribe paradigm in plain text as proposed by ROS.
+Moreover, the overhead of CPU performance and communication load should also be considered in distributed architectures that needs to work on real time.
+
 
 As we commented in the introduction, we think that securing communications is just one dimension in  the cybersecurity of Autonomous Systems. If we want to see autonomous systems working in our homes we need to secure the navigation abilities, the interaction mechanisms, etc. 
-Moreover, the overhead of communication and deployment should also be considered in distributed architectures.
-
-Some works have been sketched in this area, as for instance in \cite{Guiochet2016}.
-
-
 
 
 \section*{Acknowledgment}
