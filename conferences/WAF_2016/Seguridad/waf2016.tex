@@ -2,16 +2,15 @@
 
 \usepackage{color}
 \usepackage{flushend}
-
 \usepackage{fancyvrb}
-
-
 \usepackage[pdftex]{graphicx}
+
 % declare the path(s) where your graphic files are
 \graphicspath{{figures/}}
 % and their extensions so you won't have to specify these with
 % every instance of \includegraphics
 \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+
 
 \begin{document}
 
@@ -23,7 +22,6 @@ All authors are with the Robotics Group (http://robotica.unileon.es) and the Res
 
 \IEEEcompsocthanksitem Corresponding author: vicente.matellan@unileon.es} % <-this % s
 }
-
 
 \markboth{Workshop on Physical Agents, M\'alaga 2016}%
 {Matell\'an et al: Cybersecurity in ROS}
@@ -43,31 +41,31 @@ autonomous systems, cybersecurity, robotics, performance, cyber-physical systems
 
 \section{Introduction}
 
-\IEEEPARstart{A}{utonomous} systems are spreading not just in the virtual world (Internet, software systems), or in science-fiction movies, but in our ordinary real world. Currently we can find driverless cars in the streets, autonomous vacuum cleaners in our homes, museum guides, hotel assistants, etc. These cyber-physical systems, as any computer-based system, can suffer different types of vulnerabilities, and the need of cybersecurity \cite{Morante2015} is required. 
+\IEEEPARstart{A}{utonomous} systems are spreading not just in the virtual world (Internet, software systems), or in science-fiction movies, but in our ordinary real world. Currently we can already find driverless cars in the streets, autonomous vacuum cleaners in our homes, museum guides, hotel assistants, etc. These cyber-physical systems, as any computer-based system, can suffer different types of attacks, and the need of cybersecurity \cite{Morante2015} is required. 
 
 ROS (Robotic Operating System) \cite{ROS09} has become the most popular framework for developing robotic applications. It started in the research environment, but currently most of manufacturers of commercial platforms use ROS as the {\em de facto} standard for building robotic software. For example, object-manipulation robots like Baxter (by Rethink robotics){\textcolor{red}{[poner REF]}} or service robots as our RB1 (by Robotnik){\textcolor{red}{[poner REF]}} are ROS based platforms.
 
-Our research group is developing assistant robot~\cite{Martin2014} for the elderly. When we initiated experiments involving potential users, caregivers have asked us about the security of our robot, and about the privacy of its communications \cite{Denning2009}. If an assistant robot carrying a camera is deployed in a home, the access to the camera should be secured. Even more when the robot is managing medical information. We have developed all our software for the autonomous behaviour of the robots using ROS, so we need to consider its security.
+Our research group is developing an assistant robot~\cite{Martin2014} for the elderly. When we initiated experiments involving potential users, caregivers have asked us about the security of our robot and about the privacy of its communications \cite{Denning2009}. When an assistant robot carrying a camera is deployed in a home, the access to the camera should be secured; even more when the robot is managing medical information. We have developed all our software for the autonomous behaviour of the robots using ROS, so we need to consider its security.
 
 
-\subsection{ROS security assestment}
+\subsection{ROS security assessment}
 
-ROS provides specific libraries for robotics as well as classical operating system services such as hardware abstraction (for sensors and actuators), low-level device control, and inter-process communication. Inter-process communication is based on a graph architecture where computation takes place in ROS processes named nodes. These nodes can receive and send messages, but no security was considered in its design. 
+ROS provides specific libraries for robotics as well as classical operating system services such as hardware abstraction (for sensors and actuators), low-level device control, and inter-process communication. Inter-process communication is based on a graph architecture where computation takes place in ROS processes named nodes. Nodes can receive and send messages, but no security was considered by design. 
 
-ROS framework is basically a message-passing distributed system. Its architecture is based on processes that publish {\em messages} to {\em topics}. For instance, a process ({\em node}) can be in charge of accessing a sensor, making the basic processing of the information, and publishing it as a structure information on a named topic. Another process can {\em subscribe} to this topic, that is, it can read that information, make a decision about the movement of the robot. These commands will be sent to the motors in another topic. These nodes can be running in the same computer or in different computers. 
+ROS framework is basically a message-passing distributed system. Its architecture is based on processes that publish {\em messages} to {\em topics}. For instance, a process ({\em node}) can be in charge of accessing a sensor, performing the information processing, and publishing it as an information structure on a named topic. Another process can {\em subscribe} to this topic, that is, read its information. Then the process can make a decision about the movement of the robot. Next, this node will publish the commands in another topic to sent them to the motors. ROS nodes can be running in the same computer or in different computers. 
 
-This approach is very convenient for developers but it is very easily tampered by malicious hackers. For instance in \cite{McClean2013} an experiment involving a ROS-based honeypot is described. The honeypot was a radio model truck with two cameras and a compass as sensors and controlled from a remote ROS node written in Javascript and hosted in a remote enterprise grade web server. Vulnerabilities described in the paper range from plain-text communications, unprotected TCP ports to unencrypted data storage.
+This approach is very convenient for developers but can be easily tampered by malicious hackers. For instance, in \cite{McClean2013} an experiment involving a ROS-based honeypot is described. The honeypot was a radio model truck with two cameras and a compass as sensors, and it was controlled from a remote ROS node written in Javascript and hosted in a remote enterprise grade web server. Vulnerabilities described in the paper comprise plain-text communications, unprotected TCP ports and unencrypted data storage.
 
-These vulnerabilities are a subset of the security problems threatening any computing system:
+These vulnerabilities are a subset of the security problems threatening any computer system:
 {\textcolor{red}{No s\'e si merece la pena, demasiado generalista. Igual es mejor hablar más de cosas específicas de robótica y de ROS en particular}}
 \begin{enumerate}
  \item Availability: Interruption
  \item Confidenciatily: Interception
  \item Integrity: Modification
- \item Authenticity :Fabrication
+ \item Authenticity: Fabrication
 \end{enumerate}
 
-Figure \ref{fig:Conceptualmodel} graphically summarizes these problems in our robot.
+Figure \ref{fig:Conceptualmodel} graphically summarizes these problems in our robot \textit{Cervantes}.
 
 \begin{figure}[ht]
     \centering
@@ -76,9 +74,9 @@ Figure \ref{fig:Conceptualmodel} graphically summarizes these problems in our ro
   \label{fig:Conceptualmodel}
 \end{figure}
 
-The first step to solve some of these problems is to secure the communication channels by using a ciphering mechanism. but, how does this systems impact on the performance of a robotic system? This is the goal of this paper, characterize and evaluate different alternatives to secure ROS communication mechanism.
+The first step to solve some of these problems is to secure the communication channels by using an encryption mechanism. But, how does this system impact on the performance of a robotic system? This is the goal of this paper, characterize and evaluate different alternatives to secure ROS communications.
 
-Next section describes the testbed we have designed to measure the performance of the encrypted ROS system. Third section evaluates the data obtained in the experiments and in the last section some conclusions and further work are presented.
+Next section describes the testbed we have designed to measure the performance of the encrypted ROS system. Third section evaluates the data obtained in the experiments, and the last section presents some conclusions obtained and further work.
 
 
 
@@ -87,7 +85,7 @@ Next section describes the testbed we have designed to measure the performance o
 Conventional ROS environment is composed by at least one ROS Master and any laptop clients. The ROS Master is the key element in a ROS environment, it runs as a nameservice.
 It also stores topics and services registration information for ROS nodes. 
 
-When a node want to stablish a connection with a topic, it communicate with the Master to advise its registration information. After this step, the node gets more information about other registeres nodes and can stablish new connections approapiately. The Master is updated in real time about clients information, and at the same time callbacks to those related nodes.
+When a node want to stablish a connection with a topic, it communicate with the Master to advise its registration information. After this step, the node gets more information about other registered nodes and can stablish new connections appropriately. The Master is updated in real time about clients information, and at the same time callbacks to those related nodes.
 
 
 
@@ -99,7 +97,7 @@ The standard process starts with a basic sensor node (BSN). We have defined as B
 
 
 
-We have prepared a  testbed with two laptopts 
+We have prepared a  testbed with two laptopts.
 
 % \subsection{Simulated testedbed}
 
@@ -110,7 +108,7 @@ We have installed ROS Jade in two computers connected through a wired Ethernet 1
 
 In this first approach we have changed the info published by the node, and instead of publish the information in a clean way, we publish the information encrypted.
 We use the DES3 algorithm that provides a 
-Triple DES references the Triple Data Encryption Algorithm (3DES or TDEA or Triple DEA). It is a symmetric-key block cipher and from a high level point of view the algoritm applies the Data Encryption Standard (DES) cipher algorithm three times to each data block. It is standarized by NIST (Recommendation for
+Triple DES references the Triple Data Encryption Algorithm (3DES or TDEA or Triple DEA). It is a symmetric-key block cipher and from a high level point of view the algorithm applies the Data Encryption Standard (DES) cipher algorithm three times to each data block. It is standarized by NIST (Recommendation for
 the Triple Data Encryption Algorithm (TDEA) Block Cipher) NIST Special Publication 800-67.
 
 It has a fixed data block size of 8 bytes. Its keys are 128 (Option 1) or 192 bits (Option 2) long. However, 1 out of 8 bits is used for redundancy and do not contribute to security. The effective key length is respectively 112 or 168 bits.
@@ -140,9 +138,6 @@ The decorator pattern can be used to extend (decorate) the functionality of a ce
 
 
 
-
-
-
 \subsection{Robotic testbed}
 
 We want to evaluate whether ciphering communications would affect the performance of ROS. 
@@ -150,7 +145,7 @@ In the second experiment we changed the first computer for a RB1 robot and the X
 
 
 
-\section{Experimental Measuments}
+\section{Experimental Measurements}
 
 Figure \ref{fig:velocidad-maqueta} shows the maximum rate that can be reached both in the laser and the camera visualization according to \texttt{rviz} information.
 
@@ -293,11 +288,11 @@ Fig~\ref{fig:text_encryption_time} outlines the behaviour of the talker cypherin
 
 We have used a Logitech, Inc. QuickCam Pro 9000 webcam.
 
-There are three nodes involved in our system: usb\_cam, encrypte\_node and decrypted\_node. The first and the sencond run in the master computer, the decrypted one in a separate computer.
+There are three nodes involved in our system: usb\_cam, encrypted\_node and decrypted\_node. The first and the sencond run in the master computer, the decrypted one in a separate computer.
 
 There are three topics involved: 
 
-To analyse the behaviour of the system under encrypt/decrypt circumstances we use an intel i7 computer with 16 GM RAM. The ROS master system has 234 process running by default in a Ubuntu 14.04, the client is running 242 process in the same operative system.
+To analyse the behaviour of the system under encrypt/decrypt circumstances we use an Intel i7 computer with 16 GB RAM. The ROS master system has 234 process running by default in a Ubuntu 14.04, the client is running 242 process in the same operative system.
 
 In this case we measure the time needed to encrypt or decrypt the ROS message ({\em sensor\_msgs/Image.msg}). We just encrypt or decrypt the field data of {\em uint8[]} that is treated as a string.
 
