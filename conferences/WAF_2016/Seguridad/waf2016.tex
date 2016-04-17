@@ -108,7 +108,6 @@ Figure~\ref{fig:TestBed} provides the graphical representation of this situation
 The standard process starts with a basic sensor node (BSN). We have defined as BSN those ROS nodes in charge of to publish the information from the sensor.
 
 
-
 We have prepared a testbed with two laptopts.
 
 % \subsection{Simulated testedbed}
@@ -137,11 +136,9 @@ It is important that all subkeys are different, otherwise 3DES would degrade to 
 3DES is cryptographically secure, although it is slower than AES algorithm.
 
 
-The decorator pattern can be used to extend (decorate) the functionality of a certain object statically, or in some cases at run-time, independently of other instances of the same class, provided some groundwork is done at design time. 
-
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=.5\textwidth]{TestBed.pdf}
+    \includegraphics[width=.5\textwidth]{TestBed_simple.pdf}
     \caption{Scheme of the scenario used for testbed.}
   \label{fig:TestBed}
 \end{figure}
@@ -151,26 +148,26 @@ The decorator pattern can be used to extend (decorate) the functionality of a ce
 
 \subsection{Robotic testbed}
 
-We want to evaluate whether ciphering communications would affect the performance of ROS. 
-In the second experiment we changed the first computer for a RB1 robot and the XXX switch by a wireless one. This robot was also running ROS Jade.
+We want to evaluate how the encryption of communications would affect the performance of ROS.
+In the second experiment we changed the first computer for a RB1 robot and the XXX switch by a wireless one. The robot was also running ROS Jade.
 
 
 
 \section{Experimental Measurements}
 
 To illustrate the described approach, we present an ad-hoc implementation of an encryption system to change part of the message used for transmit or receive robot sensors information. 
-We maintanin in each case 
+We maintain in each case 
 
 % Figure \ref{fig:velocidad-maqueta} shows the maximum rate that can be reached both in the laser and the camera visualization according to \texttt{rviz} information.
 
-The same measurements were made in the second environment to see if the use of wireless systems and a real robot would have any influence.
+The same measurements were made in the second environment to see whether the use of wireless systems and a real robot have any impact.
 
 % The absolute values of the frame rates is obviously different, as shown in figure \ref{fig:velocidad-robot}. But the interesting part is the relative different when using clear communications or ciphered ones. 
 
 % Table \ref{tab:relativas}  compares the relative reduction of speed when using ciphered protocols vs clear ones in both environments as well as the relative increase of CPU usage.
 
-We have addded a funtion to our program in order to measure the time spent in each encrypt and decrypt call. The function is a python method presented as a decorator pattern 
-The decorator pattern is used here to extend the functionality of encrypt/decrypt at run-time. 
+%The decorator pattern can be used to extend (decorate) the functionality of a certain object statically, or in some cases at run-time, independently of other instances of the same class, provided some groundwork is done at design time. 
+We have added a function to our program in order to measure the time spent on each encryption and decryption call. The function is a python method presented as a decorator pattern, which is used here to extend the functionality of encryption/decryption at run-time. 
 
 
 {
@@ -194,18 +191,18 @@ def fn_timer(function):
 % \subsubsection{Text Messages}
 
 In this test we have used a modified version of talker/listener tutorial proposed by ROS. 
-ROS statistical data shows the simple publish/subscribe example sending 11 string messages ({\em std\_msgs/String}) by second of ``Hello wold'' plus a timestamp with 440 byts of traffic.
-In this manner, we want to analyse the behaviour of the system using bigger messages: T1, 262144 bytes; T2,  524288 bytes; and T3, 1048576 bytes 
+ROS statistical data shows the simple publish/subscribe example sending 11 string messages ({\em std\_msgs/String}) by second of ``Hello wold'' plus a timestamp with 440 bytes of traffic.
+In this manner, we want to analyse the behaviour of the system using bigger messages: T1, 262144 bytes; T2, 524288 bytes; and T3, 1048576 bytes 
 
-The measurments of behaviour of ROS traffic presents with simple plain messages {\em delivered\_msgs} 10 of T1 generate . When T2 messages are sent the system runs with 4194368 bytes of traffic and finally when it is working in  T3 messages just send 4194336 bytes and a total of 4 messages. There is no dropped messages by subscription.
+The measurements of behaviour of ROS traffic presents with simple plain messages {\em delivered\_msgs} 10 of T1 generate . When T2 messages are sent the system runs with 4194368 bytes of traffic and finally when it is working in  T3 messages just send 4194336 bytes and a total of 4 messages. There is no dropped messages by subscription.
 
 We want to determine the duration of execution of our talker. We run the Linux {\em time} command to measure the total CPU time consumed by the ROS talker process. 
-Firstly we analyzed T1, that presents in a time window of 32.884 seconds a user time of  1.364 seconds and a sys time of 0.044s. It represents a CPU time of 1.408 seconds.
-Secondly we analyzed T2, that presents in a time window of 33.749 seconds a user time of  2.508 seconds and a sys time of 0.164s. It represents a CPU time of 2.672 seconds.
-Finally we analyzed T3, that presents in a time window of 34.731 seconds a user time of  5.140 seconds and a sys time of 0.120s. It represents a CPU time of 5.260 seconds.
+Firstly we analyzed T1, that presents in a time window of 32.884 seconds, a user time of  1.364 seconds and a sys time of 0.044s. It represents a CPU time of 1.408 seconds.
+Secondly we analyzed T2, that presents in a time window of 33.749 seconds, a user time of  2.508 seconds and a sys time of 0.164s. It represents a CPU time of 2.672 seconds.
+Finally we analyzed T3, that presents in a time window of 34.731 seconds, a user time of  5.140 seconds and a sys time of 0.120s. It represents a CPU time of 5.260 seconds.
 
-This is totally different when we are working with encrypted text messages of type T1, T2 or T3. Fig~\ref{fig:time_text_CPU} presents the main differences. We have repeated the same experiment, but this time calling an encryption method that encrypts from plain text to DES3. It is possible to see that the encrypt process consumes more CPU than  the plain process.
-For instance, T1 type presents running for  34.486 seconds a total of 23.008 of CPU. This means that the total CPU time increases almost 62\%. This is even higher in T2 and T3 types with almost the 98\% of real execution time.
+This is totally different when we are working with encrypted text messages of type T1, T2 or T3. Fig~\ref{fig:time_text_CPU} presents the main differences. We have repeated the same experiment, but this time calling an encryption method that encrypts from plain text to 3DES. It is possible to see that the encrypt process consumes more CPU than  the plain process.
+For instance, T1 type presents running for 34.486 seconds a total of 23.008 of CPU. This means that the total CPU time increases almost 62\%. This is even higher in T2 and T3 types with almost the 98\% of real execution time.
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=.5\textwidth]{Tiempos_CPU_cifrado_texto.png}
