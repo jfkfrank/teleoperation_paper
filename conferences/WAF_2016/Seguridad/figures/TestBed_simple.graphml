@@ -17,9 +17,17 @@
     <node id="n0">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="120.04799999999989" width="262.0" x="350.33333333333337" y="293.04712289612627"/>
+          <y:Geometry height="139.9106750103931" width="147.30078539616852" x="453.4333746038311" y="315.78201639219"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="dashed" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="custom" textColor="#000000" visible="true" width="4.0" x="71.65039269808426" y="67.95533750519655">
+            <y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
           <y:Shape type="rectangle"/>
         </y:ShapeNode>
       </data>
@@ -27,10 +35,10 @@
     <node id="n1">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="262.0" width="262.0" x="67.0" y="150.0"/>
+          <y:Geometry height="258.3322114025829" width="262.0" x="67.0" y="150.00000000000003"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="dashed" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" modelName="custom" textColor="#000000" visible="true" width="158.4921875" x="51.75390625" y="-32.501953125">Master Computer<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" modelName="custom" textColor="#000000" visible="true" width="150.73828125" x="55.630859375" y="-32.501953125">Robot Computer<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -44,15 +52,14 @@
     <node id="n2">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="120.04799999999989" width="262.0" x="350.33333333333337" y="150.0"/>
+          <y:Geometry height="120.04799999999989" width="210.6769498415324" x="350.33333333333337" y="150.0"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="dashed" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="53.00390625" modelName="custom" textColor="#000000" visible="true" width="65.15234375" x="122.58372637909963" y="4.0">Known
-Client<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" modelName="custom" textColor="#000000" visible="true" width="121.841796875" x="55.26494525367207" y="-32.501953125">Known Client<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
-              <y:SmartNodeLabelModelParameter labelRatioX="0.5" labelRatioY="-0.5" nodeRatioX="0.21654988598892988" nodeRatioY="-0.5" offsetX="0.0" offsetY="4.0" upX="0.0" upY="-1.0"/>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.5" nodeRatioX="0.051488161275189626" nodeRatioY="-0.5" offsetX="0.0" offsetY="-4.0" upX="0.0" upY="-1.0"/>
             </y:ModelParameter>
           </y:NodeLabel>
           <y:Shape type="rectangle"/>
@@ -99,7 +106,7 @@ Node<y:LabelModel>
     <node id="n5">
       <data key="d6">
         <y:ImageNode>
-          <y:Geometry height="35.35199999999992" width="25.415999999999997" x="104.64115412704984" y="434.4694999999999"/>
+          <y:Geometry height="35.35199999999992" width="25.415999999999997" x="67.0" y="425.25549684418957"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="10.707999999999998" y="39.35199999999992"/>
@@ -127,10 +134,10 @@ Node<y:LabelModel>
     <node id="n7">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="47.09850000000023" width="151.06368000000003" x="221.96139158743287" y="428.5962499999997"/>
-          <y:Fill color="#00FF00" transparent="false"/>
+          <y:Geometry height="47.09850000000023" width="212.20082079371656" x="229.52278317486568" y="505.69475"/>
+          <y:Fill color="#FF0000" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="101.376953125" x="24.843363437500017" y="14.198664062500143">/sensor/messages<y:LabelModel>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="147.396484375" x="32.40216820935828" y="14.198664062500143">/sensor/encrypt/messages/<y:LabelModel>
               <y:SmartNodeLabelModel distance="4.0"/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -143,47 +150,19 @@ Node<y:LabelModel>
     </node>
     <node id="n8">
       <data key="d6">
-        <y:ShapeNode>
-          <y:Geometry height="47.09850000000023" width="232.66368000000006" x="209.52278317486574" y="505.69475"/>
-          <y:Fill color="#FF0000" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="147.396484375" x="42.63359781250003" y="14.198664062500143">/sensor/encrypt/messages/<y:LabelModel>
-              <y:SmartNodeLabelModel distance="4.0"/>
-            </y:LabelModel>
-            <y:ModelParameter>
-              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
-            </y:ModelParameter>
-          </y:NodeLabel>
-          <y:Shape type="parallelogram"/>
-        </y:ShapeNode>
-      </data>
-    </node>
-    <node id="n9">
-      <data key="d6">
         <y:ImageNode>
-          <y:Geometry height="30.0" width="32.0" x="418.0977831748658" y="246.30562570129132"/>
+          <y:Geometry height="32.0" width="32.0" x="524.7469623811494" y="472.53070481330735"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="sandwich" modelPosition="s" textColor="#339966" visible="true" width="4.0" x="14.0" y="34.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="14.0" y="36.0"/>
           <y:Image alphaImage="true" refid="2"/>
         </y:ImageNode>
       </data>
     </node>
-    <node id="n10">
-      <data key="d6">
-        <y:ImageNode>
-          <y:Geometry height="32.0" width="32.0" x="472.1864631748658" y="496.5939957922527"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="14.0" y="36.0"/>
-          <y:Image alphaImage="true" refid="3"/>
-        </y:ImageNode>
-      </data>
-    </node>
-    <node id="n11">
+    <node id="n9">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="72.56325140258271" width="75.31249999999999" x="485.69778317486583" y="330.7689600000002"/>
+          <y:Geometry height="72.56325140258271" width="75.31249999999999" x="474.8730914289653" y="330.7689600000002"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" modelName="custom" textColor="#000000" visible="true" width="63.361328125" x="5.975585937499943" y="19.580453826291375">Processing
@@ -198,10 +177,43 @@ Node<y:LabelModel>
         </y:ShapeNode>
       </data>
     </node>
+    <node id="n10">
+      <data key="d6">
+        <y:ImageNode>
+          <y:Geometry height="32.0" width="32.0" x="178.6266666666667" y="492.2834968441895"/>
+          <y:Fill color="#CCCCFF" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="14.0" y="36.0"/>
+          <y:Image alphaImage="true" refid="2"/>
+        </y:ImageNode>
+      </data>
+    </node>
+    <node id="n11">
+      <data key="d6">
+        <y:ImageNode>
+          <y:Geometry height="35.35199999999992" width="25.415999999999997" x="89.53152000000014" y="490.6074968441895"/>
+          <y:Fill color="#CCCCFF" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="10.707999999999998" y="39.35199999999992"/>
+          <y:Image alphaImage="true" refid="3"/>
+        </y:ImageNode>
+      </data>
+    </node>
     <node id="n12">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="72.56325140258271" width="75.31249999999999" x="366.1955663497316" y="173.7423742987086"/>
+          <y:Geometry height="30.0" width="77.02335841256706" x="441.72360396858227" y="522.7932500000002"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle hasColor="false" type="dashed" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="free" modelPosition="anywhere" textColor="#000000" visible="true" width="63.361328125" x="10.167929206283532" y="6.6494140625">Subscribes</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n13">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="72.56325140258271" width="75.31249999999999" x="377.17312118002724" y="173.7423742987086"/>
           <y:Fill color="#FFCC00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" modelName="custom" textColor="#000000" visible="true" width="63.361328125" x="5.9755859375" y="19.580453826291347">Processing
@@ -216,43 +228,96 @@ Node<y:LabelModel>
         </y:ShapeNode>
       </data>
     </node>
-    <node id="n13">
-      <data key="d6">
-        <y:ImageNode>
-          <y:Geometry height="35.35199999999992" width="25.415999999999997" x="411.17046317486586" y="443.09512289612616"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="10.70799999999997" y="39.35199999999992"/>
-          <y:Image alphaImage="true" refid="4"/>
-        </y:ImageNode>
-      </data>
-    </node>
     <node id="n14">
       <data key="d6">
         <y:ImageNode>
-          <y:Geometry height="32.0" width="32.0" x="178.62666666666667" y="496.5939957922527"/>
+          <y:Geometry height="35.35199999999992" width="25.415999999999997" x="428.0920663497316" y="259.55224000000004"/>
           <y:Fill color="#CCCCFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="14.0" y="36.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="10.708000000000027" y="39.35199999999992"/>
           <y:Image alphaImage="true" refid="3"/>
         </y:ImageNode>
       </data>
     </node>
     <node id="n15">
       <data key="d6">
-        <y:ImageNode>
-          <y:Geometry height="35.35199999999992" width="25.415999999999997" x="119.53152000000014" y="496.5939957922527"/>
-          <y:Fill color="#CCCCFF" transparent="false"/>
+        <y:ShapeNode>
+          <y:Geometry height="47.09850000000023" width="123.06368000000003" x="253.62666666666664" y="435.8456864480629"/>
+          <y:Fill color="#00FF00" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" hasText="false" height="4.0" modelName="sandwich" modelPosition="s" textColor="#000000" visible="true" width="4.0" x="10.707999999999998" y="39.351999999999975"/>
-          <y:Image alphaImage="true" refid="4"/>
-        </y:ImageNode>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="101.376953125" x="10.843363437500017" y="14.198664062500143">/sensor/messages<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="parallelogram"/>
+        </y:ShapeNode>
       </data>
     </node>
     <node id="n16">
       <data key="d6">
         <y:ShapeNode>
-          <y:Geometry height="32.0" width="77.02335841256706" x="527.0" y="293.04712289612627"/>
+          <y:Geometry height="32.0" width="67.02335841256706" x="409.2119247622987" y="472.53070481330735"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle hasColor="false" type="dashed" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="free" modelPosition="anywhere" textColor="#000000" visible="true" width="63.361328125" x="10.167929206283532" y="6.6494140625">Subscribes</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n17">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="32.0" width="77.02335841256706" x="78.83747492076631" y="532.5939957922527"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle hasColor="false" type="dashed" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" modelName="custom" textColor="#000000" visible="true" width="88.703125" x="-5.839883293716468" y="-0.701171875">Publishes
+encrypted msgs<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n18">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="32.0" width="77.02335841256706" x="458.5080663497316" y="236.92893285064568"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle hasColor="false" type="dashed" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="83.34765625" x="-3.1621489187164684" y="6.649414062499972">Decrypts msgs<y:LabelModel>
+              <y:SmartNodeLabelModel distance="4.0"/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n19">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="32.0" width="77.02335841256706" x="517.7108015874326" y="410.53070481330735"/>
+          <y:Fill hasColor="false" transparent="false"/>
+          <y:BorderStyle hasColor="false" type="dashed" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" modelName="free" modelPosition="anywhere" textColor="#000000" visible="true" width="75.35546875" x="0.8339448312837021" y="-0.701171875">Can't
+decrypt msgs</y:NodeLabel>
+          <y:Shape type="rectangle"/>
+        </y:ShapeNode>
+      </data>
+    </node>
+    <node id="n20">
+      <data key="d6">
+        <y:ShapeNode>
+          <y:Geometry height="32.0" width="77.02335841256706" x="506.2352831748658" y="284.40848000000005"/>
           <y:Fill hasColor="false" transparent="false"/>
           <y:BorderStyle hasColor="false" type="dashed" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="20" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="28.501953125" modelName="custom" textColor="#000000" visible="true" width="77.359375" x="-0.16800829371641157" y="1.7490234375">Attacker<y:LabelModel>
@@ -317,33 +382,27 @@ Node<y:LabelModel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e4" source="n4" target="n7">
+    <edge id="e4" source="n4" target="n15">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
             <y:Point x="174.18933333333337" y="354.070008196095"/>
-            <y:Point x="174.18933333333337" y="452.14549999999986"/>
+            <y:Point x="174.18933333333337" y="459.39493644806305"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
-          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="43.357421875" x="20.535811679133133" y="76.41962673828107">Publish<y:LabelModel>
-              <y:SmartEdgeLabelModel autoRotationEnabled="false" defaultAngle="0.0" defaultDistance="10.0"/>
-            </y:LabelModel>
-            <y:ModelParameter>
-              <y:SmartEdgeLabelModelParameter angle="6.283185307179586" distance="12.30528000000004" distanceToCenter="true" position="left" ratio="1.0" segment="-1"/>
-            </y:ModelParameter>
-            <y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
+          <y:EdgeLabel alignment="center" configuration="AutoFlippingLabel" distance="2.0" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="33.40234375" modelName="free" modelPosition="anywhere" preferredPlacement="anywhere" ratio="0.5" textColor="#000000" visible="true" width="80.69921875" x="20.78955078125" y="66.02882080078143">Publishes
+plaintext msgs<y:PreferredPlacementDescriptor angle="0.0" angleOffsetOnRightSide="0" angleReference="absolute" angleRotationOnRightSide="co" distance="-1.0" frozen="true" placement="anywhere" side="anywhere" sideReference="relative_to_edge_flow"/>
           </y:EdgeLabel>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e5" source="n4" target="n8">
+    <edge id="e5" source="n4" target="n7">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="160.85152000000016" y="368.36896000000024"/>
-            <y:Point x="160.85152000000016" y="529.2440000000001"/>
+          <y:Path sx="2.502365872950321" sy="35.298951803905254" tx="0.0" ty="0.0">
+            <y:Point x="119.85152000000016" y="529.2440000000001"/>
           </y:Path>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="standard"/>
@@ -351,12 +410,12 @@ Node<y:LabelModel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e6" source="n11" target="n6">
+    <edge id="e6" source="n9" target="n6">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="23.173333333333318" ty="-2.6790399999996737">
-            <y:Point x="474.6" y="314.7689600000002"/>
-            <y:Point x="309.0" y="314.7689600000002"/>
+            <y:Point x="469.5253082540995" y="329.7689600000002"/>
+            <y:Point x="309.0" y="329.7689600000002"/>
             <y:Point x="309.0" y="277.1689600000002"/>
             <y:Point x="309.0" y="255.72440320000024"/>
           </y:Path>
@@ -366,7 +425,7 @@ Node<y:LabelModel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e7" source="n12" target="n6">
+    <edge id="e7" source="n13" target="n6">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -379,21 +438,21 @@ Node<y:LabelModel>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e8" source="n12" target="n8">
+    <edge id="e8" source="n13" target="n7">
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="77.99719317486586" ty="-19.695111183999757"/>
+          <y:Path sx="0.0" sy="0.0" tx="79.2061776083033" ty="-23.56118749999996"/>
           <y:LineStyle color="#339966" type="line" width="3.0"/>
           <y:Arrows source="standard" target="none"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e9" source="n11" target="n8">
+    <edge id="e9" source="n9" target="n7">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="523.3540331748658" y="529.2440000000001"/>
+            <y:Point x="512.5293414289653" y="529.2440000000001"/>
           </y:Path>
           <y:LineStyle color="#FF0000" type="line" width="3.0"/>
           <y:Arrows source="standard" target="none"/>
@@ -761,23 +820,7 @@ bE4g7NiZrDqBV6T9A9GfOg14+aoKrmQ8PTyB5aOsODkQExuvgCX4fK4YpaigoADJyclITExEaWnp&#13
 t58w8Y+/n/ZHljIrZWPSROZq0kHGU+P5Ok1NHqSopOZbP+7xj7//+h+fL0NnwwtYqeFkeFx8IpJ2&#13;
 7FJ6zRFAmTl69Cju3bv3D8B/TuApMdRvZo5MnnYlpyjd5zNovvHLWP/4+3n/+CgrPieSja//L53b&#13;
 /w+lCDs/xp9F3wAAAABJRU5ErkJggg==</y:Resource>
-      <y:Resource id="2" type="java.awt.image.BufferedImage">iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAADRElEQVR42u2ZSWhUQRCGn8a4xzUu&#13;
-wQUhUYKCS8zBg0ZR8KAe4sEFRBAlGIgQ0RxUJAiiuIIeXIMkIp4EF2RAiYpiQCLRi6AiKERFjYLR&#13;
-OBoXJvFvrYFm6J6p7unXM4dp+A4z86q6/nmvu6vqBUHqkQ9WgibwDHwHPaATtIJDYE6QpWM9aAe9&#13;
-DG6DmdkS+DBwjRm4zG9Qm+ngR4A2i+Bl9mcq+L6gOc3g42zOhIDtKYJ6DS6CUyBCC1p3bTeY6jP4&#13;
-0aBLE8xHsAb0SbAZDo7SrqSyu+xTwC5NEO9AcQrbjRrbHp934akmiMVM+waNfb2P4CdoJm828FFE&#13;
-22iij/s+BCzXCNhk6OeWwkeXDwFVGgFzDf0c0fgpCFtArWbiEkM/uzV+xoUtYGvIAsbnBOQE5AT8&#13;
-SxTLKMkTRdA5OvxEKrIFzAf9s1WAqOY6GBlsFFwA87JNgA03wDQbAaI0LCcGZFBAPCWvsrkDxy0f&#13;
-Ra6Ar6CFeMO4/rDNI3TMQsA+poC7ks0BF2Wqbg0UGwQ/I0WFlq6AXiqqQlnEeeCxQSC2Ar7ozpR0&#13;
-BVQbLk7TNSDTqApgJChVkM/899sd7z7J+AOm+CiGdLwEO6hUXUB374Ghjz0uBTQaTHw2ydki0okY&#13;
-088TlwJeMSe9ItlMBNuoEzKb0RlRdTsKXQQ/lDlhTHpuKyjnkYOpkTrh3EVd4UJAqcKx6O5VEvEa&#13;
-+aFk81xh80sqO0/Qd9clP5WKjsc6FwLKFMGUS7+vpe8u0edRSf7RZXRNnSYT+BlG73U6U8BN+twP&#13;
-fNMImEXX7GUK2OBCwBhFID/oGY9Kk4qDayDZ1CtsIpLPFuldQ1Qi0WaFq13oM3PR1SVsmSL1EK+s&#13;
-DoLB9P1Cgy3ZWc81wpxQ3I2lSfyIxPEt01eHolNuPWoM0wCR209OSGNEY63TwM95lwdZoWKBcfhA&#13;
-e37MwnaJ667GaY/JXFsYbZki2mm4QbRSql5iIX6R7w63y4KmIewGWVOIAh6BQWELECftVUYwL6gO&#13;
-qKb+T6rrxeuvsYGnISq0kw4X7R3KobyPVeB9GoGLlGQn9VQzNgqoSDEREqWUelKQRSOP0ghRH9wL&#13;
-/r977qaE7RPVC2fAajDExPFfIS6RXi3xQB0AAAAASUVORK5CYII=</y:Resource>
-      <y:Resource id="3" type="java.awt.image.BufferedImage">iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAIYklEQVR42r1XCVCT6Rl2t9OdsZ1d&#13;
+      <y:Resource id="2" type="java.awt.image.BufferedImage">iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAIYklEQVR42r1XCVCT6Rl2t9OdsZ1d&#13;
 3a22nXHVttOttdZ2V6uLxl1FjqKiwYPDY9VVQFQUs4AcuxyigiCCqIQNICB3uI+EQLjPXASSEAIk&#13;
 hEsQRBZ1lQW1+PQlazs77QwwuO0/80wyyff9z/M+7/N+fzJv3hyv5OTk1Xw+/+jIyMjJpKSkvamp&#13;
 qb+a9/+4oqKi2AqFAt3d3ejq0kOj0UCv10OtVqOiouJRdXXlwf8JMZPJXC2XN2JoaAj19XXIzc0F&#13;
@@ -816,7 +859,7 @@ nRSwqfbsovbsMlQ7JbAxjdZwLejwOQJ5NtmesBWCiDUkYD1k+a6Q5n2Fx48fT/80jPNaJ8sP+R14&#13
 YStQGrkKtbF/JRfWQsE1QkuuMVVqgXb+LmhLqHqhNU2G3Svsp/GzIezH1EnaUriPkr8PsqzdaMx1&#13;
 glb0NSoTz2J8fHT6X9a3XMzNOK7GjtFuJnYGeHyPeO8fwvwHr+b//jx2Cob1W+yi3AisLXbXT62x&#13;
 TQmwtRvUSU81FHD+60/KPwEkWHdgyjoZrAAAAABJRU5ErkJggg==</y:Resource>
-      <y:Resource id="4" type="java.awt.image.BufferedImage">iVBORw0KGgoAAAANSUhEUgAAACoAAAAwCAYAAABnjuimAAABb0lEQVR42u2XvUoDQRRG5wlCemNQ&#13;
+      <y:Resource id="3" type="java.awt.image.BufferedImage">iVBORw0KGgoAAAANSUhEUgAAACoAAAAwCAYAAABnjuimAAABb0lEQVR42u2XvUoDQRRG5wlCemNQ&#13;
 VHwjiWBnGViJaCNGR30TQRAbBSFdUEHyGGopsVODBtT4Ldw0YQYzu/du7uJ8cGCLYfYwd36NiYkR&#13;
 zSLYA13wDL6JPrgFB2BlloJ1cE5Soz/4AZdguWjJBnibQnCSD7BZlORWBsFJ2tKSa1TGEQNiI1sD&#13;
 r0yS42kgMmdPAyQ+QRNUiAQMHe2uuCXnwFeAaNPRR+LZDVY5RbcDy1px9FH1tLWcoteConecog+B&#13;
