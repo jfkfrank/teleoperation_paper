@@ -45,7 +45,7 @@ autonomous systems, cybersecurity, robotics, performance, cyber-physical systems
 
 
 % \IEEEPARstart{A}{utonomous} systems are spreading not just in the virtual world (Internet, software systems), or in science-fiction movies, but in our ordinary real world. 
-\IEEEPARstart{I}{t} is possible to find driverless cars in the streets, autonomous vacuum cleaners in our homes, museum guides, hotel assistants, etc. These cyber-physical systems, as any computer-based system, can suffer different types of vulnerabilities, and the need of cybersecurity \cite{Morante2015} is required. 
+\IEEEPARstart{I}{t} is possible to find driverless cars in the streets, autonomous vacuum cleaners in our homes, museum guides, hotel assistants, etc. These cyber-physical systems, as any computer-based system, can suffer different types of attacks, and the need of cybersecurity \cite{Morante2015} is required. 
 
 
 ROS (Robotic Operating System) \cite{ROS09} has become the most popular framework for developing robotic applications. It started in the research environment, but currently most of manufacturers of commercial platforms use ROS as the {\em de facto} standard for building robotic software. For example, object-manipulation robots like Baxter (by Rethink robotics) ~\cite{fitzgerald2013developing} or service robots as our RB1 (by Robotnik) are ROS based platforms.
@@ -58,19 +58,19 @@ Some works have been sketched in this area, as for instance in \cite{Guiochet201
 
 \subsection{Security assessment}
 
-There are three basic vulnerabilities threatening any computing system are availability (data interruption), confidenciality (data interception), integrity (data modification). Other authors also  adds two more~\cite{sattarova2007security}: authenticity and non-repudiation (data fabrication from a non-trusted origin). 
+There are three basic vulnerabilities threatening any computer system: availability (data interruption), confidentiality (data interception) and integrity (data modification). Other authors also add two more~\cite{sattarova2007security}: authenticity and non-repudiation (data fabrication from a non-trusted origin). 
 
 
-The concepts can be easily translated to an industrial control applications~\cite{huitsing2008attack} or to a robotic environment due to the distributed and extensive network use approach presented by most extended robotics frameworks (Yarp, ROS, ROBOCOMP). On the one hand, the robot is deployed in a home environment. It provides information to users and also carry out behaviours in order to fulfill required tasks. During this time, the robot perceive information from its sensors and update its behaviours. 
-On the other hand, an attaker can attempt to make the robot or its network resources unavailable, this is a denial-of-service attack. The attacker can try to modify data messages in order to change robot behaviour, the attacker can intercept the robot info about the environment and about the users personal data. Finally the attacker can simulate a sensor and deploy new information available to the robot. 
-Figure \ref{fig:Conceptualmodel} graphically summarizes these vulnerabilities in a robotic environment. In this research we are going to focus in confidenciality of data send to and from the robot. Our approach consists in encrypt data transmitted by ROS nodes, without change the ROS messages or the ROS methods to send the data. 
+The concepts can be easily translated to industrial control applications~\cite{huitsing2008attack} or to a robotic environment, due to the distributed and extensive network use approach presented by most extended robotics frameworks (Yarp, ROS, ROBOCOMP). On one hand, the robot is deployed in a home environment. It provides information to users and also carry out behaviours in order to fulfil required tasks. During this time, the robot perceive information from its sensors and update its behaviours. 
+On the other hand, an attacker can attempt to make the robot or its network resources unavailable, this is a denial-of-service attack. The attacker can try to modify data messages in order to change robot behaviour, and also intercept the robot information about the environment and about the users personal data. Finally the attacker can simulate a sensor and generate new data available to the robot. 
+Figure \ref{fig:Conceptualmodel} summarizes graphically these vulnerabilities in a robotic environment. In this research we focus on confidentiality of data sent to and from the robot. Our approach consists in encrypt data transmitted by ROS nodes, without change ROS messages nor ROS functions to send the data. 
 
 
 % \begin{enumerate}
 %  \item Availability: Interruption
 %  \item Confidenciatily: Interception
 %  \item Integrity: Modification
-%  \item Authenticity :Fabrication
+%  \item Authenticity: Fabrication
 % \end{enumerate}
 \begin{figure}[ht]
     \centering
@@ -80,29 +80,26 @@ Figure \ref{fig:Conceptualmodel} graphically summarizes these vulnerabilities in
 \end{figure}
 
 
-\subsection{ROS security assessment}
+\subsection{ROS overview}
 
-ROS provides specific libraries for robotics as well as classical operating system services such as hardware abstraction (for sensors and actuators), low-level device control, and inter-process communication. Inter-process communication is based on a graph architecture where computation takes place in ROS processes named nodes. These nodes can receive and send messages, but no security was considered in its design. 
+ROS provides specific libraries for robotics as well as classical operating system services such as hardware abstraction (for sensors and actuators), low-level device control, and inter-process communication. Inter-process communication is based on a graph architecture where computation takes place in ROS processes named nodes. These nodes can receive and send messages, but no security was considered in the communication mechanism.
 
-ROS framework is basically a message-passing distributed system. Its architecture is based on processes that publish {\em messages} to {\em topics}. For instance, a process ({\em node}) can be in charge of accessing a sensor, performing the information processing, and publishing it as an information structure on a named topic. Another process can {\em subscribe} to this topic, that is, read its information. Then the process can make a decision about the movement of the robot. Next, this node will publish the commands in another topic to sent them to the motors. ROS nodes can be running in the same computer or in different computers.
+ROS framework is basically a message-passing distributed system. Its architecture is based on processes that publish {\em messages} to {\em topics}. For instance, a process ({\em node}) can be in charge of accessing a sensor, performing the information processing, and publishing it as an information structure on a named topic. Another process can {\em subscribe} to this topic, that is, read its information. Then the process can make a decision about the movement of the robot. Next, this node will publish the commands in another topic to send them to the motors. ROS nodes can be running in the same computer or in different computers.
 
 This approach is very convenient for developers but can be easily tampered by malicious hackers. For instance, in \cite{McClean2013} an experiment involving a ROS-based honeypot is described. The honeypot was a radio model truck with two cameras and a compass as sensors, and it was controlled from a remote ROS node written in Javascript and hosted in a remote enterprise grade web server. Vulnerabilities described in the paper comprise plain-text communications, unprotected TCP ports and unencrypted data storage.
 
-The first step to solve some of these problems is to secure the communication channels by using a ciphering mechanism. but, how does this systems impact on the performance of a robotic system? This is the goal of this paper, characterize and evaluate different alternatives to secure ROS communication mechanism.
+The first step to solve some of these problems is to secure the communication channels by using an encryption mechanism. But how does encryption impact on the performance of a robotic system? This is the goal of this paper, characterize and evaluate different alternatives to secure ROS communication system and measure their performance.
 
 
-Next section describes the testbed we have designed to measure the performance of the encrypted ROS system. Third section evaluates the data obtained in the experiments, and the last section presents some conclusions obtained and further work.
+The paper is organized as follows: Next section describes the testbed we have designed to measure the performance of the encrypted ROS system. Third section evaluates the data obtained in the experiments, and last section presents some conclusions obtained and further work.
 
 
 
 \section{Testbed description}
 
-Conventional ROS environment is composed by at least one ROS Master and any laptop clients. The ROS Master is the key element in a ROS environment, it runs as a nameservice.
-It also stores topics and services registration information for ROS nodes. 
+Conventional ROS environment is composed by at least one ROS Master and some clients. ROS Master is the key element in the ROS system. It runs as a nameservice and manages registration information of topics and services used by ROS nodes. 
 
-When a node want to stablish a connection with a topic, it communicate with the Master to advise its registration information. After this step, the node gets more information about other registered nodes and can stablish new connections appropriately. The Master is updated in real time about clients information, and at the same time callbacks to those related nodes.
-
-
+When a node wants to stablish a connection with a topic, it communicates with Master to advise its registration information. After this step, the node gets more information about other registered nodes and can stablish new connections appropriately. The Master is updated in real time about clients information, and at the same time callbacks to those related nodes.
 
 % Nodes communicate with the Master to report their registration information. 
 % As these nodes communicate with the Master, they can receive information about other registered nodes and make connections as appropriate. The Master will also make callbacks to these nodes when this registration information changes, which allows nodes to dynamically create connections as new nodes are run. 
@@ -112,7 +109,7 @@ The standard process starts with a basic sensor node (BSN). We have defined as B
 
 
 
-We have prepared a  testbed with two laptopts.
+We have prepared a testbed with two laptopts.
 
 % \subsection{Simulated testedbed}
 
@@ -122,23 +119,22 @@ We have installed ROS Jade in two computers connected through a wired Ethernet 1
 % Then we modified the standard ROS implementation. We changed the TCP/IP sockets based implementation by ciphered ones.
 
 In this first approach we have changed the info published by the node, and instead of publish the information in a clean way, we publish the information encrypted.
-We use the DES3 algorithm that provides a 
-Triple DES references the Triple Data Encryption Algorithm (3DES or TDEA or Triple DEA). It is a symmetric-key block cipher and from a high level point of view the algorithm applies the Data Encryption Standard (DES) cipher algorithm three times to each data block. It is standarized by NIST (Recommendation for
-the Triple Data Encryption Algorithm (TDEA) Block Cipher) NIST Special Publication 800-67.
+We use the 3DES algorithm that provides a 
+Triple DES (3DES) references the Triple Data Encryption Algorithm (TDEA or Triple DEA). It is a symmetric-key block cipher that applies the Data Encryption Standard (DES) cipher algorithm three times to each data block. It is standardized by NIST in the Recommendation for the Triple Data Encryption Algorithm Block Cipher (NIST Special Publication 800-67).
 
-It has a fixed data block size of 8 bytes. Its keys are 128 (Option 1) or 192 bits (Option 2) long. However, 1 out of 8 bits is used for redundancy and do not contribute to security. The effective key length is respectively 112 or 168 bits.
+DES algorithm has a fixed data block size of 8 bytes. Its keys are 128 (Option 1) or 192 bits (Option 2) long. However, 1 out of 8 bits is used for redundancy and do not contribute to security. The effective key length is respectively 112 or 168 bits.
 
-TDES consists of the concatenation of 3 simple DES ciphers.
+3DES consists of the concatenation of three simple DES ciphers.
 
-The plaintext is first DES encrypted with K1, then decrypted with K2, and finally encrypted again with K3. The ciphertext is decrypted in the reverse manner.
+The plaintext is first DES-encrypted with K1, then decrypted with K2, and finally encrypted again with K3. The ciphertext is decrypted in the reverse manner.
 
 The 192 bit key is a bundle of three 64 bit independent subkeys: K1, K2, and K3.
 
 The 128 bit key is split into K1 and K2, whereas K1=K3.
 
-It is important that all subkeys are different, otherwise TDES would degrade to single DES.
+It is important that all subkeys are different, otherwise 3DES would degrade to single DES.
 
-TDES is cryptographically secure, even though it is neither as secure nor as fast as AES.
+3DES is cryptographically secure, although it is slower than AES algorithm.
 
 
 The decorator pattern can be used to extend (decorate) the functionality of a certain object statically, or in some cases at run-time, independently of other instances of the same class, provided some groundwork is done at design time. 
@@ -146,7 +142,7 @@ The decorator pattern can be used to extend (decorate) the functionality of a ce
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.5\textwidth]{TestBed.pdf}
-    \caption{Time spent in each call to encryption/decryption function.}
+    \caption{Scheme of the scenario used for testbed.}
   \label{fig:TestBed}
 \end{figure}
 
@@ -201,7 +197,7 @@ In this test we have used a modified version of talker/listener tutorial propose
 ROS statistical data shows the simple publish/subscribe example sending 11 string messages ({\em std\_msgs/String}) by second of ``Hello wold'' plus a timestamp with 440 byts of traffic.
 In this manner, we want to analyse the behaviour of the system using bigger messages: T1, 262144 bytes; T2,  524288 bytes; and T3, 1048576 bytes 
 
-The measurments of behaviour of ROS traffic presents with simple plain messages {\em delivered\_msgs} 10 of T1 generate . When T2 messages are sent the system runs with 4194368 bytes of traffic and finally when it is working in  T3 messages just send 4194336 bytes and a total of 4 messages. There is no dropped messages by subscribtion.
+The measurments of behaviour of ROS traffic presents with simple plain messages {\em delivered\_msgs} 10 of T1 generate . When T2 messages are sent the system runs with 4194368 bytes of traffic and finally when it is working in  T3 messages just send 4194336 bytes and a total of 4 messages. There is no dropped messages by subscription.
 
 We want to determine the duration of execution of our talker. We run the Linux {\em time} command to measure the total CPU time consumed by the ROS talker process. 
 Firstly we analyzed T1, that presents in a time window of 32.884 seconds a user time of  1.364 seconds and a sys time of 0.044s. It represents a CPU time of 1.408 seconds.
@@ -213,13 +209,13 @@ For instance, T1 type presents running for  34.486 seconds a total of 23.008 of 
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=.5\textwidth]{Tiempos_CPU_cifrado_texto.png}
-    \caption{Time of CPU spent in a simple talker/listener test.}
+    \caption{Time of CPU spent on a simple talker/listener test.}
   \label{fig:time_text_CPU}
 \end{figure}
 
-If we focus in encryption/decryption process we can see the time needed to encryption call presents in 1040 messages 
-a minimal time of 0.059246 seconds and a  max time to encrypt the string of  0.683408 seconds with an average of 0.063858 seconds and standard deviation of 0.000388.
-This time encreases with T2 and T3 types. T2 type needs 0.123383 seconds in average with standard deviation of 0.000040 seconds and  T3  0.247303 with a standar deviation of 0.000137.
+{\textcolor{red}{[REESCRIBIR BIEN ESTE P\'ARRAFO].}} If we focus on the encryption/decryption process, we can see that the time needed for the encryption function shows in 1040 messages a minimal time of 0.059246 seconds and a max time to encrypt the string of 0.683408 seconds with an average of 0.063858 seconds and standard deviation of 0.000388.
+
+This time increases with T2 and T3 types. T2 type needs 0.123383 seconds in average with standard deviation of 0.000040 seconds and  T3  0.247303 with a standard deviation of 0.000137.
 
 
 
@@ -292,9 +288,8 @@ This time encreases with T2 and T3 types. T2 type needs 0.123383 seconds in aver
 
 
 
-
-
 \subsection{Camera}
+
 
 \subsubsection{Process evaluation}
 
@@ -309,7 +304,7 @@ To analyse the behaviour of the system under encrypt/decrypt circumstances we us
 \begin{figure}[ht]
     \centering
     \includegraphics[width=.5\textwidth]{Screenshot.png}
-    \caption{Screenshot taken during the image encryption test.}
+    \caption{Screenshot taken during image encryption test.}
   \label{fig:screenshot}
 \end{figure}
 
@@ -324,20 +319,17 @@ mean of  0.008828 seconds and a standard deviation of 0.000003 seconds. The mode
 
 
 
-Figure \ref{fig:screenshot} presents the situation in the client node. We have used the ROS node {\em image\_view} to visualize the images from topics.  There is an non-encrypted topic that we have maintanined in order to validate delays. There is an encrypted topic that is not possible to visualize using the releeased image\_view ROS node. Finally there is a frame that presents the image after decrypt the topic using our own decrypt node. 
+Figure \ref{fig:screenshot} presents the situation in the client node. We have used the ROS node {\em image\_view} to visualize the images from topics.  There is an non-encrypted topic that we have maintained in order to validate delays. There is an encrypted topic that is not possible to visualize using the released image\_view ROS node. Finally there is a frame that presents the image after decrypt the topic using our own decrypt node. 
 
 
-The fps in the encrypter machine is 14.56 and the fps in the decryption machine is 14.54.
-
-
-
+The FPS in the encrypter machine is 14.56 and the FPS in the decryption machine is 14.54.
 
 
 
 \begin{figure*}[ht]
     \centering
     \includegraphics[width=.9\textwidth]{Outline_encryption_text.png}
-    \caption{Time spent in each call to encryption/decryption function.}
+    \caption{Time spent on each call to encryption/decryption function.}
   \label{fig:text_encryption_time}
 \end{figure*}
 
@@ -347,7 +339,6 @@ The fps in the encrypter machine is 14.56 and the fps in the decryption machine 
 Fig~\ref{fig:text_encryption_time} outlines the behaviour of the talker cyphering data. Left part of the figure presents the box plot of the three types of message. The right part of the element present the number of repetition associated to a time to each encryption process.
 
 
-
 We observe that the delay induced by encryption does not reduce the standard frame rate. 
 
 The figure~\ref{fig:images_encryption} presents the box-plot of the encryption decryption data analyzed and the histograma. 
@@ -355,24 +346,22 @@ The figure~\ref{fig:images_encryption} presents the box-plot of the encryption d
 \begin{figure*}[ht]
     \centering
     \includegraphics[width=.9\textwidth]{Outline_images_encryption_decrytiontime2.png}
-    \caption{Time spent in each call to encryption/decryption function.}
+    \caption{Time spent on each call to encryption/decryption function.}
   \label{fig:images_encryption}
 \end{figure*}
 
-\section{Conclusion and Futher Work}
+\section{Conclusion and Further Work}
 
-This article has introduced the use of ciphering information through ROS communication system.
-We have evaluated the influence from two points of view CPU consuming and network traffic. 
+This article has introduced the use of encrypted information through ROS communication system.
+We have evaluated the impact of this added feature from two points of view: CPU consuming and network traffic. 
 
-We have shown that our approach allows avoinding security problems related with publish/subscribe paradigm in plain text as proposed by ROS.
-Moreover, the overhead of CPU performance and communication load should also be considered in distributed architectures that needs to work on real time.
+We have shown that our approach avoids security problems related with the plain-text publish/subscribe paradigm used by ROS. However, the overhead of CPU performance and communication load should also be considered in distributed architectures that need to work on real time.
 
-
-As we commented in the introduction, we think that securing communications is just one dimension in  the cybersecurity of Autonomous Systems. If we want to see autonomous systems working in our homes we need to secure the navigation abilities, the interaction mechanisms, etc. 
+As we pointed out in the introduction, securing communications is just one dimension in the cybersecurity of autonomous systems. If we want to see these machines working in our homes we need to secure navigation abilities and interaction mechanisms, to avoid manipulated or malicious behaviours and make robots reliable assistants for every person at home.
 
 
 \section*{Acknowledgment}
-The authors would  like to thank the Spanish Ministry of Economy and Competitiveness for the partial support to this work under grant DPI2013-40534-R and to the Spanish National Institue of CyberSecurity (INCIBE) under grand Adenda21 ULE-INCIBE.
+The authors would like to thank the Spanish Ministry of Economy and Competitiveness for the partial support to this work under grant DPI2013-40534-R and to the Spanish National Institue of CyberSecurity (INCIBE) under grand Adenda21 ULE-INCIBE.
 
 \bibliographystyle{plain} 
 \bibliography{waf2016}
