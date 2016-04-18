@@ -99,33 +99,45 @@ The paper is organized as follows: Next section describes the testbed we have de
 
 Conventional ROS environment is composed by at least one ROS Master and some clients. ROS Master is the key element in the ROS system. It runs as a nameservice and manages registration information of topics and services used by ROS nodes. 
 
-When a node wants to stablish a connection with a topic, it communicates with Master to advise its registration information. After this step, the node gets more information about other registered nodes and can stablish new connections appropriately. The Master is updated in real time about clients information, and at the same time callbacks to those related nodes.
+When a node wants to stablish a connection with a topic, it communicates with Master to advise its registration information. After this step, the node gets more information about other registered nodes so it can stablish new connections with their topics appropriately. The Master is updated in real time with nodes information and topics they publish/subscribe.
 
 % Nodes communicate with the Master to report their registration information. 
 % As these nodes communicate with the Master, they can receive information about other registered nodes and make connections as appropriate. The Master will also make callbacks to these nodes when this registration information changes, which allows nodes to dynamically create connections as new nodes are run. 
 
-Figure~\ref{fig:TestBed} provides the graphical representation of this situation. In this case, two clients are connected to a topic. It is transparent to ROS Master this situation,  
-The standard process starts with a basic sensor node (BSN). We have defined as BSN those ROS nodes in charge of to publish the information from the sensor.
 
+%%%  DESCRIPCIÓN DEL ESCENARIO
+Figure~\ref{fig:TestBed} provides a graphical representation of this situation. In this case, two clients are connected to a topic. This situation is transparent to ROS Master.
+The standard process starts with a basic sensor node (BSN). We have defined as BSN those ROS nodes in charge of to publish the information from the sensor.
 
 We have prepared a testbed with two laptopts.
 
-% \subsection{Simulated testedbed}
 
-We have installed ROS Jade in two computers connected through a wired Ethernet 10/100 switch (model XXXX). In the first computer we have connected a Xtion camera and a Hokuyo laser. In the second computer have run a node visualizing the information from the sensors. Figure \ref{fig:maqueta} shows this environment.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.5\textwidth]{TestBed_simple.pdf}
+    \caption{Scheme of the scenario simulated for testbed.}
+  \label{fig:TestBed}
+\end{figure}
+
+
+We have installed ROS Jade in two computers connected through a wired Ethernet 10/100 switch (model XXXX). In the first computer we have connected an Asus Xtion camera and a Hokuyo laser sensor. In the second computer have run a node visualizing the information from the sensors. %Figure \ref{fig:maqueta} shows this environment.
+
 
 
 % Then we modified the standard ROS implementation. We changed the TCP/IP sockets based implementation by ciphered ones.
 
-In this first approach we have changed the info published by the node, and instead of publish the information in a clean way, we publish the information encrypted.
-We use the 3DES algorithm that provides a 
-Triple DES (3DES) references the Triple Data Encryption Algorithm (TDEA or Triple DEA). It is a symmetric-key block cipher that applies the Data Encryption Standard (DES) cipher algorithm three times to each data block. It is standardized by NIST in the Recommendation for the Triple Data Encryption Algorithm Block Cipher (NIST Special Publication 800-67).
+\subsection{Encrypting ROS messages}
 
-DES algorithm has a fixed data block size of 8 bytes. Its keys are 128 (Option 1) or 192 bits (Option 2) long. However, 1 out of 8 bits is used for redundancy and do not contribute to security. The effective key length is respectively 112 or 168 bits.
+%%%  SISTEMA DE CIFRADO QUE USAMOS
 
-3DES consists of the concatenation of three simple DES ciphers.
+% Decir que: SÓLO HEMOS AÑADIDO CIFRADO Y DESCIFRADO EN LOS NODOS EMISORES Y RECEPTORES. NO HEMOS MODIFICADO EL SISTEMA DE BAJO NIVEL DE ROS, PARA EVALUAR ESPECÍFICAMENTE Y DE UNA FORMA MÁS PRECISA LA CARGA QUE SUPONE EL CIFRADO EN LOS NODOS.
 
-The plaintext is first DES-encrypted with K1, then decrypted with K2, and finally encrypted again with K3. The ciphertext is decrypted in the reverse manner.
+In this first approach we have changed the data published by the node, and instead of publish the information in a plain manner, we publish the information encrypted. We use the 3DES algorithm that provides a security layer to protect data.
+Triple DES (3DES) references the Triple Data Encryption Algorithm (TDEA or Triple DEA). It is a symmetric-key block cipher that applies the Data Encryption Standard (DES) algorithm three times to each data block. It is standardized by NIST in the Recommendation for the Triple Data Encryption Algorithm Block Cipher (NIST Special Publication 800-67).
+
+DES algorithm has a fixed data block size of 8 bytes. Its keys are 128 (option 1) or 192 bits (option 2) long. However, 1 out of 8 bits is used for redundancy and do not contribute to security. The effective key length is respectively 112 or 168 bits.
+
+The plaintext is first encrypted with K1, then decrypted with K2, and finally encrypted again with K3. The ciphertext is decrypted in the reverse manner.
 
 The 192 bit key is a bundle of three 64 bit independent subkeys: K1, K2, and K3.
 
@@ -133,23 +145,16 @@ The 128 bit key is split into K1 and K2, whereas K1=K3.
 
 It is important that all subkeys are different, otherwise 3DES would degrade to single DES.
 
-3DES is cryptographically secure, although it is slower than AES algorithm.
+3DES is cryptographically secure, although it is slower than AES algorithm. In a next stage, we will substitute 3DES with AES in our encryption system and repeat all the test we have done, to compare the performance.
 
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=.5\textwidth]{TestBed_simple.pdf}
-    \caption{Scheme of the scenario used for testbed.}
-  \label{fig:TestBed}
-\end{figure}
+\subsection{Tests performed}
 
-
-
-
-\subsection{Robotic testbed}
+%%%%  COMENTAR A ALTO NIVEL QUÉ/CUÁNTAS PRUEBAS HEMOS HECHO
 
 We want to evaluate how the encryption of communications would affect the performance of ROS.
 In the second experiment we changed the first computer for a RB1 robot and the XXX switch by a wireless one. The robot was also running ROS Jade.
+
 
 
 
@@ -364,5 +369,4 @@ The authors would like to thank the Spanish Ministry of Economy and Competitiven
 \bibliography{waf2016}
 
 \end{document}
-
 
