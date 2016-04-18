@@ -16,11 +16,11 @@
 
 \title{Cybersecurity in Autonomous Systems: Evaluating the performance of hardening ROS}
 
-\author{David Ma\~nanes, Francisco Javier Rodr\'iguez Lera, Jes\'us Balsa and Vicente Matell\'an,
+\author{David Ma\~nanes, Francisco Javier Rodr\'iguez Lera, Jes\'us Balsa and Vicente Matell\'an
 \IEEEcompsocitemizethanks{
 All authors are with the Robotics Group (http://robotica.unileon.es) and the Research Institute on Applied Sciences to Cybersecurity (http://riasc.unileon.es) at Universidad de Le\'on (Spain).
 
-\IEEEcompsocthanksitem Corresponding author: vicente.matellan@unileon.es} % <-this % s
+\IEEEcompsocthanksitem Corresponding author: vicente.matellan@unileon.es}% <-this % is needed.
 }
 
 \markboth{Workshop on Physical Agents, M\'alaga 2016}%
@@ -31,13 +31,13 @@ All authors are with the Robotics Group (http://robotica.unileon.es) and the Res
 \begin{abstract}
 As robotic systems spread, cybersecurity emerges as major concern. Currently most research autonomous systems are built using the ROS framework, along with other commercial software. 
 ROS is a distributed framework where nodes publish information that other nodes consume. 
-This model simplifies data communication but poses a major threat because a malicious process could easily interfere the communications, read private messages or even supersede nodes. In this paper we propose that ROS communications should be ciphered. We also measure how this ciphering affects its performance. We have used three different ciphering techniques: DES, AES and RSA. We have evaluated the performance of the system, both from the computing and the communications points of view. Preliminary results show that symmetric ciphers using private keys impose significant delays.
+This model simplifies data communication but poses a major threat because a malicious process could easily interfere the communications, read private messages or even supersede nodes. In this paper we propose that ROS communications should be encrypted. We also measure how encryption affects its performance. We have used three different ciphering techniques: DES, AES and RSA. We have evaluated the performance of the system, both from the computing and the communications point of view. Preliminary results show that symmetric ciphers using private keys impose significant delays.
 
 \end{abstract}
 
 
 \begin{IEEEkeywords}
-Autonomous systems, cybersecurity, Data security, Cyber-physical systems, Performance analysis
+Autonomous systems, Cybersecurity, Data security, Cyber-physical systems, ROS, Performance analysis
 \end{IEEEkeywords}
 
 
@@ -60,10 +60,10 @@ Some works have been sketched in this area, as for instance in \cite{Guiochet201
 
 There are three basic vulnerabilities threatening any computer system: availability (data interruption), confidentiality (data interception) and integrity (data modification). Other authors also add two more~\cite{sattarova2007security}: authenticity and non-repudiation (data fabrication from a non-trusted origin). 
 
+These concepts can be easily translated to industrial control applications~\cite{huitsing2008attack} or to robotic environments, due to the distributed approach used in most extended robotic frameworks (Yarp, ROS, ROBOCOMP). On one hand, the robot is deployed in a home environment. The robot provides information to users and also carries out behaviours in order to fulfil required tasks. 
+On the other hand, an attacker could attempt to make the robot or its network resources unavailable, this is a denial-of-service attack. The attacker could also intercept and modify command messages in order to change robot behaviour, and capture robot information about the environment and about the users. Finally the attacker could simulate a sensor and generate new data and send it to the robot. Figure \ref{fig:Conceptualmodel} summarizes graphically these vulnerabilities in a robotic environment.
 
-The concepts can be easily translated to industrial control applications~\cite{huitsing2008attack} or to a robotic environment, due to the distributed and extensive network use approach presented by most extended robotics frameworks (Yarp, ROS, ROBOCOMP). On one hand, the robot is deployed in a home environment. It provides information to users and also carry out behaviours in order to fulfil required tasks. During this time, the robot perceive information from its sensors and update its behaviours. 
-On the other hand, an attacker can attempt to make the robot or its network resources unavailable, this is a denial-of-service attack. The attacker can try to modify data messages in order to change robot behaviour, and also intercept the robot information about the environment and about the users personal data. Finally the attacker can simulate a sensor and generate new data available to the robot. 
-Figure \ref{fig:Conceptualmodel} summarizes graphically these vulnerabilities in a robotic environment. In this research we focus on confidentiality of data sent to and from the robot. Our approach consists in encrypt data transmitted by ROS nodes, without change ROS messages nor ROS functions to send the data. 
+In this research we focus on confidentiality of data sent to and from the robot. Our approach consists in encrypt data transmitted between ROS processes, adding two nodes for encryption and decryption task. We don't change ROS messages nor ROS standard functions to send the data. 
 
 
 % \begin{enumerate}
@@ -106,7 +106,7 @@ When a node wants to stablish a connection with a topic, it communicates with Ma
 
 
 %%%  DESCRIPCIÓN DEL ESCENARIO
-Figure~\ref{fig:TestBed} provides a graphical representation of this situation. In this case, two clients are connected to a topic. This situation is transparent to ROS Master.
+Figure~\ref{fig:TestBed} provides a graphical representation of the scenario we wanted to simulate. In this case, two clients are connected to a topic. This situation is transparent to ROS Master.
 The standard process starts with a basic sensor node (BSN). We have defined as BSN those ROS nodes in charge of to publish the information from the sensor.
 
 We have prepared a testbed with two laptopts.
