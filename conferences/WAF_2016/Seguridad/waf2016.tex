@@ -14,7 +14,7 @@
 
 \begin{document}
 
-\title{Cybersecurity in Autonomous Systems: Evaluating the performance of hardened ROS}
+\title{Cybersecurity in Autonomous Systems: Evaluating the performance of hardening ROS}
 
 \author{David Ma\~nanes, Francisco Javier Rodr\'iguez Lera, Jes\'us Balsa and Vicente Matell\'an,
 \IEEEcompsocitemizethanks{
@@ -37,7 +37,7 @@ This model simplifies data communication but poses a major threat because a mali
 
 
 \begin{IEEEkeywords}
-autonomous systems, cybersecurity, robotics, performance, cyber-physical systems, ciphers
+Autonomous systems, cybersecurity, Data security, Cyber-physical systems, Performance analysis
 \end{IEEEkeywords}
 
 
@@ -351,6 +351,101 @@ The figure~\ref{fig:images_encryption} presents the box-plot of the encryption d
     \caption{Time spent on each call to encryption/decryption function.}
   \label{fig:images_encryption}
 \end{figure*}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+%  Camara
+% *****************************************************
+% load avg
+% *****************************************************
+% 1m
+% Cifrado length: 73583.000000
+% Cifrado min: 0.000000
+% Cifrado max: 4.090000
+% Cifrado mean: 0.420771
+% Cifrado stdev: 0.402261
+% El valor moda del elemento 1m: (array([ 0.01]), array([ 2720.]))
+% 5m
+% Cifrado length: 73583.000000
+% Cifrado min: 0.070000
+% Cifrado max: 1.330000
+% Cifrado mean: 0.420862
+% Cifrado stdev: 0.062276
+% El valor moda del elemento 5m: (array([ 0.27]), array([ 2261.]))
+% 15m
+% Cifrado length: 73583.000000
+% Cifrado min: 0.190000
+% Cifrado max: 0.710000
+% Cifrado mean: 0.420539
+% Cifrado stdev: 0.009572
+% El valor moda del elemento 15m: (array([ 0.39]), array([ 3407.]))
+% 
+% 
+% 
+% *****************************************************
+% net/eth0
+% *****************************************************
+% recv
+% Cifrado length: 73583.000000
+% Cifrado min: 0.000000
+% Cifrado max: 2894889.000000
+% Cifrado mean: 180.865336
+% Cifrado stdev: 152873314.363260
+% El valor moda del elemento recv: (array([ 0.]), array([ 39574.]))
+% send
+% Cifrado length: 73583.000000
+% Cifrado min: 0.000000
+% Cifrado max: 16727.000000
+% Cifrado mean: 0.987021
+% Cifrado stdev: 9843.397769
+% El valor moda del elemento send: (array([ 0.]), array([ 73511.]))
+% 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% Idle PC
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+% *****************************************************
+% net/eth0
+% *****************************************************
+% recv
+% Cifrado length: 73950.000000
+% Cifrado min: 0.000000
+% Cifrado max: 2429716.000000
+% Cifrado mean: 199.616822
+% Cifrado stdev: 134166979.708237
+% El valor moda del elemento recv: (array([ 0.]), array([ 34878.]))
+% send
+% Cifrado length: 73950.000000
+% Cifrado min: 0.000000
+% Cifrado max: 14811.000000
+% Cifrado mean: 23.408343
+% Cifrado stdev: 12934.495778
+% El valor moda del elemento send: (array([ 0.]), array([ 64845.]))
+% 
+% *****************************************************
+% load avg
+% *****************************************************
+% 1m
+% Cifrado length: 73950.000000
+% Cifrado min: 0.000000
+% Cifrado max: 4.520000
+% Cifrado mean: 0.310385
+% Cifrado stdev: 0.599820
+% El valor moda del elemento 1m: (array([ 0.]), array([ 41293.]))
+% 5m
+% Cifrado length: 73950.000000
+% Cifrado min: 0.020000
+% Cifrado max: 1.360000
+% Cifrado mean: 0.311375
+% Cifrado stdev: 0.094693
+% El valor moda del elemento 5m: (array([ 0.04]), array([ 5726.]))
+% 15m
+% Cifrado length: 73950.000000
+% Cifrado min: 0.130000
+% Cifrado max: 0.620000
+% Cifrado mean: 0.311785
+% Cifrado stdev: 0.012632
+% El valor moda del elemento 15m: (array([ 0.22]), array([ 3330.]))
+
+
 
 \section{Conclusion and Further Work}
 
