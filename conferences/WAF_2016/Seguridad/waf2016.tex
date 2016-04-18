@@ -86,7 +86,14 @@ ROS provides specific libraries for robotics as well as classical operating syst
 
 ROS framework is basically a message-passing distributed system. Its architecture is based on processes that publish {\em messages} to {\em topics}. For instance, a process ({\em node}) can be in charge of accessing a sensor, performing the information processing, and publishing it as an information structure on a named topic. Another process can {\em subscribe} to this topic, that is, read its information. Then the process can make a decision about the movement of the robot. Next, this node will publish the commands in another topic to send them to the motors. ROS nodes can be running in the same computer or in different computers.
 
-This approach is very convenient for developers but can be easily tampered by malicious hackers. For instance, in \cite{McClean2013} an experiment involving a ROS-based honeypot is described. The honeypot was a radio model truck with two cameras and a compass as sensors, and it was controlled from a remote ROS node written in Javascript and hosted in a remote enterprise grade web server. Vulnerabilities described in the paper comprise plain-text communications, unprotected TCP ports and unencrypted data storage.
+Conventional ROS environment is composed by at least one ROS Master and some clients. ROS Master is the key element in the ROS system. It runs as a nameservice and manages registration information of topics and services used by ROS nodes. 
+
+When a node wants to stablish a connection with a topic, it communicates with Master to advise its registration information. After this step, the node gets more information about other registered nodes so it can stablish new connections with their topics appropriately. The Master is updated in real time with nodes information and topics they publish/subscribe.
+
+% Nodes communicate with the Master to report their registration information. 
+% As these nodes communicate with the Master, they can receive information about other registered nodes and make connections as appropriate. The Master will also make callbacks to these nodes when this registration information changes, which allows nodes to dynamically create connections as new nodes are run. 
+
+The ROS distributed approach is very convenient for developers but can be easily tampered by malicious hackers. For instance, in \cite{McClean2013} an experiment involving a ROS-based honeypot is described. The honeypot was a radio model truck with two cameras and a compass as sensors, and it was controlled from a remote ROS node written in Javascript and hosted in a remote enterprise grade web server. Vulnerabilities described in the paper comprise plain-text communications, unprotected TCP ports and unencrypted data storage.
 
 The first step to solve some of these problems is to secure the communication channels by using an encryption mechanism. But how does encryption impact on the performance of a robotic system? This is the goal of this paper, characterize and evaluate different alternatives to secure ROS communication system and measure their performance.
 
@@ -97,31 +104,31 @@ The paper is organized as follows: Next section describes the testbed we have de
 
 \section{Testbed description}
 
-Conventional ROS environment is composed by at least one ROS Master and some clients. ROS Master is the key element in the ROS system. It runs as a nameservice and manages registration information of topics and services used by ROS nodes. 
-
-When a node wants to stablish a connection with a topic, it communicates with Master to advise its registration information. After this step, the node gets more information about other registered nodes so it can stablish new connections with their topics appropriately. The Master is updated in real time with nodes information and topics they publish/subscribe.
-
-% Nodes communicate with the Master to report their registration information. 
-% As these nodes communicate with the Master, they can receive information about other registered nodes and make connections as appropriate. The Master will also make callbacks to these nodes when this registration information changes, which allows nodes to dynamically create connections as new nodes are run. 
-
-
 %%%  DESCRIPCIÓN DEL ESCENARIO
-Figure~\ref{fig:TestBed} provides a graphical representation of the scenario we wanted to simulate. In this case, two clients are connected to a topic. This situation is transparent to ROS Master.
-The standard process starts with a basic sensor node (BSN). We have defined as BSN those ROS nodes in charge of to publish the information from the sensor.
+ 
+We prepared the following scenario to test the implementation of our approach.
 
-We have prepared a testbed with two laptopts.
+\textcolor{red}{TRADUCIR:} Un robot con un PC corriendo el master. Un sensor láser conectado al PC del robot. Un nodo de cifrado corriendo en el robot, que cifra los mensajes del láser y los publica en el topic "laser/encryted" (por ejemplo).
+Por otro lado, hay un PC cliente con ROS, que se registra en el master. Se suscribe al topic "laser/encryted" y como conoce la clave, es capaz de descifrar la información proporcionada por el láser.
+
+Al mismo tiempo, un atacante desde otro PC con ROS, intenta hacer lo mismo. Escanea la red hasta dar con la IP del master y se registra. Pero gracias a nuestra solución, aunque se suscriba al topic para obtener los datos del láse, no es capaz de ver nada legible porque no conoce la clave de descifrado.
+
+\textcolor{red}{DUDA:} C\'omo estamos transmitiendo la clave la primera vez? ¿La tienen cableada el Master y el Client?
+
+Figure~\ref{fig:TestBed} provides a graphical representation of the scenario created. In this case, two clients are connected to a topic. This situation is transparent to ROS Master.
+%The standard process starts with a basic sensor node (BSN). We have defined as BSN those ROS nodes in charge of to publish the information from the sensor.
+%We have prepared a testbed with two laptopts.
 
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=.5\textwidth]{TestBed_simple.pdf}
-    \caption{Scheme of the scenario simulated for testbed.}
+    \includegraphics[width=.5\textwidth]{TestBed_complete.pdf}
+    \caption{Scheme of the scenario used for testbed.}
   \label{fig:TestBed}
 \end{figure}
 
 
-We have installed ROS Jade in two computers connected through a wired Ethernet 10/100 switch (model XXXX). In the first computer we have connected an Asus Xtion camera and a Hokuyo laser sensor. In the second computer have run a node visualizing the information from the sensors. %Figure \ref{fig:maqueta} shows this environment.
-
+We have installed ROS Indigo in two computers connected through a wired Ethernet 10/100 switch (model XXXX). In the first computer we have connected an Asus Xtion camera and a Hokuyo laser sensor. In the second computer have run a node visualizing the information from the sensors. %Figure \ref{fig:maqueta} shows this environment.
 
 
 % Then we modified the standard ROS implementation. We changed the TCP/IP sockets based implementation by ciphered ones.
@@ -150,10 +157,10 @@ It is important that all subkeys are different, otherwise 3DES would degrade to 
 
 \subsection{Tests performed}
 
-%%%%  COMENTAR A ALTO NIVEL QUÉ/CUÁNTAS PRUEBAS HEMOS HECHO
+\textcolor{red}{COMENTAR A ALTO NIVEL QU\'E/CU\'ANTAS PRUEBAS HEMOS HECHO.}
 
 We want to evaluate how the encryption of communications would affect the performance of ROS.
-In the second experiment we changed the first computer for a RB1 robot and the XXX switch by a wireless one. The robot was also running ROS Jade.
+In the second experiment we changed the first computer for a RB1 robot and the XXX switch by a wireless one. The robot was also running ROS Indigo.
 
 
 
@@ -197,7 +204,7 @@ def fn_timer(function):
 
 In this test we have used a modified version of talker/listener tutorial proposed by ROS. 
 ROS statistical data shows the simple publish/subscribe example sending 11 string messages ({\em std\_msgs/String}) by second of ``Hello wold'' plus a timestamp with 440 bytes of traffic.
-In this manner, we want to analyse the behaviour of the system using bigger messages: T1, 262144 bytes; T2, 524288 bytes; and T3, 1048576 bytes 
+In this manner, we want to analyse the behaviour of the system using bigger messages: T1, 262144 bytes (256 KB); T2, 524288 bytes (512 KB); and T3, 1048576 bytes (1024 KB).
 
 The measurements of behaviour of ROS traffic presents with simple plain messages {\em delivered\_msgs} 10 of T1 generate . When T2 messages are sent the system runs with 4194368 bytes of traffic and finally when it is working in  T3 messages just send 4194336 bytes and a total of 4 messages. There is no dropped messages by subscription.
 
@@ -215,7 +222,7 @@ For instance, T1 type presents running for 34.486 seconds a total of 23.008 of C
   \label{fig:time_text_CPU}
 \end{figure}
 
-{\textcolor{red}{[REESCRIBIR BIEN ESTE P\'ARRAFO].}} If we focus on the encryption/decryption process, we can see that the time needed for the encryption function shows in 1040 messages a minimal time of 0.059246 seconds and a max time to encrypt the string of 0.683408 seconds with an average of 0.063858 seconds and standard deviation of 0.000388.
+\textcolor{red}{[REESCRIBIR BIEN ESTE P\'ARRAFO].} If we focus on the encryption/decryption process, we can see that the time needed for the encryption function shows in 1040 messages a minimal time of 0.059246 seconds and a max time to encrypt the string of 0.683408 seconds with an average of 0.063858 seconds and standard deviation of 0.000388.
 
 This time increases with T2 and T3 types. T2 type needs 0.123383 seconds in average with standard deviation of 0.000040 seconds and  T3  0.247303 with a standard deviation of 0.000137.
 
