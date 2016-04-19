@@ -16,7 +16,7 @@
 
 \title{Cybersecurity in Autonomous Systems: Evaluating the performance of hardening ROS}
 
-\author{David Ma\~nanes, Francisco Javier Rodr\'iguez Lera, Jes\'us Balsa and Vicente Matell\'an
+\author{Francisco Javier Rodr\'iguez Lera, Jes\'us Balsa, Fernando Casado, Camino Fern\'andez, and Vicente Matell\'an
 \IEEEcompsocitemizethanks{
 All authors are with the Robotics Group (http://robotica.unileon.es) and the Research Institute on Applied Sciences to Cybersecurity (http://riasc.unileon.es) at Universidad de Le\'on (Spain).
 
@@ -32,7 +32,6 @@ All authors are with the Robotics Group (http://robotica.unileon.es) and the Res
 As robotic systems spread, cybersecurity emerges as major concern. Currently most research autonomous systems are built using the ROS framework, along with other commercial software. 
 ROS is a distributed framework where nodes publish information that other nodes consume. 
 This model simplifies data communication but poses a major threat because a malicious process could easily interfere the communications, read private messages or even supersede nodes. In this paper we propose that ROS communications should be encrypted. We also measure how encryption affects its performance. We have used three different ciphering techniques: DES, AES and RSA. We have evaluated the performance of the system, both from the computing and the communications point of view. Preliminary results show that symmetric ciphers using private keys impose significant delays.
-
 \end{abstract}
 
 
@@ -45,25 +44,30 @@ Autonomous systems, Cybersecurity, Data security, Cyber-physical systems, ROS, P
 
 
 % \IEEEPARstart{A}{utonomous} systems are spreading not just in the virtual world (Internet, software systems), or in science-fiction movies, but in our ordinary real world. 
-\IEEEPARstart{I}{t} is possible to find driverless cars in the streets, autonomous vacuum cleaners in our homes, museum guides, hotel assistants, etc. These cyber-physical systems, as any computer-based system, can suffer different types of attacks, and the need of cybersecurity \cite{Morante2015} is required. 
+\IEEEPARstart{I}{t} is possible to find driverless cars in the streets, autonomous vacuum cleaners in our homes, museum guides, hotel assistants, etc. These robotic systems, as any computer-based system, can suffer different types of attacks, and the need of cybersecurity \cite{Morante2015} is required. 
 
+ROS (Robotic Operating System) \cite{ROS09} has become the most popular framework for developing robotic applications. It started as a research framework, but currently most of manufacturers of commercial platforms use ROS as the {\em de facto} standard for building robotic software. For example, object-manipulation robots like Baxter (by Rethink robotics) ~\cite{fitzgerald2013developing} or service robots as our RB1 (by Robotnik) are ROS based platforms.
 
-ROS (Robotic Operating System) \cite{ROS09} has become the most popular framework for developing robotic applications. It started in the research environment, but currently most of manufacturers of commercial platforms use ROS as the {\em de facto} standard for building robotic software. For example, object-manipulation robots like Baxter (by Rethink robotics) ~\cite{fitzgerald2013developing} or service robots as our RB1 (by Robotnik) are ROS based platforms.
+Our research group is developing an assistant robot~\cite{Martin2014} for the elderly. When we initiated experiments involving potential users, caregivers have asked us about the security of our robot and about the privacy of its communications \cite{Denning2009}. When an assistant robot carrying a camera is deployed in a home, the access to the camera should be secured; even more when the robot is managing medical information. 
 
-Our research group is developing an assistant robot~\cite{Martin2014} for the elderly. When we initiated experiments involving potential users, caregivers have asked us about the security of our robot and about the privacy of its communications \cite{Denning2009}. When an assistant robot carrying a camera is deployed in a home, the access to the camera should be secured; even more when the robot is managing medical information. We have developed all our software for the autonomous behaviour of the robots using ROS, so we need to consider its security.
+We have developed all the software that controls the autonomous behavior of our robot using ROS, so we decide to analyzed its security. 
 
-Some works have been sketched in this area, as for instance in \cite{Guiochet2016}.
+%We realized that the communication mechanism was one of its weakest points. 
+
+%Some works have been sketched in this area, as for instance in \cite{Guiochet2016}.
 
 
 
 \subsection{Security assessment}
 
+
 There are three basic vulnerabilities threatening any computer system: availability (data interruption), confidentiality (data interception) and integrity (data modification). Other authors also add two more~\cite{sattarova2007security}: authenticity and non-repudiation (data fabrication from a non-trusted origin). 
 
-These concepts can be easily translated to industrial control applications~\cite{huitsing2008attack} or to robotic environments, due to the distributed approach used in most extended robotic frameworks (Yarp, ROS, ROBOCOMP). On one hand, the robot is deployed in a home environment. The robot provides information to users and also carries out behaviours in order to fulfil required tasks. 
-On the other hand, an attacker could attempt to make the robot or its network resources unavailable, this is a denial-of-service attack. The attacker could also intercept and modify command messages in order to change robot behaviour, and capture robot information about the environment and about the users. Finally the attacker could simulate a sensor and generate new data and send it to the robot. Figure \ref{fig:Conceptualmodel} summarizes graphically these vulnerabilities in a robotic environment.
+These concepts can be easily translated to industrial control applications~\cite{huitsing2008attack} or to robotic environments, due to the distributed approach used in most extended robotic frameworks (Yarp, ROS, ROBOCOMP). On one hand, the robot is deployed in a home environment. The robot provides information to users and also carries out behaviors in order to fulfill required tasks. 
+On the other hand, an attacker could attempt to make the robot or its network resources unavailable, this is a denial-of-service attack. The attacker could also intercept and modify command messages in order to change robot behavior, and capture robot information about the environment and about the users. Finally the attacker could simulate a sensor and generate new data and send it to the robot. Figure \ref{fig:Conceptualmodel} summarizes graphically these vulnerabilities in a robotic environment.
 
-In this research we focus on confidentiality of data sent to and from the robot. Our approach consists in encrypt data transmitted between ROS processes, adding two nodes for encryption and decryption task. We don't change ROS messages nor ROS standard functions to send the data. 
+In this research we focus on confidentiality of data sent to and from the robot. Our proposal consists in encrypt data transmitted between ROS processes, adding two nodes for encryption and decryption task. We don't change ROS messages nor ROS standard functions to send the data. The question is if this hardening of ROS will impact on its performance.
+
 
 
 % \begin{enumerate}
