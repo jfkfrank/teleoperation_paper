@@ -4,6 +4,8 @@
 \usepackage{flushend}
 \usepackage{fancyvrb}
 \usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+
 
 % declare the path(s) where your graphic files are
 \graphicspath{{figures/}}
@@ -176,12 +178,6 @@ It is important that all subkeys are different, otherwise 3DES would degrade to 
 3DES is cryptographically secure, although it is slower than AES algorithm. In a next stage, we will substitute 3DES with AES in our encryption system and repeat all the test we have done, to compare the performance.
 
 
-\subsection{Tests performed}
-
-\textcolor{red}{COMENTAR A ALTO NIVEL QU\'E/CU\'ANTAS PRUEBAS HEMOS HECHO.}
-
-We want to evaluate how the encryption of communications would affect the performance of ROS.
-In the second experiment we changed the first computer for a RB1 robot and the XXX switch by a wireless one. The robot was also running ROS Indigo.
 
 
 
@@ -220,8 +216,90 @@ def fn_timer(function):
   }
 }
 
+We have divided the experiments in three parts. First we have analyzed how does the "talker-listener" simple ROS node works under encrypted conditions. Then we have stressed the same node publishing-subscribing bigger text messages. Finally we have analyzed a real sensor, a camera, under crypted conditions in order to analize the system behaviour under encrypting conditions.  
 
-\subsection{Text Messages}
+\subsection{Hardware Used}
+
+\textcolor{red}{COMENTAR A ALTO NIVEL QU\'E/CU\'ANTAS PRUEBAS HEMOS HECHO.}
+
+We want to evaluate how the encryption of communications would affect the performance of ROS.
+In this first approach we have used two  Alcatel-Lucent OmniSwitch 6860E de 48 puertos PoE+ (OS6860E-P48)
+second experiment we changed the first computer for a RB1 robot and the XXX switch by a wireless one. The robot was also running ROS Indigo.
+
+
+
+\subsection{Test 1: Talker-Listener Node}
+
+In this test we have used the version of talker/listener tutorial proposed by ROS\footnote{\url{http://wiki.ros.org/rospy_tutorials/Tutorials/WritingPublisherSubscriber}}
+
+This package distributed by ROS as a demo, presents a simple ROS package that creates two rospy nodes. The "talker" node broadcasts a {\em Hellow world + Timestamp} message on topic "chatter", while the "listener" node receives and prints the message.
+
+
+%======================================
+%Cifrado
+%======================================
+%Cifrado length: 1272.000000
+%Cifrado min: 0.000040
+%Cifrado max: 0.000129
+%Cifrado mean: 0.000065
+%Cifrado stdev: 0.000000
+%El valor moda de la fase de cifrado fue:
+%(array([  4.60147858e-05]), array([ 55.]))
+%======================================
+%Descifrado
+%======================================
+%Cifrado length: 1570.000000
+%Cifrado min: 0.000023
+%Cifrado max: 0.000239
+%Cifrado mean: 0.000045
+%Cifrado stdev: 0.000000
+%El valor moda de la fase de cifrado fue:
+%(array([  4.50611115e-05]), array([ 260.]))
+
+Table~\ref{tab:time_simple_text_hellow_CPU} presents the CPU time spent when the nodes are running in different machines.  The values are the result of launching ROS nodes using the Unix command {\em time}. The values present a minimal consumption of CPU associated to the process. In  case of Plain publish/subscribe it represents than 1\% and in the case of the publisher in encrypt mode it represents approximately the 1.1\%, that is almos the same than in plain mode.
+
+%\begin{figure}[ht!]
+%	\centering
+%	\includegraphics[width=.5\textwidth]{Text_plain_vs_encrypted.png}
+%	\caption{Time of CPU spent on a simple publisher/listener 30 seconds running test.}
+%	\label{fig:time_simple_text_hellow_CPU}
+%\end{figure}
+
+\begin{table}[h]
+	\centering
+	\caption{Time in seconds of CPU spent on a simple publisher/listener running test.}
+	\label{tab:time_simple_text_hellow_CPU}
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+&		Plain&	Plain&	Encrypt&	Decrypt \\
+&		Publication&Subscription&Publication&Subscription \\\hline
+Time running&34.491&	34.484&	36.882&	34.995 \\\hline
+Time user&0.184&	0.196&	0.348&	0.24 \\\hline
+Time sys&0.024&	0.08&	0.064&	0.056 \\\hline
+Total CPU&0.208&	0.276&	0.412&	0.296 \\\hline
+
+	\end{tabular}
+\end{table}
+
+Figure~\ref{fig:time_simple_text_CPU} presents the boxplot associated to the calls to encrypt/decrypt methods used in this paper. It was used the PyCrypto package, it is an extended python Cryptography Toolkit that allows to simply the method to encrypt or decrypt in multiple languages. In this case we have cyphered using 3DES.
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=.5\textwidth]{figure_Simple_Publisher_subscriber.png}
+	\caption{Time spent on a encrypt/decrypt DES3 function call.}
+	\label{fig:time_simple_text_CPU}
+\end{figure}
+
+
+\begin{figure*}[ht!]
+	\centering
+	\includegraphics[width=.99\textwidth]{Screenshot_hello_world.png}
+	\caption{Screenshot with the nodes involved in the simple publisher/subscribe test. Upper left terminal presents the publisher node before encryption. Botton left terminal depicts the subscriber node after decruption. Right terminal presents the results of rostopic echo on {\em /chatter} topic used for transmitting info through nodes.}
+	\label{fig:screenshot_hello_world}
+\end{figure*}
+
+\subsection{Test 2: Custom Talker-Listener Node}
+
 
 In this test we have used a modified version of talker/listener tutorial proposed by ROS. 
 ROS statistical data shows the simple publish/subscribe example sending 11 string messages ({\em std\_msgs/String}) per second (with ``Hello wold'' text), plus a timestamp with 440 bytes of traffic.
@@ -238,7 +316,7 @@ This is totally different when we are working with encrypted text messages of ty
 For instance, T1 type presents running for 34.486 seconds a total of 23.008 of CPU. This means that the total CPU time increases almost 62\%. This is even higher in T2 and T3 types with almost the 98\% of real execution time.
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=.5\textwidth]{Tiempos_CPU_cifrado_texto.png}
+    \includegraphics[width=.5\textwidth]{Text_plain_vs_encrypted.png}
     \caption{Time of CPU spent on a simple talker/listener test.}
   \label{fig:time_text_CPU}
 \end{figure}
@@ -318,7 +396,7 @@ This time increases with T2 and T3 types. T2 type needs 0.123383 seconds in aver
 
 
 
-\subsection{Camera}
+\subsection{Test 3: Camera Node}
 
 
 \subsubsection{Process evaluation}
