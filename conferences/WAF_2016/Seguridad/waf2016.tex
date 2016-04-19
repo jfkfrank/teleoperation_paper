@@ -18,7 +18,7 @@
 
 \title{Cybersecurity in Autonomous Systems: Evaluating the performance of hardened ROS}
 
-\author{Francisco Javier Rodr\'iguez Lera, Jes\'us Balsa, Fernando Casado, Camino Fern\'andez, Francisco Martín Rico, and Vicente Matell\'an
+\author{Francisco Javier Rodr\'iguez Lera, Jes\'us Balsa, Fernando Casado, Camino Fern\'andez, Francisco Mart\'in Rico, and Vicente Matell\'an
 \IEEEcompsocitemizethanks{
 Francisco Javier Rodr\'iguez Lera, Jes\'us Balsa, Fernando Casado, Camino Fern\'andez, and Vicente Matell\'an are with the Robotics Group (http://robotica.unileon.es) and the Research Institute on Applied Sciences to Cybersecurity (http://riasc.unileon.es) at Universidad de Le\'on (Spain).
 
@@ -119,22 +119,23 @@ The paper is organized as follows: Next section describes the testbed we have de
 
 %%%  DESCRIPCIÓN DEL ESCENARIO
  
-{\color{red}{Habr'ia que contar primero qu'e se quiere medir}} 
- 
-We prepared the following scenario to test the implementation of our approach.
+
+In order to evaluate the performance of the encrypted  version of ROS communications environment, we designed the following scenario.
 
 %\textcolor{red}{TRADUCIR:} Un robot con un PC corriendo el master. Un sensor láser conectado al PC del robot. Un nodo de cifrado corriendo en el robot, que cifra los mensajes del láser y los publica en el topic "laser/encryted" (por ejemplo).
 %Por otro lado, hay un PC cliente con ROS, que se registra en el master. Se suscribe al topic "laser/encryted" y como conoce la clave, es capaz de descifrar la información proporcionada por el láser.
 
-First, we set up our robot RB1 installing ROS Indigo in its embedded computer. The master component was running in this platform. The robot was connected by cable to the network of our laboratory. We plugged a Hokuyo laser sensor to the robot. We launched the Hokuyo node that publishes laser data to the topic \textit{/laser}. Next we executed our encryption node which subscribes to \textit{/laser}, performs data encryption and publishes them into \textit{/encrypted/laser} topic.
+First, we installed ROS Indigo in the on-board computer of the our RB1 mobile robot. The ROS master component ran in this platform. The robot was connected by wire to our laboratory network infrastructure. First we used the Hokuyo laser sensor of the robot. We launched a Hokuyo node that published laser data in the topic \textit{/laser}. Then, we ran {\textcolor{red}{our encryption node, antes hay que decir que nodos hay}} which subscribes to \textit{/laser}, performs data encryption and publishes them into \textit{/encrypted/laser} topic.
 
 Second, we used one desktop computer as a ``known client'', also with ROS Indigo installed and connected by cable to our network. This client knows the master ROS IP, so it can communicate with master. We run a decryption node in the client computer, which registers to master and subscribes to the topic \textit{/encrypted/laser}. This node decrypts data and prints them on the screen.
 
-Third, we used another desktop computer as a simulated ``attacker'', connected to the same  cable network. This computer has the same ROS version running on it. The attacker doesn't know the master ROS IP, but he can easily discover it performing a network scan with known tools like \textit{nmap}. Then the attacker can execute a malicious node for attempting to read laser data, which is being published in the topic \textit{/encrypted/laser}. Despite the node could subscribe to that topic, all data received is encrypted. As a result, the malicious node can't see original laser messages because the attacker doesn't have the key to decrypt them. 
+Third, we used another desktop computer as a simulated ``attacker'', connected to the same  cable network. This computer has the same ROS version running on it. The attacker doesn't know the master ROS IP, but he can easily discover it performing a network scan with well known tools like \textit{nmap}. Then, the attacker could execute a malicious node for attempting to read laser data, which is being published in the topic \textit{/encrypted/laser}. Despite the node could subscribe to that topic, all data received is encrypted. As a result, the malicious node can't see original laser messages because the attacker doesn't have the key to decrypt them. 
 
 %Al mismo tiempo, un atacante desde otro PC con ROS, intenta hacer lo mismo. Escanea la red hasta dar con la IP del master y se registra. Pero gracias a nuestra soluci\'on, aunque se suscriba al topic para obtener los datos del l\'aser, no es capaz de ver nada legible porque no conoce la clave de descifrado.
 
-\textcolor{red}{TRADUCIR:} Para las pruebas, la clave para cifrar/descifrar la tienen guardada tanto el master como el cliente conocido. En un sistema real, este proceso debería hacerse mediante un sistema de clave pública-privada como RSA, para transmitir de una forma segura la clave que van a compartir ambos nodos.
+%\textcolor{red}{TRADUCIR:} Para las pruebas, la clave para cifrar/descifrar la tienen guardada tanto el master como el cliente conocido. En un sistema real, este proceso debería hacerse mediante un sistema de clave pública-privada como RSA, para transmitir de una forma segura la clave que van a compartir ambos nodos.
+
+The cryptographic key  is stored in the master node and it is known by the legitimate clients. In a system in production this mechanism can be implemented as a public-private key schema as RSA  to safely share the key between the nodes. 
 
 Figure~\ref{fig:TestBed} provides a graphical representation of the scenario created.
 %In this case, two clients are connected to a topic. This situation is transparent to ROS Master.

@@ -46,10 +46,10 @@ JoPhA, journal, \LaTeX, paper, template.
 %...
 
 % GOALS OF THE PAPER
-  The motivation behind this paper is to test whether or not the sense of touch improves the user experience in teleoperation. To achieve this, we propose an experiment: teleoperate a robot for playing a board game. The scenario will have two players and one game. One player is located at the game's place while the other is away, teleoperating a robot which is ``physically'' located at that same place. The teleoperation system consists of a Geomagic Touch haptic interface (that acts as a master device) and a Baxter robot (which acts as the slave device). The board game chosen to play is ``checkers'', as it is...
+  The motivation behind this paper is to test whether or not the sense of touch improves the user experience in teleoperation. To achieve this, we propose an experiment: teleoperate a robot for playing a board game. The scenario will have two players and one game. One player is located at the game's place while the other is away, teleoperating a robot which is ``physically'' located at that same place. The teleoperation system consists of a Geomagic Touch haptic interface (that acts as a master device) and a Baxter robot (which acts as the slave device). The board game chosen to play is ``checkers'', a strategy game chosen because of its simplicity: all pieces are equal except from their colors and they can only move diagonally forward. With this setup, the user experience is evaluated by defining and measuring some metrics with a group of expert's evaluators.
 
 % STRUCTURE
-  This paper is organized as follows. Section~\ref{sec:environment} shows the architecture of the environment by describing the basic elements of the system. Section~\ref{sec:experiment} describes how the experiment has been carried out.~\ldots Finally, the paper ends with our conclusions.
+  This paper is organized as follows. Section~\ref{sec:environment} shows the architecture of the environment by describing the basic elements of the system. Section~\ref{sec:experiment} describes how the experiment has been defined and carried out. Finally, the paper ends with our conclusions.
 
 \section{Environment description}
 \label{sec:environment}
@@ -74,7 +74,7 @@ JoPhA, journal, \LaTeX, paper, template.
 
 
 
-\subsection{Slave: Haptic Device}
+\subsection{Master: Haptic Device}
 Haptic feedback takes advantage of the human sense of touch by recreating forces, vibrations or motions to the user. 
 An haptic device allows to feel a feedback from virtual or real objects and produces a realistic touch sensations to a user. 
 The PHANToM Omni is a 6 DOF haptic device that applies haptic feedback. 
@@ -84,7 +84,7 @@ The PHANToM Omni is a 6 DOF haptic device that applies haptic feedback.
 It has 3 actuated DOF associated to the armature which provides the translational movements (X, Y, and Z Cartesian coordinates) and other 3 non-actuated DOF associated to the gimball  that gives the orientation (pitch, roll and yaw rotational movements).  The characteristic of this device allow to offer a feedback up to a maximum of 3.3N.
 
 
-\subsection{Master: Baxter}
+\subsection{Slave: Baxter}
 Subsubsection text here. 
 
 (Paper de Fran)
