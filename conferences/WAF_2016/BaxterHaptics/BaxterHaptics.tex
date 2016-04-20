@@ -39,11 +39,7 @@ JoPhA, journal, \LaTeX, paper, template.
 
   Enhancing the user experience is a key aspect in teleoperation. These systems use different interfaces (e.g. cameras, microphones or input devices) to provide sensory information to the operator, and thus, improving the user experience. Traditionally, video feedback from an on-board or front-mounted camera is limited by technical constraints~\cite{Woods04,Woods97} like a restricted field of view or poor resolution. In some scenarios, these constraints makes difficult for the operator to be aware of the robot's proximity to objects~\cite{Alfano90}, causing a decrease in performance. To alleviate such limitations, at least partially, haptic cues (either by force or tactile feedback) have been shown to be useful in some applications~\cite{Son13,Sitti03,Diolaiti02}, especially when the operator performs manipulation tasks~\cite{King09,Kron04}.
   
-%   haptics must play a superior role over vision or audio.
-  In recent years, haptic devices are playing a superior role over vision or audio, particularly in applications that involve touch.%...
-
-% Interfaces: haptics and delay
-%...
+  Haptic feedback is very important when simulating interactions with rigid objects. When interacting with rigid objects like exploring the edges, surfaces features, etc. visual information is replaced by the sense of touch.  % add some brief literature review about haptics in teleoperation
 
 % GOALS OF THE PAPER
   The motivation behind this paper is to test whether or not the sense of touch improves the user experience in teleoperation. To achieve this, we propose an experiment: teleoperate a robot for playing a board game. The scenario will have two players and one game. One player is located at the game's place while the other is away, teleoperating a robot which is ``physically'' located at that same place. The teleoperation system consists of a Geomagic Touch haptic interface (that acts as a master device) and a Baxter robot (which acts as the slave device). The board game chosen to play is ``checkers'', a strategy game chosen because of its simplicity: all pieces are equal except from their colors and they can only move diagonally forward. With this setup, the user experience is evaluated by defining and measuring some metrics with a group of expert's evaluators.
@@ -56,9 +52,13 @@ JoPhA, journal, \LaTeX, paper, template.
 
 % FRAN? + GONZALO?
 
-% TELEMANIPULATION SYSTEMS AND BILATERAL TELEOPERATION. Highlight bilateral teleoperation using position [Kuchenbecker 2006].
-
-  A basic telemanipulation system consists of a master robot manipulated by an operator and a slave...
+  A telemanipulation system is comprised of two robots, master and slave, and a communication channel that physically links them. The master allows an operator to send commands to control the slave motion, while the slave robot interacts with the environment by executing such commands. 
+  
+  For this work, the environment needs to be a place where a board game can be played. To simplify the experiment,...
+  
+   The choosen environment is s a room containing a table with a checkers board and another table for the operator. The whole telemanipulation system is located inside such room. The master is a Geomagic Touch haptic device, located at the operator's table, while the slave is a Baxter robot placed in front of the game board's table. To ignore the communication channel time delays, both the master and the slave are connected to the same workstation through Ethernet cables.
+  
+  % TELEMANIPULATION SYSTEMS AND BILATERAL TELEOPERATION. Highlight bilateral teleoperation using position [Kuchenbecker 2006].
   
 \includegraphics[scale=0.07]{Images/baxterHoldingPiece.jpg} 
 
