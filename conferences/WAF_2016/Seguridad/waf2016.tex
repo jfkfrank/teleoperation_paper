@@ -179,13 +179,13 @@ It is important that all subkeys are different, otherwise 3DES would degrade to 
 3DES is cryptographically secure, although it is slower than AES algorithm. In a next stage, we will substitute 3DES with AES in our encryption system and repeat all the test we have done, to compare the performance.
 
 
-
+From the development side, tt was used the PyCrypto package. It is an extended python Cryptography Toolkit that allows to simply the method to encrypt or decrypt in multiple languages. 
 
 
 
 \section{Experimental Measurements}
 
-\textcolor{red}{A\~NADIR EL MODELO DE SWITCH EN ESTA SECCI\'ON}
+\textcolor{red}{COMENTAR A ALTO NIVEL QU\'E/CU\'ANTAS PRUEBAS HEMOS HECHO.}
 
 To illustrate the described approach, we present an ad-hoc implementation of an encryption system to change part of the message used for transmit or receive robot sensors information. 
 We maintain in each case 
@@ -219,13 +219,15 @@ def fn_timer(function):
 
 We have divided the experiments in three parts. First we have analyzed how does the "talker-listener" simple ROS node works under encrypted conditions. Then we have stressed the same node publishing-subscribing bigger text messages. Finally we have analyzed a real sensor, a camera, under crypted conditions in order to analize the system behaviour under encrypting conditions.  
 
-\subsection{Hardware Used}
+\subsection{Hardware Set-up}
 
-\textcolor{red}{COMENTAR A ALTO NIVEL QU\'E/CU\'ANTAS PRUEBAS HEMOS HECHO.}
+
 
 We want to evaluate how the encryption of communications would affect the performance of ROS.
-In this first approach we have used two  Alcatel-Lucent OmniSwitch 6860E de 48 puertos PoE+ (OS6860E-P48)
-second experiment we changed the first computer for a RB1 robot and the XXX switch by a wireless one. The robot was also running ROS Indigo.
+We have used the better of the cases where a 8x Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz
+with 16231MB of RAM Memory	and running an Ubuntu 14.04.4 LTS Operating System.
+
+The two computers are connected by an  Alcatel-Lucent OmniSwitch 6860E switch
 
 
 
@@ -282,7 +284,7 @@ Total CPU&0.208&	0.276&	0.412&	0.296 \\\hline
 	\end{tabular}
 \end{table}
 
-Figure~\ref{fig:time_simple_text_CPU} presents the boxplot associated to the calls to encrypt/decrypt methods used in this paper. It was used the PyCrypto package, it is an extended python Cryptography Toolkit that allows to simply the method to encrypt or decrypt in multiple languages. In this case we have cyphered using 3DES.
+Figure~\ref{fig:time_simple_text_CPU} presents the boxplot associated to the calls to encrypt/decrypt methods during this test.  We can observe that the average time in this process is slightly higher in encryption (0.000065 seconds) against the decryption  (0.000045 seconds), but in both cases it is almost negligible.
 
 \begin{figure}[ht!]
 	\centering
@@ -295,7 +297,7 @@ Figure~\ref{fig:time_simple_text_CPU} presents the boxplot associated to the cal
 \begin{figure*}[ht!]
 	\centering
 	\includegraphics[width=.99\textwidth]{Screenshot_hello_world.png}
-	\caption{Screenshot with the nodes involved in the simple publisher/subscribe test. Upper left terminal presents the publisher node before encryption. Botton left terminal depicts the subscriber node after decruption. Right terminal presents the results of rostopic echo on {\em /chatter} topic used for transmitting info through nodes.}
+	\caption{Screen-shot with the nodes involved in the simple publisher/subscribe test. Upper left terminal presents the publisher node before encryption. Bottom left terminal depicts the subscriber node after decryption. Right terminal presents the results of rostopic echo on {\em /chatter} topic used for transmitting info through nodes.}
 	\label{fig:screenshot_hello_world}
 \end{figure*}
 
