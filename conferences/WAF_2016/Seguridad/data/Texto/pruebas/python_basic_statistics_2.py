@@ -30,7 +30,7 @@ data_1024 = np.genfromtxt("Salida_1024KB.txt",delimiter="\n")
 ##################################################################################### 
 # create new figure
 fig = plt.figure()
-fig.suptitle('Data Analysis: Test Encrypt/Decrypt (DES3)', fontsize=16, fontweight='bold')
+fig.suptitle('Data Analysis: Text Encrypt/Decrypt (3DES)', fontsize=16, fontweight='bold')
 ##################################################################################### 
 
 

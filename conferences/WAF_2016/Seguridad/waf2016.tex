@@ -93,7 +93,7 @@ In this research we focus on confidentiality of data sent to and from the robot.
 \end{figure}
 
 
-\subsection{ROS overview}
+\section{ROS overview}
 
 ROS provides specific libraries for robotics as well as classical operating system services such as hardware abstraction (for sensors and actuators), low-level device control, and inter-process communication. Inter-process communication is based on a graph architecture where computation takes place in ROS processes named nodes. These nodes can receive and send messages, but no security was considered in the communication mechanism.
 
@@ -102,6 +102,17 @@ ROS framework is basically a message-passing distributed system. Its architectur
 Conventional ROS environment is composed by at least one ROS Master and some clients. ROS Master is the key element in the ROS system. It runs as a nameservice and manages registration information of topics and services used by ROS nodes. 
 
 When a node wants to stablish a connection with a topic, it communicates with Master to advise its registration information. After this step, the node gets more information about other registered nodes so it can stablish new connections with their topics appropriately. The Master is updated in real time with nodes information and topics they publish/subscribe.
+
+%% Origen de la gráfica
+%%
+%%http://answers.ros.org/question/12882/why-ros-topic-should-get-xmlrpc-addressport-but-ros-service-doesnt/
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=.495\textwidth]{ros_tutorial.png}
+	\caption{Conceptual model of ROS topics presented by Radu Rusu in his tutorial\cite{rusu2010ros}.}
+	\label{fig:Conceptual_ROS_topics_model}
+\end{figure}
+
 
 % Nodes communicate with the Master to report their registration information. 
 % As these nodes communicate with the Master, they can receive information about other registered nodes and make connections as appropriate. The Master will also make callbacks to these nodes when this registration information changes, which allows nodes to dynamically create connections as new nodes are run. 
@@ -113,6 +124,35 @@ The first step to solve some of these problems is to secure the communication ch
 
 The paper is organized as follows: Next section describes the testbed we have designed to measure the performance of the encrypted ROS system. Third section evaluates the data obtained in the experiments, and last section presents some conclusions obtained and further work.
 
+\subsection{ROS Messages}
+
+{\color{red} COPIA-PEGA -> Modificar}
+ROS uses a simplified messages description language for describing the data values (aka messages) that ROS nodes publish. This description makes it easy for ROS tools to automatically generate source code for the message type in several target languages. Message descriptions are stored in .msg files in the msg/ subdirectory of a ROS package. 
+
+Tipos básicos
+
+Tipos de arrays
+
+Tipos compuestos: por ejemplo el de imágenes
+
+File: sensor\_msgs/Image.msg
+
+{
+	\footnotesize{
+\begin{Verbatim}[frame=single, commandchars=+\(\)]
+std_msgs/Header header
+uint32 height
+uint32 width
+string encoding
+uint8 is_bigendian
+uint32 step
++underline(uint8[] data) #matrix data
+\end{Verbatim}
+	}
+}
+
+
+http://wiki.ros.org/msg
 
 
 \section{Testbed description}
@@ -219,16 +259,17 @@ def fn_timer(function):
 
 We have divided the experiments in three parts. First we have analyzed how does the "talker-listener" simple ROS node works under encrypted conditions. Then we have stressed the same node publishing-subscribing bigger text messages. Finally we have analyzed a real sensor, a camera, under crypted conditions in order to analize the system behaviour under encrypting conditions.  
 
-\subsection{Hardware Set-up}
+\subsection{Hardware/Software Set-up}
 
 
 
 We want to evaluate how the encryption of communications would affect the performance of ROS.
 We have used the better of the cases where a 8x Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz
 with 16231MB of RAM Memory	and running an Ubuntu 14.04.4 LTS Operating System.
+The ROS master system has 234 process running by default, the client is running 242 process.
 
 The two computers are connected by an  Alcatel-Lucent OmniSwitch 6860E switch
-
+This hardware conditions are the most favorable against the real environment of a robotic platform for instance wireless or hardware restrictions.
 
 
 \subsection{Test 1: Talker-Listener Node}
@@ -258,8 +299,23 @@ This package distributed by ROS as a demo, presents a simple ROS package that cr
 %Cifrado stdev: 0.000000
 %El valor moda de la fase de cifrado fue:
 %(array([  4.50611115e-05]), array([ 260.]))
+\begin{table}[h]
+	\centering
+	\caption{Time in seconds of CPU spent on a simple publisher/listener running test.}
+	\label{tab:time_simple_text_hellow_CPU}
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		&		Plain&	Plain&	Encrypt&	Decrypt \\
+		&		Publication&Subscription&Publication&Subscription \\\hline
+		Time running&34.491&	34.484&	36.882&	34.995 \\\hline
+		Time user&0.184&	0.196&	0.348&	0.24 \\\hline
+		Time sys&0.024&	0.08&	0.064&	0.056 \\\hline
+		Total CPU&0.208&	0.276&	0.412&	0.296 \\\hline
+		
+	\end{tabular}
+\end{table}
 
-Table~\ref{tab:time_simple_text_hellow_CPU} presents the CPU time spent when the nodes are running in different machines.  The values are the result of launching ROS nodes using the Unix command {\em time}. The values present a minimal consumption of CPU associated to the process. In  case of Plain publish/subscribe it represents than 1\% and in the case of the publisher in encrypt mode it represents approximately the 1.1\%, that is almos the same than in plain mode.
+Table~\ref{tab:time_simple_text_hellow_CPU} presents the CPU time spent when the nodes are running in different machines.  The values are the result of launching ROS nodes using the Unix command {\em time}. The values present a minimal consumption of CPU associated to the process. In  case of Plain publish/subscribe it represents than 1\% and in the case of the publisher in encrypt mode it represents approximately the 1.1\%, that is almost the same than in plain mode.
 
 %\begin{figure}[ht!]
 %	\centering
@@ -268,31 +324,12 @@ Table~\ref{tab:time_simple_text_hellow_CPU} presents the CPU time spent when the
 %	\label{fig:time_simple_text_hellow_CPU}
 %\end{figure}
 
-\begin{table}[h]
-	\centering
-	\caption{Time in seconds of CPU spent on a simple publisher/listener running test.}
-	\label{tab:time_simple_text_hellow_CPU}
-	\begin{tabular}{|l|l|l|l|l|}
-		\hline
-&		Plain&	Plain&	Encrypt&	Decrypt \\
-&		Publication&Subscription&Publication&Subscription \\\hline
-Time running&34.491&	34.484&	36.882&	34.995 \\\hline
-Time user&0.184&	0.196&	0.348&	0.24 \\\hline
-Time sys&0.024&	0.08&	0.064&	0.056 \\\hline
-Total CPU&0.208&	0.276&	0.412&	0.296 \\\hline
-
-	\end{tabular}
-\end{table}
-
-Figure~\ref{fig:time_simple_text_CPU} presents the boxplot associated to the calls to encrypt/decrypt methods during this test.  We can observe that the average time in this process is slightly higher in encryption (0.000065 seconds) against the decryption  (0.000045 seconds), but in both cases it is almost negligible.
-
-\begin{figure}[ht!]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=.5\textwidth]{figure_Simple_Publisher_subscriber.png}
 	\caption{Time spent on a encrypt/decrypt DES3 function call.}
 	\label{fig:time_simple_text_CPU}
 \end{figure}
-
 
 \begin{figure*}[ht!]
 	\centering
@@ -301,12 +338,27 @@ Figure~\ref{fig:time_simple_text_CPU} presents the boxplot associated to the cal
 	\label{fig:screenshot_hello_world}
 \end{figure*}
 
+
+Figure~\ref{fig:time_simple_text_CPU} presents the box-plot associated to the calls to encrypt/decrypt methods during this test.  We can observe that the average time in this process is slightly higher in encryption (0.000065 seconds) against the decryption  (0.000045 second), but in both cases it is almost negligible. The worst case presented a 0.000129 seconds in ciphering time and  0.000239 second of deciphering time.
+
+
+Figure~\ref{fig:screenshot_hello_world} presents the screenshot of this experiment. It shows the three terminals from the two nodes involved in this experiment. Publisher node (top-left window) that presents a simple log, subscriber node with key (bottom-left) that presents the message after the decryption call and subscriber node without key ({\em rostopic echo }) that shows the encrypted message in the topic.
+
+
 \subsection{Test 2: Custom Talker-Listener Node}
 
 
-In this test we have used a modified version of talker/listener tutorial proposed by ROS. 
+In this test we have used the same version of talker/listener tutorial proposed by ROS previously used. This sintetic test defines three text messages:
+\begin{itemize}
+\item T1: this is a string message of 262144 bytes (256 KB)
+\item T2: it is a string message of 524288 bytes (512 KB)
+\item T3: presents a string message of 1048576 bytes (1024 KB)
+\end{itemize}  
+
+
+
 ROS statistical data shows the simple publish/subscribe example sending 11 string messages ({\em std\_msgs/String}) per second (with ``Hello wold'' text), plus a timestamp with 440 bytes of traffic.
-In this manner, we wanted to analyse the behaviour of the system using bigger messages: T1, 262144 bytes (256 KB); T2, 524288 bytes (512 KB); and T3, 1048576 bytes (1024 KB).
+In this manner, we wanted to analyse the behaviour of the system using bigger messages:
 
 The measurements of behaviour of ROS traffic presents with simple plain messages {\em delivered\_msgs} 10 of T1 generate . When T2 messages are sent the system runs with 4194368 bytes of traffic and finally when it is working in  T3 messages just send 4194336 bytes and a total of 4 messages. There is no dropped messages by subscription.
 
@@ -317,6 +369,7 @@ Finally we analyzed T3, that presents in a time window of 34.731 seconds, a user
 
 This is totally different when we are working with encrypted text messages of type T1, T2 or T3. Fig~\ref{fig:time_text_CPU} presents the main differences. We have repeated the same experiment, but this time calling an encryption method that encrypts from plain text to 3DES. It is possible to see that the encrypt process consumes more CPU than  the plain process.
 For instance, T1 type presents running for 34.486 seconds a total of 23.008 of CPU. This means that the total CPU time increases almost 62\%. This is even higher in T2 and T3 types with almost the 98\% of real execution time.
+
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=.5\textwidth]{Text_plain_vs_encrypted.png}
@@ -328,6 +381,15 @@ For instance, T1 type presents running for 34.486 seconds a total of 23.008 of C
 
 This time increases with T2 and T3 types. T2 type needs 0.123383 seconds in average with standard deviation of 0.000040 seconds and  T3  0.247303 with a standard deviation of 0.000137.
 
+
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=.49\textwidth]{Outline_images_encryption_decrytiontime3.png}
+	\caption{Time spent on each call to encryption/decryption function.}
+	\label{fig:text_encryption_time}
+\end{figure}
 
 
 % raspberry@david-H97M-D3H:~/catkin_ws/src/security_repo/ciphering_project/simple_talker_listener/src$ time python talker3DES.py
@@ -402,22 +464,22 @@ This time increases with T2 and T3 types. T2 type needs 0.123383 seconds in aver
 \subsection{Test 3: Camera Node}
 
 
-\subsubsection{Process evaluation}
+%\subsubsection{Process evaluation}
+A real experiment have been developed using a RGB camera. We have used a Logitech, Inc. QuickCam Pro 9000 webcam, it will provide a frame rate of 15 fps @ 640x480 of resolution.
 
-We have used a Logitech, Inc. QuickCam Pro 9000 webcam.
+This test involves three ROS nodes between the computers: usb\_cam, encrypted\_node and decrypted\_node. The first ROS node is the {\em usb\_cam}\footnote{\url{http://wiki.ros.org/usb_cam}}, it is developed by Benjamin Pitzer and maintained between ROS versions.
+The second node runs in the same computer and it is in charge of encrypt the message from {\em usb\_cam}. The third node runs on the second computer and it is in charge of decrypt and present the image on display.
 
-There are three nodes involved in our system: usb\_cam, encrypted\_node and decrypted\_node. The first and the sencond run in the master computer, the decrypted one in a separate computer.
 
-There are three topics involved: \textcolor{red}{[COMPLETAR]}
+%There are three topics involved: \textcolor{red}{[COMPLETAR]}
 
-To analyse the behaviour of the system under encrypt/decrypt circumstances we use an Intel i7 computer with 16 GB RAM. The ROS master system has 234 process running by default in a Ubuntu 14.04, the client is running 242 process in the same operative system.
 
-\begin{figure}[ht]
+\begin{figure*}[ht]
     \centering
-    \includegraphics[width=.5\textwidth]{Screenshot.png}
+    \includegraphics[width=.99\textwidth]{Screenshot.png}
     \caption{Screenshot taken during image encryption test.}
   \label{fig:screenshot}
-\end{figure}
+\end{figure*}
 
 In this case we measure the time needed to encrypt or decrypt the ROS message ({\em sensor\_msgs/Image.msg}). We just encrypt or decrypt the field data of {\em uint8[]} that is treated as a string.
 To evaluate  the frame rate, our nodes present this information during the execution in the visualization frame . 
@@ -428,21 +490,18 @@ mean of  0.010948 seconds and a standard deviation of 0.000004 seconds. The mode
 The minimal time to decrypt the images was 0.001288 seconds, the max time was 0.039130 seconds with a 
 mean of  0.008828 seconds and a standard deviation of 0.000003 seconds. The mode value in this phase was 0.008183 seconds wich was reapeated 593 times. 
 
-
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=.49\textwidth]{Outline_images_encryption_decrytiontime2.png}
+	\caption{Time spent on each call to encryption/decryption function.}
+	\label{fig:images_encryption}
+\end{figure}
 
 Figure \ref{fig:screenshot} presents the situation in the client node. We have used the ROS node {\em image\_view} to visualize the images from topics.  There is an non-encrypted topic that we have maintained in order to validate delays. There is an encrypted topic that is not possible to visualize using the released image\_view ROS node. Finally there is a frame that presents the image after decrypt the topic using our own decrypt node. 
 
 
 The FPS in the encrypter machine is 14.56 and the FPS in the decryption machine is 14.54.
 
-
-
-\begin{figure*}[ht]
-    \centering
-    \includegraphics[width=.9\textwidth]{Outline_encryption_text.png}
-    \caption{Time spent on each call to encryption/decryption function.}
-  \label{fig:text_encryption_time}
-\end{figure*}
 
 
 \section{Discussion}
@@ -454,12 +513,8 @@ We observe that the delay induced by encryption does not reduce the standard fra
 
 The figure~\ref{fig:images_encryption} presents the box-plot of the encryption decryption data analyzed and the histograma. 
 
-\begin{figure*}[ht]
-    \centering
-    \includegraphics[width=.9\textwidth]{Outline_images_encryption_decrytiontime2.png}
-    \caption{Time spent on each call to encryption/decryption function.}
-  \label{fig:images_encryption}
-\end{figure*}
+rosparam set enable\_statistics true
+
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 %  Camara
 % *****************************************************
