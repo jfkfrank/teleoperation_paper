@@ -73,11 +73,20 @@ There are three basic vulnerabilities threatening any computer system: availabil
 
 These concepts can be easily translated to industrial control applications~\cite{huitsing2008attack} or to robotic environments, due to the distributed approach used in most extended robotic frameworks (Yarp, ROS, ROBOCOMP). On one hand, the robot is deployed in a home environment. The robot provides information to users and also carries out behaviors in order to fulfill required tasks. 
 
-On the other hand, an attacker could attempt to make the robot or its network resources unavailable, this is a denial-of-service attack. The attacker could also intercept and modify command messages in order to change robot behavior, and capture robot information about the environment and about the users. Finally the attacker could simulate a sensor and generate new data and send it to the robot. Figure \ref{fig:Conceptualmodel} summarizes graphically these vulnerabilities in a robotic environment.
+On the other hand, an attacker could attempt to make the robot or its network resources unavailable, this is a denial-of-service attack. The attacker could also intercept and modify command messages in order to change robot behavior, and capture robot information about the environment and about the users. Finally the attacker could simulate a sensor and generate new data and send it to the robot. Fig. \ref{fig:Conceptualmodel} summarizes graphically these vulnerabilities in a robotic environment.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=.5\textwidth]{RobotsAttacks.pdf}
+	\caption{Conceptual model of the security attacks.}
+	\label{fig:Conceptualmodel}
+\end{figure}
 
 In this research we focus on confidentiality of data sent to and from the robot. Our proposal consists in encrypt data transmitted between ROS processes, adding two nodes for encryption and decryption task. We don't change ROS messages nor ROS standard functions to send the data. The question is if this hardening of ROS will impact on its performance.
 
 
+
+The reminder of this paper is organized as follows: Next section describes the ROS framework communication process. Section~\ref{Description} defines the testbed designed to measure the performance of the encrypted ROS system. Section~\ref{experiments} shows the data obtained in the proposed experiments as well as the discussion. Finally section\ref{conclusions} presents the conclusions obtained and further work.
 
 % \begin{enumerate}
 %  \item Availability: Interruption
@@ -85,23 +94,18 @@ In this research we focus on confidentiality of data sent to and from the robot.
 %  \item Integrity: Modification
 %  \item Authenticity: Fabrication
 % \end{enumerate}
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=.5\textwidth]{RobotsAttacks.pdf}
-    \caption{Conceptual model of the security attacks.}
-  \label{fig:Conceptualmodel}
-\end{figure}
+
 
 
 \section{ROS overview}
-
+\label{ROS_overview}
 ROS provides specific libraries for robotics as well as classical operating system services such as hardware abstraction (for sensors and actuators), low-level device control, and inter-process communication. Inter-process communication is based on a graph architecture where computation takes place in ROS processes named nodes. These nodes can receive and send messages, but no security was considered in the communication mechanism.
 
 ROS framework is basically a message-passing distributed system. Its architecture is based on processes that publish {\em messages} to {\em topics}. For instance, a process ({\em node}) can be in charge of accessing a sensor, performing the information processing, and publishing it as an information structure on a named topic. Another process can {\em subscribe} to this topic, that is, read its information. Then the process can make a decision about the movement of the robot. Next, this node will publish the commands in another topic to send them to the motors. ROS nodes can be running in the same computer or in different computers.
 
 Conventional ROS environment is composed by at least one ROS Master and some clients. ROS Master is the key element in the ROS system. It runs as a nameservice and manages registration information of topics and services used by ROS nodes. 
 
-When a node wants to stablish a connection with a topic, it communicates with Master to advise its registration information. After this step, the node gets more information about other registered nodes so it can stablish new connections with their topics appropriately. The Master is updated in real time with nodes information and topics they publish/subscribe.
+When a node wants to stablish a connection with a topic, it communicates with Master to advise its registration information. After this step, the node gets more information about other registered nodes so it can stablish new connections with their topics appropriately. The Master is updated in real time with nodes information and topics they publish/subscribe. Fig.~\ref{fig:Conceptual_ROS_topics_model} presents the 6 steps involved in this process as presented in Rusu's tutorial~\cite{rusu2010ros}.
 
 %% Origen de la gráfica
 %%
@@ -122,45 +126,23 @@ The ROS distributed approach is very convenient for developers but can be easily
 The first step to solve some of these problems is to secure the communication channels by using an encryption mechanism. But how does encryption impact on the performance of a robotic system? This is the goal of this paper, characterize and evaluate different alternatives to secure ROS communication system and measure their performance.
 
 
-The paper is organized as follows: Next section describes the testbed we have designed to measure the performance of the encrypted ROS system. Third section evaluates the data obtained in the experiments, and last section presents some conclusions obtained and further work.
-
-\subsection{ROS Messages}
-
-{\color{red} COPIA-PEGA -> Modificar}
-ROS uses a simplified messages description language for describing the data values (aka messages) that ROS nodes publish. This description makes it easy for ROS tools to automatically generate source code for the message type in several target languages. Message descriptions are stored in .msg files in the msg/ subdirectory of a ROS package. 
-
-Tipos básicos
-
-Tipos de arrays
-
-Tipos compuestos: por ejemplo el de imágenes
-
-File: sensor\_msgs/Image.msg
-
-{
-	\footnotesize{
-\begin{Verbatim}[frame=single, commandchars=+\(\)]
-std_msgs/Header header
-uint32 height
-uint32 width
-string encoding
-uint8 is_bigendian
-uint32 step
-+underline(uint8[] data) #matrix data
-\end{Verbatim}
-	}
-}
-
-
-http://wiki.ros.org/msg
 
 
 \section{Testbed description}
-
+\label{Description}
 %%%  DESCRIPCIÓN DEL ESCENARIO
  
 
 In order to evaluate the performance of the encrypted  version of ROS communications environment, we designed the following scenario.
+Fig.~\ref{fig:TestBed} provides a graphical representation of the scenario created.
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=.5\textwidth]{TestBed_complete.pdf}
+	\caption{Scheme of the scenario used for testbed.}
+	\label{fig:TestBed}
+\end{figure}
 
 %\textcolor{red}{TRADUCIR:} Un robot con un PC corriendo el master. Un sensor láser conectado al PC del robot. Un nodo de cifrado corriendo en el robot, que cifra los mensajes del láser y los publica en el topic "laser/encryted" (por ejemplo).
 %Por otro lado, hay un PC cliente con ROS, que se registra en el master. Se suscribe al topic "laser/encryted" y como conoce la clave, es capaz de descifrar la información proporcionada por el láser.
@@ -177,18 +159,12 @@ Third, we used another desktop computer as a simulated ``attacker'', connected t
 
 The cryptographic key  is stored in the master node and it is known by the legitimate clients. In a system in production this mechanism can be implemented as a public-private key schema as RSA  to safely share the key between the nodes. 
 
-Figure~\ref{fig:TestBed} provides a graphical representation of the scenario created.
+
 %In this case, two clients are connected to a topic. This situation is transparent to ROS Master.
 %The standard process starts with a basic sensor node (BSN). We have defined as BSN those ROS nodes in charge of to publish the information from the sensor.
 %We have prepared a testbed with two laptopts.
 
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=.5\textwidth]{TestBed_complete.pdf}
-    \caption{Scheme of the scenario used for testbed.}
-  \label{fig:TestBed}
-\end{figure}
 
 
 %We have installed ROS Indigo in two computers connected through a wired Ethernet 10/100 switch (model XXXX).
@@ -203,7 +179,33 @@ Figure~\ref{fig:TestBed} provides a graphical representation of the scenario cre
 
 % Decir que: SÓLO HEMOS AÑADIDO CIFRADO Y DESCIFRADO EN LOS NODOS EMISORES Y RECEPTORES. NO HEMOS MODIFICADO EL SISTEMA DE BAJO NIVEL DE ROS, PARA EVALUAR ESPECÍFICAMENTE Y DE UNA FORMA MÁS PRECISA LA CARGA QUE SUPONE EL CIFRADO EN LOS NODOS.
 
-In this first approach we have changed the data published by the node, and instead of publish the information in a plain manner, we publish the information encrypted. We use the 3DES algorithm that provides a security layer to protect data.
+In this first approach we have changed the data published by the node, and instead of publish the information in a plain manner, we publish the information encrypted. 
+
+ROS uses a {\em messages description language}\footnote{\url{http://wiki.ros.org/msg}} for describing the data values that each node publish. In this manner, it is easy for ROS tools to automatically generate source code for the message type in several target languages as ICE or idl. 
+
+There are built-in types (14), array types (4) and customized types. For instance, if we get the {\em sensor\_msgs/Image.msg} message, we find a composed message by one non built-int message, and five built-in (3 x uint32, 1 x string, 1 x uint8 )and one array type (uint8[]).
+
+{
+	\footnotesize{
+		\begin{Verbatim}[frame=single, commandchars=+\(\)]
+		std_msgs/Header header
+		uint32 height
+		uint32 width
+		string encoding
+		uint8 is_bigendian
+		uint32 step
+		+underline(uint8[] data) #matrix data
+		\end{Verbatim}
+	}
+}
+
+In this case is {\em data} field the element that contains the data of the image, so we are going to encrypt this element before to be publisher in ROS distributed system.
+
+
+
+
+
+We use the 3DES algorithm that provides a security layer to protect data.
 Triple DES (3DES) references the Triple Data Encryption Algorithm (TDEA or Triple DEA). It is a symmetric-key block cipher that applies the Data Encryption Standard (DES) algorithm three times to each data block. It is standardized by NIST in the Recommendation for the Triple Data Encryption Algorithm Block Cipher (NIST Special Publication 800-67).
 
 DES algorithm has a fixed data block size of 8 bytes. Its keys are 128 (option 1) or 192 bits (option 2) long. However, 1 out of 8 bits is used for redundancy and do not contribute to security. The effective key length is respectively 112 or 168 bits.
@@ -224,7 +226,7 @@ From the development side, tt was used the PyCrypto package. It is an extended p
 
 
 \section{Experimental Measurements}
-
+\label{experiments}
 \textcolor{red}{COMENTAR A ALTO NIVEL QU\'E/CU\'ANTAS PRUEBAS HEMOS HECHO.}
 
 To illustrate the described approach, we present an ad-hoc implementation of an encryption system to change part of the message used for transmit or receive robot sensors information. 
@@ -612,7 +614,7 @@ rosparam set enable\_statistics true
 
 
 \section{Conclusion and Further Work}
-
+\label{conclusions}
 This article has introduced the use of encrypted information through ROS communication system.
 We have evaluated the impact of this added feature from two points of view: CPU consuming and network traffic. 
 
