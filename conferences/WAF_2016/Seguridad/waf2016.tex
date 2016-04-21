@@ -187,25 +187,26 @@ There are built-in types (14), array types (4) and customized types. For instanc
 
 {
 	\footnotesize{
-		\begin{Verbatim}[frame=single, commandchars=+\(\)]
-		std_msgs/Header header
-		uint32 height
-		uint32 width
-		string encoding
-		uint8 is_bigendian
-		uint32 step
-		+underline(uint8[] data) #matrix data
-		\end{Verbatim}
+	\begin{Verbatim}[frame=single, commandchars=+\(\)]
+std_msgs/Header header #custom msg
+
+uint32 height
+uint32 width
+string encoding
+uint8 is_bigendian
+uint32 step
+
++underline(uint8[] data) #matrix data of an image
+	\end{Verbatim}
 	}
 }
 
-In this case is {\em data} field the element that contains the data of the image, so we are going to encrypt this element before to be publisher in ROS distributed system.
+In this case is {\em data} field the element that contains the information of the image grabbed by the camera, so we are going to encrypt this element before to be publisher in ROS distributed system.
 
 
 
-
-
-We use the 3DES algorithm that provides a security layer to protect data.
+We use the 3DES algorithm to provide a security layer to ROS data.
+It  is  a  known that  3DES cyphering speed is slower~\cite{singh2013study} than other cipher methods as for instance AES. As the worse environment, this is the motivation to analyze its behaviour in a real environment with ROS.
 Triple DES (3DES) references the Triple Data Encryption Algorithm (TDEA or Triple DEA). It is a symmetric-key block cipher that applies the Data Encryption Standard (DES) algorithm three times to each data block. It is standardized by NIST in the Recommendation for the Triple Data Encryption Algorithm Block Cipher (NIST Special Publication 800-67).
 
 DES algorithm has a fixed data block size of 8 bytes. Its keys are 128 (option 1) or 192 bits (option 2) long. However, 1 out of 8 bits is used for redundancy and do not contribute to security. The effective key length is respectively 112 or 168 bits.
@@ -227,7 +228,7 @@ From the development side, tt was used the PyCrypto package. It is an extended p
 
 \section{Experimental Measurements}
 \label{experiments}
-\textcolor{red}{COMENTAR A ALTO NIVEL QU\'E/CU\'ANTAS PRUEBAS HEMOS HECHO.}
+%\textcolor{red}{COMENTAR A ALTO NIVEL QU\'E/CU\'ANTAS PRUEBAS HEMOS HECHO.}
 
 To illustrate the described approach, we present an ad-hoc implementation of an encryption system to change part of the message used for transmit or receive robot sensors information. 
 We maintain in each case 
@@ -259,7 +260,7 @@ def fn_timer(function):
   }
 }
 
-We have divided the experiments in three parts. First we have analyzed how does the "talker-listener" simple ROS node works under encrypted conditions. Then we have stressed the same node publishing-subscribing bigger text messages. Finally we have analyzed a real sensor, a camera, under crypted conditions in order to analize the system behaviour under encrypting conditions.  
+We have divided the experiments in three parts. First we have analyzed how does the "Publisher-listener"  ROS nodes work under encrypted conditions. Then we have stressed the same nodes publishing bigger text messages, in plain text as well as encrypted text. Finally we have analyzed a camera sensor, under the same encryption/decryption conditions.  
 
 \subsection{Hardware/Software Set-up}
 
@@ -274,7 +275,7 @@ The two computers are connected by an  Alcatel-Lucent OmniSwitch 6860E switch
 This hardware conditions are the most favorable against the real environment of a robotic platform for instance wireless or hardware restrictions.
 
 
-\subsection{Test 1: Talker-Listener Node}
+\subsection{Test 1: HelloWorld Publisher-Listener Node}
 
 In this test we have used the version of talker/listener tutorial proposed by ROS\footnote{\url{http://wiki.ros.org/rospy_tutorials/Tutorials/WritingPublisherSubscriber}}
 
@@ -328,8 +329,8 @@ Table~\ref{tab:time_simple_text_hellow_CPU} presents the CPU time spent when the
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=.5\textwidth]{figure_Simple_Publisher_subscriber.png}
-	\caption{Time spent on a encrypt/decrypt DES3 function call.}
+	\includegraphics[width=.5\textwidth]{figure_Simple_Publisher_subscriber1.png}
+	\caption{Histogram showing the time spent on a encrypt/decrypt DES3 function call.}
 	\label{fig:time_simple_text_CPU}
 \end{figure}
 
@@ -341,16 +342,16 @@ Table~\ref{tab:time_simple_text_hellow_CPU} presents the CPU time spent when the
 \end{figure*}
 
 
-Figure~\ref{fig:time_simple_text_CPU} presents the box-plot associated to the calls to encrypt/decrypt methods during this test.  We can observe that the average time in this process is slightly higher in encryption (0.000065 seconds) against the decryption  (0.000045 second), but in both cases it is almost negligible. The worst case presented a 0.000129 seconds in ciphering time and  0.000239 second of deciphering time.
+Figure~\ref{fig:time_simple_text_CPU} presents the histogram associated to the calls to encrypt/decrypt method used in these tests.  We can observe that the average time in the encryption process is slightly higher (0.000065 seconds) than the decryption process (0.000045 second). However, in both cases it is almost negligible. The worst case presented a 0.000129 seconds in ciphering time and  0.000239 second of deciphering time.
 
 
 Figure~\ref{fig:screenshot_hello_world} presents the screenshot of this experiment. It shows the three terminals from the two nodes involved in this experiment. Publisher node (top-left window) that presents a simple log, subscriber node with key (bottom-left) that presents the message after the decryption call and subscriber node without key ({\em rostopic echo }) that shows the encrypted message in the topic.
 
 
-\subsection{Test 2: Custom Talker-Listener Node}
+\subsection{Test 2: Custom Text Publisher-Listener Node}
 
 
-In this test we have used the same version of talker/listener tutorial proposed by ROS previously used. This sintetic test defines three text messages:
+In this test we have used the same version of talker/listener nodes proposed by ROS. In this particular test we generate a sintetic text strings with different sizes:
 \begin{itemize}
 \item T1: this is a string message of 262144 bytes (256 KB)
 \item T2: it is a string message of 524288 bytes (512 KB)
@@ -358,40 +359,39 @@ In this test we have used the same version of talker/listener tutorial proposed 
 \end{itemize}  
 
 
+We want to determine the duration of execution of our talker and the time spent by our listener nodes. Again, we run the Linux {\em time} command to measure the total CPU time consumed by the ROS talker process. 
 
-ROS statistical data shows the simple publish/subscribe example sending 11 string messages ({\em std\_msgs/String}) per second (with ``Hello wold'' text), plus a timestamp with 440 bytes of traffic.
-In this manner, we wanted to analyse the behaviour of the system using bigger messages:
-
-The measurements of behaviour of ROS traffic presents with simple plain messages {\em delivered\_msgs} 10 of T1 generate . When T2 messages are sent the system runs with 4194368 bytes of traffic and finally when it is working in  T3 messages just send 4194336 bytes and a total of 4 messages. There is no dropped messages by subscription.
-
-We want to determine the duration of execution of our talker. We run the Linux {\em time} command to measure the total CPU time consumed by the ROS talker process. 
-Firstly we analyzed T1, that presents in a time window of 32.884 seconds, a user time of  1.364 seconds and a sys time of 0.044s. It represents a CPU time of 1.408 seconds.
-Secondly we analyzed T2, that presents in a time window of 33.749 seconds, a user time of  2.508 seconds and a sys time of 0.164s. It represents a CPU time of 2.672 seconds.
-Finally we analyzed T3, that presents in a time window of 34.731 seconds, a user time of  5.140 seconds and a sys time of 0.120s. It represents a CPU time of 5.260 seconds.
-
-This is totally different when we are working with encrypted text messages of type T1, T2 or T3. Fig~\ref{fig:time_text_CPU} presents the main differences. We have repeated the same experiment, but this time calling an encryption method that encrypts from plain text to 3DES. It is possible to see that the encrypt process consumes more CPU than  the plain process.
-For instance, T1 type presents running for 34.486 seconds a total of 23.008 of CPU. This means that the total CPU time increases almost 62\%. This is even higher in T2 and T3 types with almost the 98\% of real execution time.
+Initially we run the test with the three size types of messages using plain text. 
+We have performed the test three times, running the nodes for a time lapse of 30 to 35 seconds. 
+Firstly, reviewing the  T1 type (it is presented in a time window of 32.884 seconds) we find   a CPU time of 1.408 seconds. It was a user time of  1.364 seconds and a sys time of 0.044s. I
+Secondly, we analyse the string of type T2. It was launched in a  window of 33.749 seconds, and needed a total CPU of a  2.672 seconds (user time of 2.508 seconds and a sys time of 0.164s). 
+Finally, we analyse T3, that presents in a time window of 34.731 seconds a total CPU of 5.260 seconds (it is divided by a user time of  5.140 seconds and a sys time of 0.120s).
 
 \begin{figure}[ht!]
-    \centering
-    \includegraphics[width=.5\textwidth]{Text_plain_vs_encrypted.png}
-    \caption{Time of CPU spent on a simple talker/listener test.}
-  \label{fig:time_text_CPU}
+	%    \centering
+	\includegraphics[width=.5\textwidth]{Figura_t1t2t3.png}
+	\caption{Time of CPU spent by publiser/subscriber nodes sending T1, T2 and T3 messages in plain and Encrypted/Decrypted on test 2.}
+	\label{fig:time_text_CPU}
 \end{figure}
 
-\textcolor{red}{[REESCRIBIR BIEN ESTE P\'ARRAFO].} If we focus on the encryption/decryption process, we can see that the time needed for the encryption function shows in 1040 messages a minimal time of 0.059246 seconds and a max time to encrypt the string of 0.683408 seconds with an average of 0.063858 seconds and standard deviation of 0.000388.
-
-This time increases with T2 and T3 types. T2 type needs 0.123383 seconds in average with standard deviation of 0.000040 seconds and  T3  0.247303 with a standard deviation of 0.000137.
-
+This is totally different when we are working with encrypted text messages. Fig~\ref{fig:time_text_CPU} presents the main differences. We have repeated the same experiment, but this time calling an encryption method that encrypts from plain text to 3DES. It is possible to see that the encrypt process consumes more CPU than  the plain process.
+For instance, T1 type presents running for 34.486 seconds a total of 23.008 of CPU. This means that the total CPU time increases almost 62\%. This is even higher in T2 and T3 types with almost the 98\% of real execution time. It is clear that the encrypted/decrypted approach consumes more CPU (yellow bars in Fig.~\ref{fig:time_text_CPU}) than plain text (orange bars in Fig.~\ref{fig:time_text_CPU}). 
 
 
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=.49\textwidth]{Outline_images_encryption_decrytiontime3.png}
-	\caption{Time spent on each call to encryption/decryption function.}
+	\includegraphics[width=.5\textwidth]{Outline_images_encryption_decrytiontime4.png}
+	\caption{Histogram by each publisher node attending each call to the encryption method.}
 	\label{fig:text_encryption_time}
 \end{figure}
+
+%\textcolor{red}{[REESCRIBIR BIEN ESTE P\'ARRAFO].} 
+We know that the encryption process needs more CPU, but how long does the process of encryption/decryption take in each block?. Just for clarification, we review the encryption phase in the publisher node.
+In case of T1 messages, during its window (34.486s) the node is able to encrypt 1040 messages. The minimal time to perform this task is 0.059246 seconds and the maximum time to encrypt the string is 0.683408 seconds. In average, the system spents 0.063858 seconds (standard deviation of 0.000388 seconds).
+This time increases with T2 and T3 types. T2 type needs 0.123383 seconds in average with standard deviation of 0.000040 seconds and  T3  0.247303 with a standard deviation of 0.000137.
+Fig.~\ref{fig:text_encryption_time} presents the histogram associated to this experiment.
+
 
 
 % raspberry@david-H97M-D3H:~/catkin_ws/src/security_repo/ciphering_project/simple_talker_listener/src$ time python talker3DES.py
@@ -467,55 +467,101 @@ This time increases with T2 and T3 types. T2 type needs 0.123383 seconds in aver
 
 
 %\subsubsection{Process evaluation}
-A real experiment have been developed using a RGB camera. We have used a Logitech, Inc. QuickCam Pro 9000 webcam, it will provide a frame rate of 15 fps @ 640x480 of resolution.
+The third experiment has been developed using a RGB camera. A Logitech, Inc. QuickCam Pro 9000 webcam will provide a frame rate of 15 fps @ 640x480 of resolution. This sensor will be registered on ROS system to provide images to the environment.
 
-This test involves three ROS nodes between the computers: usb\_cam, encrypted\_node and decrypted\_node. The first ROS node is the {\em usb\_cam}\footnote{\url{http://wiki.ros.org/usb_cam}}, it is developed by Benjamin Pitzer and maintained between ROS versions.
-The second node runs in the same computer and it is in charge of encrypt the message from {\em usb\_cam}. The third node runs on the second computer and it is in charge of decrypt and present the image on display.
+This test involves three ROS nodes, two from the publisher side: usb\_cam, encrypted\_node and one from the listener side: decrypted\_node. First ROS node,{\em usb\_cam}\footnote{\url{http://wiki.ros.org/usb_cam}} is developed by Benjamin Pitzer and still maintained by ROS developers. It is in charge of to grab information from sensor and publish in a topic.
+The second node runs in the same computer and it is in charge of encrypt the message published by {\em usb\_cam}. The third node runs on the second computer, it is in charge of decrypt the messages distributed by publisher node and to display the original image on display.
+\begin{figure*}[ht!]
+	\centering
+	\includegraphics[width=.99\textwidth]{Screenshot.png}
+	\caption{Screenshot taken during image encryption test.}
+	\label{fig:screenshot}
+\end{figure*}
 
+
+
+Figure \ref{fig:screenshot} presents the situation in a given moment $T$ on the listener node. We have used the ROS node {\em image\_view} to visualize the images from topics.  There is an non-encrypted topic that we have maintained in order to validate delays. There is an encrypted topic that is not possible to visualize using the released image\_view ROS node. Finally there is a frame that presents the image after decrypt the topic using our own decrypt node. 
 
 %There are three topics involved: \textcolor{red}{[COMPLETAR]}
 
 
-\begin{figure*}[ht]
-    \centering
-    \includegraphics[width=.99\textwidth]{Screenshot.png}
-    \caption{Screenshot taken during image encryption test.}
-  \label{fig:screenshot}
-\end{figure*}
+Again, we measure the time needed to encrypt or decrypt the ROS message ({\em sensor\_msgs/Image.msg}). We just encrypt or decrypt the field data of {\em uint8[]} that is treated as a string. To evaluate  the frame rate, our nodes present this information during the execution in the visualization frame . 
 
-In this case we measure the time needed to encrypt or decrypt the ROS message ({\em sensor\_msgs/Image.msg}). We just encrypt or decrypt the field data of {\em uint8[]} that is treated as a string.
-To evaluate  the frame rate, our nodes present this information during the execution in the visualization frame . 
+This experiment was running for about 18 hours sending in total 971790 frames. The average time in the process of encrypt the sensor data was 0.010948 seconds (stddev 0.000004s).
+Minimal procesing time was 0.001309 seconds and max procesing time was 0.026909 seconds. 
+%mean of  0.010948 seconds and a standard deviation of 0.000004 seconds. The mode value in this phase was 0.010571 seconds wich was reapeated 415 times. 
+The average time to decrypt the images was 0.008828 seconds (stddev 0.000003s).
+The max time decrypting an image was 0.039130s and the minimal 0.001288s. 
+%%The minimal time to decrypt the images was 0.001288 seconds, the max time was 0.039130 seconds with a mean of  0.008828 seconds and a standard deviation of 0.000003 seconds. The mode value in this phase was 0.008183 seconds wich was reapeated 593 times. 
 
-This experiment was running for about 18 hours sending in total 971790 frames. The minimal time to encrypt the images was 0.001309 seconds, the max time  0.026909 seconds with a 
-mean of  0.010948 seconds and a standard deviation of 0.000004 seconds. The mode value in this phase was 0.010571 seconds wich was reapeated 415 times. 
 
-The minimal time to decrypt the images was 0.001288 seconds, the max time was 0.039130 seconds with a 
-mean of  0.008828 seconds and a standard deviation of 0.000003 seconds. The mode value in this phase was 0.008183 seconds wich was reapeated 593 times. 
 
-\begin{figure}[ht]
+
+
+\begin{figure*}[ht!]
 	\centering
-	\includegraphics[width=.49\textwidth]{Outline_images_encryption_decrytiontime2.png}
-	\caption{Time spent on each call to encryption/decryption function.}
+	\includegraphics[width=.99\textwidth]{Outline_images_encryption_decrytiontime2.png}
+	\caption{Time spent on each call to encryption/decryption function during the image processing in test 3.}
 	\label{fig:images_encryption}
-\end{figure}
-
-Figure \ref{fig:screenshot} presents the situation in the client node. We have used the ROS node {\em image\_view} to visualize the images from topics.  There is an non-encrypted topic that we have maintained in order to validate delays. There is an encrypted topic that is not possible to visualize using the released image\_view ROS node. Finally there is a frame that presents the image after decrypt the topic using our own decrypt node. 
-
-
-The FPS in the encrypter machine is 14.56 and the FPS in the decryption machine is 14.54.
-
+\end{figure*}
 
 
 \section{Discussion}
 
-Fig~\ref{fig:text_encryption_time} outlines the behaviour of the talker cyphering data. Left part of the figure presents the box plot of the three types of message. The right part of the element present the number of repetition associated to a time to each encryption process.
+This  study  provides  an  in-depth  characterization  of  the  3DES encryption under most positive conditions. On the one hand, we have two nodes ready for high performance due its  hardware characteristics.  On the other hand, the software on both machines is limited to those nodes needed for the test, no extra computational process are launched.
+
+Results presented in first test, showed than there is no difference between to send a simple plain string of chars {\em Hello world + timestamps}  and a encrypted string of chars. 
+However, these data do no support the possibility of continuously  use encrypted methods. Total CPU time consumed by publisher node when the string increases to 256KB suggest that this situation can decreases overall system performance.    
+
+ROS provides a statistical data system that shows the publish/subscribe performance between 
+connected nodes. When the system is active on a node, the statistical data is published in a new topic updated each second .%({\em std\_msgs/String})
+
+Under these conditions, we have observed two main issues: the first related with traffic and the second related with the number of delivered messages. The first issue imply that the traffic in bytes increases under the same conditions of speed (delivered messages) For instance when the test 1 is running, during one second: 
+\begin{enumerate}
+	\item plain mode presents  10 messages  with 346 bytes of traffic (in average).
+	\item encrypted mode presents 10 messages in average with 420 bytes of traffic (in average).
+\end{enumerate}
+
+The second issues comes, under higher peformance requirements as in test 2, sending messages of type T3. In a second we can find:
+\begin{enumerate}
+	\item plain mode presents  10 messages  with 11010132 bytes of traffic (in average).
+	\item encrypted mode presents 5 messages in average with 5242880 bytes of traffic (in average).
+\end{enumerate}
 
 
-We observe that the delay induced by encryption does not reduce the standard frame rate. 
 
-The figure~\ref{fig:images_encryption} presents the box-plot of the encryption decryption data analyzed and the histograma. 
+%Descifrado length: 285.000000
+%Descifrado min: 0.234246
+%Descifrado max: 0.273480
+%Descifrado mean: 0.240323
+%Descifrado stdev: 0.000021
+%El valor moda de la fase de descifrado fue:
+%(array([ 0.23816991]), array([ 2.]))
 
-rosparam set enable\_statistics true
+Under these conditions the number of messages per second is reduced to the half. There are one main reason  to get these results, publisher node needs at least 0.247303 seconds to encrypt the message and the listener node also needs 0.240323 with a stddev 0.000021. The situation is even worst when the listener also has to do something with the message. For instance just printing the message on the screen reduce the overall performance to 2 messages per second. 
+
+%
+%times presented by our test2 presents  sending 11 string messages  per second (with ``Hello wold'' text), plus a timestamp with 440 bytes of traffic.
+%In this manner, we wanted to analyse the behaviour of the system using bigger messages:
+%
+%The behaviour of ROS traffic using  with simple plain messages {\em delivered\_msgs} 10 of T1 generate . When T2 messages are sent the system runs with 4194368 bytes of traffic and finally when it is working in  T3 messages just send 4194336 bytes and a total of 4 messages. There is no dropped messages by subscription.
+
+Finally, the experimental procedure follow in test 3 does not show a significant delay produced by encryption, it means that under these condition it does not reduce the camera frame rate. The FPS in the publisher machine was 14.56 and the FPS in the decryption machine was 14.54.
+
+
+
+Fig.~\ref{fig:images_encryption} outlines the behaviour of the publisher cyphering data. Left part of the figure presents the box plot of the three types of message. The right part of the element present the histogram associated to the time in each call to the encryption method. We observe close processing times (in average) in the encryption/decryption process similar to other researchers results\cite{elminaam2008performance}. {\color{red}{deberíamos decir algo bonito aqui}.}
+
+
+%
+%
+%The figure~\ref{fig:images_encryption} presents the box-plot of the encryption decryption data analyzed and the histograma. 
+
+%rosparam set enable\_statistics true
+
+
+
+
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 %  Camara
