@@ -101,14 +101,18 @@ JoPhA, journal, \LaTeX, paper, template.
   \label{fig:environment:slave}
 \end{figure}
 
-%INSERT TECHNICAL DESCRIPTION OF BAXTER
+Baxter is an industrial robot produced by Rethink Robotics.
+It was developed to enable collaborative human-robot  cowork  and enhanced   Human-Robot Interaction. 
 
-%...
-Subsubsection text here. 
+It consists  of two seven degree-of-freedom arms, this characteristic provides a kinematic redundancy which allows to enhance object manipulation.
+It comes with Series Elastic Actuators at each joint, 
+incorporating  full  position  and  force  sensing. 
+Attending specification its max payload is 2.2 kg (including end effector) and a gripping force of 35N.
 
-(Paper de Fran)
+Baxter mounts several sensors, one camera on each griper along with an infrared sensor range (4 – 40 cm), one camera on top of robot display which is situated as a head and range finding  sensors integrated on top of the robot.
 
-(Incluir imágenes articulaciones)
+Baxter deploys an  intuitive  Zero  Force  Gravity Compensation  mode that  allows  users  to move  each  degree of freedom of both arms without effort.
+
 
 %\includegraphics[scale=0.07]{Images/baxterHoldingPiece.jpg} 
 %
@@ -202,9 +206,17 @@ the Cartesian coordinates of the wrist joint.
 
 The  rotation  of  the  gimbal  is  then  used  to  correspond  to  the  three rotational  degrees  of  freedom  (Rx,  Ry,  and  Rz)  of  the  forearm  of  the  robot.    
 By  doing  this,  the  problems  associated  with  multiple  solutions  to  larger  order  degree  of  freedom  robotic  systems  are  mitigated.    
-It  is  approximated  that  the  three  axese intersect  at  the  wrist despite the length of the link between the lower arm and forearm.  
+It  is  approximated  that  the  three  axes intersect  at  the  wrist despite the length of the link between the lower arm and forearm.  
 This is justified due to the relatively short length of this link and the fact that the robot is controlled based on the vision of a surgeon, allowing for intuitive compensation by the surgeon to position the  end  effector.
 This  visual  compensation  is  also  used  to  mitigate  the  effects  of  motor backlash propagation through the robot, although solutions to reduce backlash are being attempted.
+
+
+
+\begin{figure*}[ht!]
+	\centering
+	\includegraphics[width=.99\textwidth]{Figures/Controls.pdf} 
+	\caption{Haptic-Baxter-Haptic control with human interaction.}
+\end{figure*}
 
 \section{Experiment and Results}
 \label{sec:experiment}
@@ -315,7 +327,33 @@ From the point of view of usability and using as reference the definition provid
 }
 \end{table}
 
-In order to improve the use of our haptic interface we will test the haptic device for a set of expert's evaluators (3-5 people). We will prepare a user's experience test in order to measured human-robot metrics defined above. We designed a scenario in our usability laboratory in order to apply useful evaluation methods and to improve the human-robot interaction.
+In order to improve the use of our haptic interface we will test the haptic device for a set of expert's evaluators (8 people). We will prepare a user's experience test in order to measured human-robot metrics defined above. We designed a scenario in our usability laboratory in order to apply useful evaluation methods and to improve the human-robot interaction.
+
+\begin{table}[h]
+	\centering
+	\label{metric_test}
+	\caption{Descriptive statistics from Human-Robot experimental results}
+%	\resizebox{9cm}{!}{
+\begin{tabular}{  l  l }
+	\hline
+	Description & Result\\ 	\hline
+	Subjects& 7\\ 	\hline
+	Mean&	77,5329s  \\ 	\hline
+	Standard Deviation&	39,1256s  \\	\hline 
+	Minimum&	50s\\\hline
+	Maximum&	161s\\\hline
+
+\end{tabular}
+%}
+\end{table}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.55]{Figures/ResumenDatos_PruebaBasica.png} 
+	\caption{\label{3Dprinter}Results overview of experiments performed.}
+\end{figure}
+
 
 
 \section{Conclusion}
