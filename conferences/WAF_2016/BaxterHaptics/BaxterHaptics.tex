@@ -101,18 +101,14 @@ JoPhA, journal, \LaTeX, paper, template.
   \label{fig:environment:slave}
 \end{figure}
 
-Baxter is an industrial robot produced by Rethink Robotics.
-It was developed to enable collaborative human-robot  cowork  and enhanced   Human-Robot Interaction. 
+%INSERT TECHNICAL DESCRIPTION OF BAXTER
 
-It consists  of two seven degree-of-freedom arms, this characteristic provides a kinematic redundancy which allows to enhance object manipulation.
-It comes with Series Elastic Actuators at each joint, 
-incorporating  full  position  and  force  sensing. 
-Attending specification its max payload is 2.2 kg (including end effector) and a gripping force of 35N.
+%...
+Subsubsection text here. 
 
-Baxter mounts several sensors, one camera on each griper along with an infrared sensor range (4 – 40 cm), one camera on top of robot display which is situated as a head and range finding  sensors integrated on top of the robot.
+(Paper de Fran)
 
-Baxter deploys an  intuitive  Zero  Force  Gravity Compensation  mode that  allows  users  to move  each  degree of freedom of both arms without effort.
-
+(Incluir imágenes articulaciones)
 
 %\includegraphics[scale=0.07]{Images/baxterHoldingPiece.jpg} 
 %
@@ -206,17 +202,9 @@ the Cartesian coordinates of the wrist joint.
 
 The  rotation  of  the  gimbal  is  then  used  to  correspond  to  the  three rotational  degrees  of  freedom  (Rx,  Ry,  and  Rz)  of  the  forearm  of  the  robot.    
 By  doing  this,  the  problems  associated  with  multiple  solutions  to  larger  order  degree  of  freedom  robotic  systems  are  mitigated.    
-It  is  approximated  that  the  three  axes intersect  at  the  wrist despite the length of the link between the lower arm and forearm.  
+It  is  approximated  that  the  three  axese intersect  at  the  wrist despite the length of the link between the lower arm and forearm.  
 This is justified due to the relatively short length of this link and the fact that the robot is controlled based on the vision of a surgeon, allowing for intuitive compensation by the surgeon to position the  end  effector.
 This  visual  compensation  is  also  used  to  mitigate  the  effects  of  motor backlash propagation through the robot, although solutions to reduce backlash are being attempted.
-
-
-
-\begin{figure*}[ht!]
-	\centering
-	\includegraphics[width=.99\textwidth]{Figures/Controls.pdf} 
-	\caption{Haptic-Baxter-Haptic control with human interaction.}
-\end{figure*}
 
 \section{Experiment and Results}
 \label{sec:experiment}
@@ -244,7 +232,7 @@ We have also modified the board and we made our own game board where the squares
 After making the changes and to improve the grip of the pieces we have changed the natural way to do that (close the robot grippers) and we do open these grippers.
 
 
-\subsection{Evaluation}
+\subsection{Evaluation methodology}
 
 For evaluation of our experiment we used the Guideline for Ergonomic Haptic Interaction Design (GEHID) developed by L. M. Muñoz, P. Ponsa, and A. Casals \cite{Munoz12}. The guide provides an approach that relates human factors to robotics technology and is based on measures that characterize the haptic interfaces, user’s capabilities and the objects to manipulate. We chose this guide as it is a method that aims to cover aspects of haptic interface design and human-robot interaction in order to improve the design and use of human-robot haptic interfaces in telerobotics applications.
 
@@ -305,7 +293,7 @@ The third step is to establish a clear relationship between selected indicators 
 
 \end{table}
 
-\subsection{User experience}
+\subsection{Experimental results}
 
 From the point of view of usability and using as reference the definition provide by the international standard ISO 9241-11 \cite{ISO98} that define usability as “The extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency and satisfaction in a specified context of use”, we measure these aspects for our experiment. But we need to include other aspects such as the haptic environment conditions in this classical model approach. L. M. Muñoz, P. Ponsa, and A. Casals \cite{Munoz12} describes in their research a human-robot metric classes that shows table \ref{metric_classes}.
 
@@ -327,33 +315,71 @@ From the point of view of usability and using as reference the definition provid
 }
 \end{table}
 
-In order to improve the use of our haptic interface we will test the haptic device for a set of expert's evaluators (8 people). We will prepare a user's experience test in order to measured human-robot metrics defined above. We designed a scenario in our usability laboratory in order to apply useful evaluation methods and to improve the human-robot interaction.
+In a first experiment we measured the performance of haptic interface in terms of execution time of a simple task. So we chose a group of nine people (7 technicians and 2 developers). They are familiar with the use of haptic devices. Participants only used the haptic interface without seeing the robot environment. Table \ref{results_exp} shows the quantitative results and figure \ref{results} shows a bar chart with these results. 
 
 \begin{table}[h]
-	\centering
-	\label{metric_test}
-	\caption{Descriptive statistics from Human-Robot experimental results}
-%	\resizebox{9cm}{!}{
-\begin{tabular}{  l  l }
-	\hline
-	Description & Result\\ 	\hline
-	Subjects& 7\\ 	\hline
-	Mean&	77,5329s  \\ 	\hline
-	Standard Deviation&	39,1256s  \\	\hline 
-	Minimum&	50s\\\hline
-	Maximum&	161s\\\hline
-
+\centering
+\caption{\label{results_exp}Results of experiment}
+\resizebox{9cm}{!}{
+\begin{tabular}{cccccc}
+\hline 
+\textbf{\footnotesize{}Subject } & \textbf{\footnotesize{}Time (sec.)} & \textbf{\footnotesize{}Collisions} & \textbf{\footnotesize{}Specification} & \textbf{\footnotesize{}Sex} & \textbf{\footnotesize{}Age}\tabularnewline
+\hline 
+{\footnotesize{}1} & {\footnotesize{}57} & {\footnotesize{}2 } & {\footnotesize{}Technician} & {\footnotesize{}M} & {\footnotesize{}20-30}\tabularnewline
+\hline 
+{\footnotesize{}2} & {\footnotesize{}60} & {\footnotesize{}0} & {\footnotesize{}Technician} & {\footnotesize{}M} & {\footnotesize{}20-30}\tabularnewline
+\hline 
+{\footnotesize{}3} & {\footnotesize{}161} & {\footnotesize{}3} & {\footnotesize{}Technician} & {\footnotesize{}M} & {\footnotesize{}30-40}\tabularnewline
+\hline 
+{\footnotesize{}4} & {\footnotesize{}50} & {\footnotesize{}0} & {\footnotesize{}Technician} & {\footnotesize{}M} & {\footnotesize{}20-30}\tabularnewline
+\hline 
+{\footnotesize{}5} & {\footnotesize{}70} & {\footnotesize{}0} & {\footnotesize{}Technician} & {\footnotesize{}F} & {\footnotesize{}20-30}\tabularnewline
+\hline 
+{\footnotesize{}6} & {\footnotesize{}55} & {\footnotesize{}0} & {\footnotesize{}Technician} & {\footnotesize{}M} & {\footnotesize{}20-30}\tabularnewline
+\hline 
+{\footnotesize{}7} & {\footnotesize{}90} & {\footnotesize{}0} & {\footnotesize{}Technician} & {\footnotesize{}M} & {\footnotesize{}20-30}\tabularnewline
+\hline 
+{\footnotesize{}8} & {\footnotesize{}23} & {\footnotesize{}0} & {\footnotesize{}Developer} & {\footnotesize{}M} & {\footnotesize{}20-30}\tabularnewline
+\hline 
+{\footnotesize{}9} & {\footnotesize{}13} & {\footnotesize{}0} & {\footnotesize{}Developer} & {\footnotesize{}F} & {\footnotesize{}20-30}\tabularnewline
+\hline 
 \end{tabular}
-%}
+}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.35]{Images/results.jpg} 
+\caption{\label{results}Diagram with results of experiment.}
+\end{figure}
+
+Analyzing these results we can see that the developers of the experiment have completed the task in a much less than the other participants time. Thus, taking only data from the first seven subjects in the experiment, we can see that the average time to complete the task has been 77,5714 seconds and a standard deviation of 39,1256 seconds. Table \ref{measures} shows other statistical measures of results.
+
+\begin{table}[h]
+\centering
+\caption{\label{measures}Statistical measures}
+\begin{tabular}{rr}
+\hline 
+\textbf{\footnotesize{}Measure} & \textbf{\footnotesize{}Time (sec.)}\tabularnewline
+\hline 
+{\footnotesize{}Mean} & {\footnotesize{}77,5714}\tabularnewline
+{\footnotesize{}Standard Error } & {\footnotesize{}14,7881 }\tabularnewline
+{\footnotesize{}Median} & {\footnotesize{}60}\tabularnewline
+{\footnotesize{}Standard Deviation} & {\footnotesize{}39,1256}\tabularnewline
+{\footnotesize{}Sample Variance} & {\footnotesize{}1530,81 }\tabularnewline
+{\footnotesize{}Kurtosis} & {\footnotesize{}4,49283}\tabularnewline
+{\footnotesize{}Skewness} & {\footnotesize{}2,08931}\tabularnewline
+{\footnotesize{}Range} & {\footnotesize{}111 }\tabularnewline
+{\footnotesize{}Minimum} & {\footnotesize{}50}\tabularnewline
+{\footnotesize{}Maximum} & {\footnotesize{}161}\tabularnewline
+{\footnotesize{}Sum} & {\footnotesize{}543}\tabularnewline
+{\footnotesize{}Count} & {\footnotesize{}7}\tabularnewline
+\hline 
+\end{tabular}
 \end{table}
 
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.55]{Figures/ResumenDatos_PruebaBasica.png} 
-	\caption{\label{3Dprinter}Results overview of experiments performed.}
-\end{figure}
-
+Finally, the participants replied a set of questions for a subjective evaluation of the experiment.
 
 
 \section{Conclusion}
